@@ -1,0 +1,807 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Learning more · PEP root6 workshop</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-panels/panels.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-block-align/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../css/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="pyroot.html" />
+    
+    
+    <link rel="prev" href="modules.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction.html">
+            
+                <a href="../introduction.html">
+            
+                    
+                    Part 1 - Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../feat1.html">
+            
+                <a href="../feat1.html">
+            
+                    
+                    Part 2 - New C++ features
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../feat2.html">
+            
+                <a href="../feat2.html">
+            
+                    
+                    Part 3 - Smart (and dumb) pointers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../newf2/intro.html">
+            
+                <a href="../newf2/intro.html">
+            
+                    
+                    Pointers, the absolute basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../newf2/smartp.html">
+            
+                <a href="../newf2/smartp.html">
+            
+                    
+                    Smart pointers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../parallellism.html">
+            
+                <a href="../parallellism.html">
+            
+                    
+                    Part 4 - Parallellism
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../parallell/intro.html">
+            
+                <a href="../parallell/intro.html">
+            
+                    
+                    Threads and processes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../parallell/example.html">
+            
+                <a href="../parallell/example.html">
+            
+                    
+                    Posix multithreading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../parallell/root.html">
+            
+                <a href="../parallell/root.html">
+            
+                    
+                    Parallellism with ROOT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../changes.html">
+            
+                <a href="../changes.html">
+            
+                    
+                    Part 5 - 5 to 6: changes to user code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../vectorization.html">
+            
+                <a href="../vectorization.html">
+            
+                    
+                    Part 6 - Vectorization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../tdf/declarative.html">
+            
+                <a href="../tdf/declarative.html">
+            
+                    
+                    Part 7 - Declarative analysis
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../tdf/concept.html">
+            
+                <a href="../tdf/concept.html">
+            
+                    
+                    Declarative programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../tdf/TDataFrame.html">
+            
+                <a href="../tdf/TDataFrame.html">
+            
+                    
+                    TDataFrame
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Part 8 - Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="running.html">
+            
+                <a href="running.html">
+            
+                    
+                    Running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="operators.html">
+            
+                <a href="operators.html">
+            
+                    
+                    Objects and operators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="numbers.html">
+            
+                <a href="numbers.html">
+            
+                    
+                    Numbers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="strings.html">
+            
+                <a href="strings.html">
+            
+                    
+                    Strings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="lists.html">
+            
+                <a href="lists.html">
+            
+                    
+                    Lists and looping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="dictionaries.html">
+            
+                <a href="dictionaries.html">
+            
+                    
+                    Dictionaries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="conditions.html">
+            
+                <a href="conditions.html">
+            
+                    
+                    Conditions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="methods.html">
+            
+                <a href="methods.html">
+            
+                    
+                    Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="scripting.html">
+            
+                <a href="scripting.html">
+            
+                    
+                    Scripting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="modules.html">
+            
+                <a href="modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9.11" data-path="learning.html">
+            
+                <a href="learning.html">
+            
+                    
+                    Learning more
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.12" data-path="pyroot.html">
+            
+                <a href="pyroot.html">
+            
+                    
+                    PyROOT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../bestprac/best_prac.html">
+            
+                <a href="../bestprac/best_prac.html">
+            
+                    
+                    Part 9 - Best Practices
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../bestprac/preparing.html">
+            
+                <a href="../bestprac/preparing.html">
+            
+                    
+                    Preparing your code for debugging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../bestprac/general.html">
+            
+                <a href="../bestprac/general.html">
+            
+                    
+                    Some general programming tips
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../bestprac/crash.html">
+            
+                <a href="../bestprac/crash.html">
+            
+                    
+                    Where does my code crash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../bestprac/memory.html">
+            
+                <a href="../bestprac/memory.html">
+            
+                    
+                    Finding memory leaks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Learning more</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="learning-more">Learning more</h1>
+<p>Learning Python is like learning&#x2026; well, like learning a language! You must 
+practice reading and writing regularly, and as you do you&#x2019;ll become more and 
+more comfortable, starting to get a <em>feeling</em> for how things work, and how to 
+effectively express yourself.</p>
+<p>Programming is a career in and of itself, so as physicists we have twice as 
+much work to do! It takes people many years to get comfortable with any 
+language, so try not to get too frustrated if things seem complicated at the 
+beginning. It gets better!</p>
+<p>When you do get stuck, ask friends and colleagues for help. One of the great 
+things about Python is that many people around the world use it, and it&#x2019;s very 
+popular in high energy physics, so you likely already know someone who can help 
+solve your problem. Working on code with others is a great way to learn, as you 
+can see how other people do things, and find out tricks you didn&#x2019;t know about.</p>
+<p>Beyond other people, Google is a powerful ally. Knowing how to express your 
+problem is important in getting the best answers quickly. Generally, including 
+a few words as possible is a good idea, like <a href="https://www.google.com/search?q=python+dictionary+delete+key" target="_blank">&#x201C;python dictionary delete 
+key&#x201D;</a>, or <a href="https://www.google.com/search?q=python+read+file+lines" target="_blank">&#x201C;python read file lines&#x201D;</a>.</p>
+<p><a href="https://stackoverflow.com" target="_blank">Stack Overflow</a> is an excellent resource, with 
+community-provided answers for many programming-related questions. Most 
+problems you encounter will already be answered there, and often the answers 
+are quite didactic, providing context and further reading, beyond just posting 
+the code that answers the question (these answers aren&#x2019;t always the ones marked 
+as the &#x2018;best answer&#x2019;, and don&#x2019;t always have the most votes).</p>
+<h2 id="exploring-python">Exploring Python</h2>
+<p>The Python standard library is a treasure-trove of useful objects and methods. 
+We&#x2019;ve gone through a tiny subset of them here, some others that might be useful 
+to you are:</p>
+<ul>
+<li><code>os</code>: Operating system functions to manipulate and query your machine and the 
+file system, like <code>os.mkdir</code> to make directories and <code>os.rename</code>.</li>
+<li><code>tempfile</code>: create files and directories in a temporary location, like
+<code>/tmp</code>, e.g. <code>tempfile.mkdtemp</code>.</li>
+<li><code>glob</code>: File name matching, to be able to do things like <code>ls folder/*.txt</code> in 
+Python with <code>glob.glob(&apos;folder/*.txt&apos;)</code>.</li>
+<li><code>subprocess</code>: Call shell commands with <code>subprocess.call([&apos;ls&apos;, &apos;-l&apos;, &apos;-a&apos;])</code>.</li>
+<li><code>time</code>: Get the current time with <code>time.localtime().tm_hour</code>.</li>
+<li><code>collections</code>: Use <code>collections.namedtuple</code> to create your own property-only
+objects.<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> collections
+<span class="hljs-meta">&gt;&gt;&gt; </span>Coordinate = collections.namedtuple(<span class="hljs-string">&apos;Coordinate&apos;</span>, [<span class="hljs-string">&apos;x&apos;</span>, <span class="hljs-string">&apos;y&apos;</span>])
+<span class="hljs-meta">&gt;&gt;&gt; </span>coord = Coordinate(<span class="hljs-number">4.5</span>, <span class="hljs-number">2.0</span>)
+<span class="hljs-meta">&gt;&gt;&gt; </span>coord.y
+<span class="hljs-number">2.0</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>x, y = coord
+<span class="hljs-meta">&gt;&gt;&gt; </span>x
+<span class="hljs-number">4.5</span>
+</code></pre>
+Use <code>collections.OrderedDict</code> for ordered dictionaries.<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>d = {<span class="hljs-string">&apos;foo&apos;</span>: <span class="hljs-string">&apos;bar&apos;</span>, <span class="hljs-number">123</span>: <span class="hljs-number">321</span>, <span class="hljs-string">&apos;hero&apos;</span>: <span class="hljs-string">&apos;thor&apos;</span>}
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> key, value <span class="hljs-keyword">in</span> d.items():
+<span class="hljs-meta">... </span>    <span class="hljs-keyword">print</span> key, value
+...
+<span class="hljs-number">123</span> <span class="hljs-number">321</span>
+foo bar
+hero thor
+<span class="hljs-meta">&gt;&gt;&gt; </span>d = collections.OrderedDict([(<span class="hljs-string">&apos;foo&apos;</span>, <span class="hljs-string">&apos;bar&apos;</span>), (<span class="hljs-number">123</span>, <span class="hljs-number">321</span>)])
+<span class="hljs-meta">&gt;&gt;&gt; </span>d.update([(<span class="hljs-string">&apos;hero&apos;</span>, <span class="hljs-string">&apos;thor&apos;</span>)])
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">for</span> key, value <span class="hljs-keyword">in</span> d.items():
+<span class="hljs-meta">... </span>    <span class="hljs-keyword">print</span> key, value
+...
+foo bar
+<span class="hljs-number">123</span> <span class="hljs-number">321</span>
+hero thor
+</code></pre>
+<code>collections.defaultdict</code> is useful for creating dictionaries that will create 
+automatically create values when a previously undefined key is accessed.<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span>d = collections.defaultdict(int)
+<span class="hljs-meta">&gt;&gt;&gt; </span>d[<span class="hljs-string">&apos;foo&apos;</span>] += <span class="hljs-number">1</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">print</span> d, d[<span class="hljs-string">&apos;foo&apos;</span>], d[<span class="hljs-string">&apos;bar&apos;</span>]
+defaultdict(&lt;type <span class="hljs-string">&apos;int&apos;</span>&gt;, {<span class="hljs-string">&apos;foo&apos;</span>: <span class="hljs-number">1</span>}) <span class="hljs-number">1</span> <span class="hljs-number">0</span>
+</code></pre>
+</li>
+</ul>
+<h2 id="conventional-coding">Conventional coding</h2>
+<p>&#x2018;Pythonic code&#x2019; is code that follows the conventions of the wider Python 
+community. Lots of people write Python, and by following certain stylistic 
+conventions it makes it easier for everyone to read each other&#x2019;s code (as they 
+say: &#x2018;you spend 90% of your time reading code, and 10% writing it&#x2019;).</p>
+<p>Pythonic style emphasises clean, readable code, with consistent formatting and 
+useful comments. The most important thing is to be consistent. You can consult 
+<a href="https://www.python.org/dev/peps/pep-0008/" target="_blank">PEP8</a>, the official Python style recommendations, if you&apos;re unsure or
+want to settle a dispute like <code>lower_case_functions</code> versus 
+<code>upperCaseFunctions</code>. Which of these two methods is easier to read?</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> time
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">myFunc</span><span class="hljs-params">(x,y,verbose = True, fast=<span class="hljs-string">&apos;yes&apos;</span>)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;Do the thing.&quot;&quot;&quot;</span>
+    z=( x *y ) /<span class="hljs-number">2</span>
+    <span class="hljs-keyword">if</span> verbose == <span class="hljs-keyword">False</span>:
+        <span class="hljs-keyword">print</span> x,y, z
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> fast:
+        time.sleep( <span class="hljs-number">1</span> )
+    <span class="hljs-keyword">return</span>  z* z
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">my_func</span><span class="hljs-params">(x, y, verbose=True, fast=True)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;Return ((x*y)/2)**2.
+
+    Keyword arguments:
+    x, y -- Values used in the computation
+    verbose -- Print computation information
+    fast -- If True, sleep for 1 second before returning
+    &quot;&quot;&quot;</span>
+    z = (x*y)/<span class="hljs-number">2</span>
+
+    <span class="hljs-keyword">if</span> verbose:
+        <span class="hljs-keyword">print</span> x, y, z
+    <span class="hljs-comment"># Should probably remove this functionality</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> fast:
+        time.sleep(<span class="hljs-number">1</span>)
+
+    <span class="hljs-keyword">return</span> z*z
+</code></pre>
+<p>The Zen of Python summarises the &#x2018;philosophy&#x2019; that the language tries to 
+follow. See what you think!</p>
+<pre><code class="lang-python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">import</span> this
+</code></pre>
+<blockquote>
+<p>&#x201C;There should be one-- and preferably only one --obvious way to do it&#x201D;</p>
+</blockquote>
+<p>If there isn&apos;t, you might be trying to come at a problem the wrong way.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="modules.html" class="navigation navigation-prev " aria-label="Previous page: Modules">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="pyroot.html" class="navigation navigation-next " aria-label="Next page: PyROOT">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Learning more","level":"1.9.11","depth":2,"next":{"title":"PyROOT","level":"1.9.12","depth":2,"path":"analysis/python/pyroot.md","ref":"analysis/python/pyroot.md","articles":[]},"previous":{"title":"Modules","level":"1.9.10","depth":2,"path":"analysis/python/modules.md","ref":"analysis/python/modules.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#117012fdc18c96831cb88196980c0ea73b0c87b8","collapsible-menu","block-align"],"styles":{"website":"css/website.css"},"pluginsConfig":{"collapsible-menu":{},"block-align":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"PEP root6 workshop","gitbook":"*","description":"PEP root6 introduction material"},"file":{"path":"analysis/python/learning.md","mtime":"2018-11-13T16:42:45.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-14T12:01:38.575Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-panels/panels.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

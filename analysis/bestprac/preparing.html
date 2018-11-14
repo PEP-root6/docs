@@ -1,0 +1,805 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Preparing your code for debugging · PEP root6 workshop</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-panels/panels.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-block-align/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../css/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="general.html" />
+    
+    
+    <link rel="prev" href="best_prac.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction.html">
+            
+                <a href="../introduction.html">
+            
+                    
+                    Part 1 - Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../feat1.html">
+            
+                <a href="../feat1.html">
+            
+                    
+                    Part 2 - New C++ features
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../feat2.html">
+            
+                <a href="../feat2.html">
+            
+                    
+                    Part 3 - Smart (and dumb) pointers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../newf2/intro.html">
+            
+                <a href="../newf2/intro.html">
+            
+                    
+                    Pointers, the absolute basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../newf2/smartp.html">
+            
+                <a href="../newf2/smartp.html">
+            
+                    
+                    Smart pointers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../parallellism.html">
+            
+                <a href="../parallellism.html">
+            
+                    
+                    Part 4 - Parallellism
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../parallell/intro.html">
+            
+                <a href="../parallell/intro.html">
+            
+                    
+                    Threads and processes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../parallell/example.html">
+            
+                <a href="../parallell/example.html">
+            
+                    
+                    Posix multithreading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../parallell/root.html">
+            
+                <a href="../parallell/root.html">
+            
+                    
+                    Parallellism with ROOT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../changes.html">
+            
+                <a href="../changes.html">
+            
+                    
+                    Part 5 - 5 to 6: changes to user code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../vectorization.html">
+            
+                <a href="../vectorization.html">
+            
+                    
+                    Part 6 - Vectorization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../tdf/declarative.html">
+            
+                <a href="../tdf/declarative.html">
+            
+                    
+                    Part 7 - Declarative analysis
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../tdf/concept.html">
+            
+                <a href="../tdf/concept.html">
+            
+                    
+                    Declarative programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../tdf/TDataFrame.html">
+            
+                <a href="../tdf/TDataFrame.html">
+            
+                    
+                    TDataFrame
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../python/">
+            
+                <a href="../python/">
+            
+                    
+                    Part 8 - Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../python/running.html">
+            
+                <a href="../python/running.html">
+            
+                    
+                    Running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../python/operators.html">
+            
+                <a href="../python/operators.html">
+            
+                    
+                    Objects and operators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../python/numbers.html">
+            
+                <a href="../python/numbers.html">
+            
+                    
+                    Numbers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../python/strings.html">
+            
+                <a href="../python/strings.html">
+            
+                    
+                    Strings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../python/lists.html">
+            
+                <a href="../python/lists.html">
+            
+                    
+                    Lists and looping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../python/dictionaries.html">
+            
+                <a href="../python/dictionaries.html">
+            
+                    
+                    Dictionaries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../python/conditions.html">
+            
+                <a href="../python/conditions.html">
+            
+                    
+                    Conditions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../python/methods.html">
+            
+                <a href="../python/methods.html">
+            
+                    
+                    Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="../python/scripting.html">
+            
+                <a href="../python/scripting.html">
+            
+                    
+                    Scripting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="../python/modules.html">
+            
+                <a href="../python/modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.11" data-path="../python/learning.html">
+            
+                <a href="../python/learning.html">
+            
+                    
+                    Learning more
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.12" data-path="../python/pyroot.html">
+            
+                <a href="../python/pyroot.html">
+            
+                    
+                    PyROOT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="best_prac.html">
+            
+                <a href="best_prac.html">
+            
+                    
+                    Part 9 - Best Practices
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.10.1" data-path="preparing.html">
+            
+                <a href="preparing.html">
+            
+                    
+                    Preparing your code for debugging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="general.html">
+            
+                <a href="general.html">
+            
+                    
+                    Some general programming tips
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="crash.html">
+            
+                <a href="crash.html">
+            
+                    
+                    Where does my code crash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="memory.html">
+            
+                <a href="memory.html">
+            
+                    
+                    Finding memory leaks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Preparing your code for debugging</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="preparing-your-code-for-debugging">Preparing your code for debugging</h2>
+<p>In broad terms when building software you typically have the option between
+generating either a <strong>release</strong> or a <strong>debug</strong> build.</p>
+<p>This also applies to ROOT (and AliRoot, AliPhysics), and your compiled analysis tasks
+and macros. As the name suggests:</p>
+<ul>
+<li><strong>release</strong> builds are meant for production and should be used when running
+your code at scale;</li>
+<li><strong>debug</strong> builds should be used exclusively when trying to sort out problems
+in the code.</li>
+</ul>
+<p>There are two main correlated characteristics that differ between release and
+debug builds:</p>
+<ul>
+<li>compile-time optimization</li>
+<li>debug symbols</li>
+</ul>
+<h3 id="compile-time-optimization">Compile-time optimization</h3>
+<p>Every compiler performs some form of optimization while producing executables
+and libraries. Optimizing a code while compiling means that the compiler does
+not merely <em>translate</em> a written programming language into machine code, but it
+also tries to <em>interpret</em> up to a certain extent what the code aims to do.</p>
+<p>All levels of optimization have the result of avoiding unnecessary code to be
+executed, and since optimization requires some code analysis, compilation time
+is longer (even if this is mostly unnoticeable with modern computers).</p>
+<p>Different levels of optimization can be choosen, ranging from no optimization
+to <em>aggressive</em> optimization; the most common compilers (for instance, <code>clang</code>
+or <code>gcc</code>) you would use the following switches:</p>
+<pre><code>[-O0|-O1|-O2|-O3|-Ofast|-Os|-Oz|-O|-O4]
+</code></pre><p>The default optimization level for the aforementioned compilers is <code>-O2</code>:
+higher levels of optimization are typically not recommended, as they might alter
+the program flow to a point it does no longer match any longer the developer&apos;s
+intentions.</p>
+<p>A list of what each <code>-O</code> flag enables in GCC is available on the
+<a href="https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html#Optimize-Options" target="_blank">GCC documentation</a>.</p>
+<p>When debugging code, you want binary instructions generated by the compiler to
+match as close as possible the readable code&apos;s flow. This is one of the reasons
+why optimization should be turned off in such a case.</p>
+<blockquote>
+<p>Increasing the optimization does not necessarily lead to more efficient code!
+&quot;Extreme&quot; optimizations (like <code>-O4</code>) are not recommended and can even lead
+to unexpected results.</p>
+</blockquote>
+<h3 id="symbols-and-debug-symbols">Symbols and debug symbols</h3>
+<p>Shared libraries and executables contain binary code divided into &quot;sections&quot;,
+and &quot;symbols&quot; are a way of referring to such sections. Each function or method
+name of your code is translated into a symbol.</p>
+<p>Extra &quot;symbols&quot; are written to a library when compiling in debug mode, pointing
+directly fragments of functions to the corresponding lines in the source code.</p>
+<p>To compile with <code>clang</code> or <code>gcc</code> with debug symbols, you would use the <code>-g</code>
+switch: there is no guarantee that optimizations are also turned off, so you&apos;d
+better specify also <code>-O0</code>:</p>
+<pre><code class="lang-bash">gcc -O0 -g ...
+</code></pre>
+<p>The same flags are used for <code>clang</code>.</p>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(4920167544);" id="-compiling-your-alice-code-for-debug-"><i class="fa fa-info-circle"></i>  Compiling your ALICE code for debug <span id="heading-4920167544"></span></h3></div><div class="panel-body" id="panel-4920167544"><p>Complex frameworks aren&apos;t typically built by directly invoking a compiler and
+its options: for instance, when compiling AliPhysics you use
+<a href="https://alisw.github.io/alibuild/tutorial.html" target="_blank">aliBuild</a>, managing
+dependencies between different packages, and <a href="https://cmake.org/" target="_blank">CMake</a>, a
+tool that generates compile commands based on the dependencies between source
+files inside the same project.</p>
+<p>A standard aliBuild compilation of AliPhysics, which is as simple as issuing:</p>
+<pre><code class="lang-bash">aliBuild build AliPhysics
+</code></pre>
+<p>will use some &quot;defaults&quot; which, if no extra option is passed, are read from the
+<a href="https://github.com/alisw/alidist/blob/master/defaults-release.sh" target="_blank">defaults-release.sh
+file</a>. Options
+in this file are such that we compile our three main packages (ROOT, AliRoot and
+AliPhysics) using both a normal optimization level (<code>-O2</code>) and debug symbols
+(<code>-g</code>).</p>
+<blockquote>
+<p>The default configuration is sufficient in most cases and it is the same used
+for Grid packages.</p>
+</blockquote>
+<p>You have the option to use a different set of &quot;defaults&quot; for debug (note that
+this will trigger a full recompilation of most packages):</p>
+<pre><code class="lang-bash">aliBuild build AliPhysics --defaults debug
+</code></pre>
+<p>Such debug configuration uses <code>-O0</code> and <code>-g</code>.</p>
+</div></div></p>
+<h4 id="your-analysis">Your analysis</h4>
+<p>Suppose your analysis task is called <code>AliAnalysisTaskDummyTask</code>. In the macro
+you use to load the analysis task, you can do:</p>
+<pre><code class="lang-c++">gROOT-&gt;LoadMacro(<span class="hljs-string">&quot;AliAnalysisTaskDummyTask.cxx++g&quot;</span>);
+</code></pre>
+<p>The &quot;double plus&quot; forces recompilation, while the appended <code>g</code> tells ROOT to
+compile the task with debug symbols. Once your code is in production, just
+remove the <code>g</code>:</p>
+<pre><code class="lang-c++">gROOT-&gt;LoadMacro(<span class="hljs-string">&quot;AliAnalysisTaskDummyTask.cxx++&quot;</span>);
+</code></pre>
+<p>Please note that debug code is considerably slower than production code,
+although it provides you with more information (for instance line numbers in
+stacktraces as we will see later).</p>
+<blockquote>
+<p>Only use debug builds for temporary tests: turn off debugging when
+sending your code to production!</p>
+</blockquote>
+<h4 id="got-debug-symbols-linux-only">Got Debug Symbols? (Linux only)</h4>
+<p>To check if your code has been compiled with debug symbols, on Linux you can
+do:</p>
+<pre><code class="lang-bash">nm <span class="hljs-_">-a</span> libName.so | grep debug
+</code></pre>
+<p>The <code>nm -a</code> command lists all symbols: we grep only the ones containing the
+word &quot;debug&quot;. For instance:</p>
+<pre><code class="lang-bash">$&gt; <span class="hljs-built_in">cd</span> <span class="hljs-variable">$ALICE_BUILD</span>/lib/tgt_*
+$&gt; objdump --syms libPWGEMCAL.so
+0000000000000000 l    d  .debug_aranges    0000000000000000              .debug_aranges
+0000000000000000 l    d  .debug_info    0000000000000000              .debug_info
+0000000000000000 l    d  .debug_abbrev  0000000000000000              .debug_abbrev
+0000000000000000 l    d  .debug_line    0000000000000000              .debug_line
+0000000000000000 l    d  .debug_str     0000000000000000              .debug_str
+0000000000000000 l    d  .debug_loc     0000000000000000              .debug_loc
+0000000000000000 l    d  .debug_ranges  0000000000000000              .debug_ranges
+</code></pre>
+<p>The library <code>libPWGEMCAL.so</code> on our reference Linux installation <strong>does
+contain</strong> debug symbols. The above command usually contains no output if no
+debug symbols are present.</p>
+<p>Please note that on macOS debug symbols do not show up with <code>nm -a</code>.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="best_prac.html" class="navigation navigation-prev " aria-label="Previous page: Part 9 - Best Practices">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="general.html" class="navigation navigation-next " aria-label="Next page: Some general programming tips">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Preparing your code for debugging","level":"1.10.1","depth":2,"next":{"title":"Some general programming tips","level":"1.10.2","depth":2,"path":"analysis/bestprac/general.md","ref":"analysis/bestprac/general.md","articles":[]},"previous":{"title":"Part 9 - Best Practices","level":"1.10","depth":1,"path":"analysis/bestprac/best_prac.md","ref":"analysis/bestprac/best_prac.md","articles":[{"title":"Preparing your code for debugging","level":"1.10.1","depth":2,"path":"analysis/bestprac/preparing.md","ref":"analysis/bestprac/preparing.md","articles":[]},{"title":"Some general programming tips","level":"1.10.2","depth":2,"path":"analysis/bestprac/general.md","ref":"analysis/bestprac/general.md","articles":[]},{"title":"Where does my code crash","level":"1.10.3","depth":2,"path":"analysis/bestprac/crash.md","ref":"analysis/bestprac/crash.md","articles":[]},{"title":"Finding memory leaks","level":"1.10.4","depth":2,"path":"analysis/bestprac/memory.md","ref":"analysis/bestprac/memory.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["katex","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#117012fdc18c96831cb88196980c0ea73b0c87b8","collapsible-menu","block-align"],"styles":{"website":"css/website.css"},"pluginsConfig":{"collapsible-menu":{},"block-align":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"PEP root6 workshop","gitbook":"*","description":"PEP root6 introduction material"},"file":{"path":"analysis/bestprac/preparing.md","mtime":"2018-11-13T16:42:45.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-14T12:01:38.575Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-panels/panels.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

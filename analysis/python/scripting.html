@@ -1,0 +1,909 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Scripting · PEP root6 workshop</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-panels/panels.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-block-align/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../css/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="modules.html" />
+    
+    
+    <link rel="prev" href="methods.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction.html">
+            
+                <a href="../introduction.html">
+            
+                    
+                    Part 1 - Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../feat1.html">
+            
+                <a href="../feat1.html">
+            
+                    
+                    Part 2 - New C++ features
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../feat2.html">
+            
+                <a href="../feat2.html">
+            
+                    
+                    Part 3 - Smart (and dumb) pointers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../newf2/intro.html">
+            
+                <a href="../newf2/intro.html">
+            
+                    
+                    Pointers, the absolute basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../newf2/smartp.html">
+            
+                <a href="../newf2/smartp.html">
+            
+                    
+                    Smart pointers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../parallellism.html">
+            
+                <a href="../parallellism.html">
+            
+                    
+                    Part 4 - Parallellism
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../parallell/intro.html">
+            
+                <a href="../parallell/intro.html">
+            
+                    
+                    Threads and processes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../parallell/example.html">
+            
+                <a href="../parallell/example.html">
+            
+                    
+                    Posix multithreading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../parallell/root.html">
+            
+                <a href="../parallell/root.html">
+            
+                    
+                    Parallellism with ROOT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../changes.html">
+            
+                <a href="../changes.html">
+            
+                    
+                    Part 5 - 5 to 6: changes to user code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../vectorization.html">
+            
+                <a href="../vectorization.html">
+            
+                    
+                    Part 6 - Vectorization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../tdf/declarative.html">
+            
+                <a href="../tdf/declarative.html">
+            
+                    
+                    Part 7 - Declarative analysis
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../tdf/concept.html">
+            
+                <a href="../tdf/concept.html">
+            
+                    
+                    Declarative programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../tdf/TDataFrame.html">
+            
+                <a href="../tdf/TDataFrame.html">
+            
+                    
+                    TDataFrame
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Part 8 - Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="running.html">
+            
+                <a href="running.html">
+            
+                    
+                    Running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="operators.html">
+            
+                <a href="operators.html">
+            
+                    
+                    Objects and operators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="numbers.html">
+            
+                <a href="numbers.html">
+            
+                    
+                    Numbers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="strings.html">
+            
+                <a href="strings.html">
+            
+                    
+                    Strings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="lists.html">
+            
+                <a href="lists.html">
+            
+                    
+                    Lists and looping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="dictionaries.html">
+            
+                <a href="dictionaries.html">
+            
+                    
+                    Dictionaries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="conditions.html">
+            
+                <a href="conditions.html">
+            
+                    
+                    Conditions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="methods.html">
+            
+                <a href="methods.html">
+            
+                    
+                    Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9.9" data-path="scripting.html">
+            
+                <a href="scripting.html">
+            
+                    
+                    Scripting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="modules.html">
+            
+                <a href="modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.11" data-path="learning.html">
+            
+                <a href="learning.html">
+            
+                    
+                    Learning more
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.12" data-path="pyroot.html">
+            
+                <a href="pyroot.html">
+            
+                    
+                    PyROOT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../bestprac/best_prac.html">
+            
+                <a href="../bestprac/best_prac.html">
+            
+                    
+                    Part 9 - Best Practices
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../bestprac/preparing.html">
+            
+                <a href="../bestprac/preparing.html">
+            
+                    
+                    Preparing your code for debugging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../bestprac/general.html">
+            
+                <a href="../bestprac/general.html">
+            
+                    
+                    Some general programming tips
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../bestprac/crash.html">
+            
+                <a href="../bestprac/crash.html">
+            
+                    
+                    Where does my code crash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../bestprac/memory.html">
+            
+                <a href="../bestprac/memory.html">
+            
+                    
+                    Finding memory leaks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Scripting</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="scripting">Scripting</h1>
+<p>OK, so we&#x2019;ve spent quite a long time in Python shells. But we can quit.
+With IPython&#x2019;s history we can only get back our work line-by-line. When we want to
+persist what we&#x2019;ve done, we write code to a file and then run the file.</p>
+<p>Let&#x2019;s create a file called <code>pizzaiolo.py</code>, and write a little python in it.</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> time
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">make_pizza</span><span class="hljs-params">(*toppings)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;Make a delicious pizza from the toppings.&quot;&quot;&quot;</span>
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;Making pizza...&apos;</span>
+    <span class="hljs-keyword">for</span> topping <span class="hljs-keyword">in</span> toppings:
+        <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;Adding {0}&apos;</span>.format(topping)
+        time.sleep(<span class="hljs-number">1</span>)
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;Done!&apos;</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;Pizza with toppings: {0}&apos;</span>.format(toppings)
+
+pizza = make_pizza(<span class="hljs-string">&apos;cheese&apos;</span>, <span class="hljs-string">&apos;olives&apos;</span>)
+</code></pre>
+<p>To run it, we can run the <code>python</code> or <code>ipython</code> programs in our shell, passing
+the filename as an argument.</p>
+<pre><code class="lang-shell">$ python pizzaiolo.py
+Making pizza...
+Adding cheese
+Done!
+Adding olives
+Done!
+$ ipython pizzaiolo.py
+Making pizza...
+Adding cheese
+Done!
+Adding olives
+Done!
+</code></pre>
+<p>We can enter an interactive shell after the script has run by including the
+<code>-i</code> flag, in which we&#x2019;ll have access to anything that was defined by the
+script.</p>
+<pre><code class="lang-shell">$ python -i pizzaiolo.py
+Making pizza...
+Adding cheese
+Done!
+Adding olives
+Done!
+&gt;&gt;&gt; time
+&lt;module &apos;time&apos; from &apos;/usr/lib/python2.7/lib-dynload/time.so&apos;&gt;
+&gt;&gt;&gt; pizza
+&quot;Pizza with toppings: (&apos;cheese&apos;, &apos;olives&apos;)&quot;
+&gt;&gt;&gt; exit()
+
+$ ipython -i pizzaiolo.py
+Making pizza...
+Adding cheese
+Done!
+Adding olives
+Done!
+
+In [1]: pizza
+&quot;Pizza with toppings: (&apos;cheese&apos;, &apos;olives&apos;)&quot;
+
+In [2]: exit()
+
+$
+</code></pre>
+<p>One of the most interesting things you can do in your own scripts is accept
+arguments. Wouldn&#x2019;t it be great if we could decide what toppings our pizza has
+<em>from the command line</em>?</p>
+<pre><code class="lang-shell">$ python pizzaiolo.py cheese broccoli
+Making pizza...
+Adding cheese
+Done!
+Adding olives
+Done!
+</code></pre>
+<p>Of course, nothing&#x2019;s changed because our script doesn&#x2019;t know how to handle such
+arguments. To add this, we use for example the <code>sys</code> module, which makes the command line
+arguments available as the <code>argv</code> property. We can modify our script to print
+this out, to get a feeling for what&#x2019;s going on. We&#x2019;ll comment out our method
+call whilst we&#x2019;re just playing around.</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">import</span> time
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">make_pizza</span><span class="hljs-params">(*toppings)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;Make a delicious pizza from the toppings.&quot;&quot;&quot;</span>
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;Making pizza...&apos;</span>
+    <span class="hljs-keyword">for</span> topping <span class="hljs-keyword">in</span> toppings:
+        <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;Adding {0}&apos;</span>.format(topping)
+        time.sleep(<span class="hljs-number">1</span>)
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;Done!&apos;</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;Pizza with toppings: {0}&apos;</span>.format(toppings)
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&apos;sys.argv:&apos;</span>, sys.argv
+<span class="hljs-comment"># pizza = make_pizza(&apos;cheese&apos;, &apos;olives&apos;)</span>
+</code></pre>
+<p>Then run it:</p>
+<pre><code class="lang-shell">$ python pizzaiolo.py
+sys.argv: [&apos;pizzaiolo.py&apos;]
+$ python pizzaiolo.py cheese broccoli
+sys.argv: [&apos;pizzaiolo.py&apos;, &apos;cheese&apos;, &apos;broccoli&apos;]
+$ python pizzaiolo.py cheese broccoli --help --verbose
+sys.argv: [&apos;pizzaiolo.py&apos;, &apos;cheese&apos;, &apos;broccoli&apos;, &apos;--help&apos;, &apos;--verbose&apos;]
+</code></pre>
+<p>Awesome! <code>sys.argv</code> is just a list with one value per argument (arguments on
+the command line are separate by spaces). The first value is always the name of
+the script that we run.</p>
+<p>So, let&#x2019;s use the command line arguments in our script.</p>
+<pre><code class="lang-python"><span class="hljs-comment"># print(&apos;sys.argv:&apos;, sys.argv)</span>
+toppings = sys.argv[<span class="hljs-number">1</span>:]
+pizza = make_pizza(*toppings)
+</code></pre>
+<p>And then run it:</p>
+<pre><code class="lang-shell">$ python pizzaiolo.py cheese broccoli
+Making pizza...
+Adding cheese
+Done!
+Adding broccoli
+Done!
+</code></pre>
+<p>Super cool. Now we could decide to add some flags that modify the behaviour of
+our program. We might like the <code>--help</code> flag to print a help message and exit,
+without actually making pizza, and a <code>--verbose</code> flag to enable printing more
+information.</p>
+<pre><code class="lang-python">arguments = sys.argv[<span class="hljs-number">1</span>:]
+
+<span class="hljs-keyword">if</span> <span class="hljs-string">&apos;--help&apos;</span> <span class="hljs-keyword">in</span> arguments:
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;Make a pizza.&apos;</span>
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;Usage: pizzaiolo.py topping1 topping2 ...&apos;</span>
+    sys.exit()
+
+<span class="hljs-keyword">if</span> <span class="hljs-string">&apos;--verbose&apos;</span> <span class="hljs-keyword">in</span> arguments:
+    verbose = <span class="hljs-keyword">True</span>
+    <span class="hljs-comment"># We don&apos;t want the flag passed as a topping!</span>
+    arguments.remove(<span class="hljs-string">&apos;--verbose&apos;</span>)
+<span class="hljs-keyword">else</span>:
+    verbose = <span class="hljs-keyword">False</span>
+
+<span class="hljs-keyword">if</span> verbose:
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;About to call make_pizza&apos;</span>
+pizza = make_pizza(*arguments)
+<span class="hljs-keyword">if</span> verbose:
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;Finished&apos;</span>
+</code></pre>
+<p>Let&#x2019;s try running it.</p>
+<pre><code class="lang-shell">$ python pizzaiolo.py cheese broccoli
+Making pizza...
+Adding cheese
+Done!
+Adding broccoli
+Done!
+$ python pizzaiolo.py cheese broccoli --help
+Make a pizza.
+Usage: pizzaiolo.py topping1 topping2 ...
+$ python pizzaiolo.py cheese broccoli --verbose
+About to call make_pizza
+Making pizza...
+Adding cheese
+Done!
+Adding broccoli
+Done!
+Finished
+</code></pre>
+<p>Great, everything seems to work.</p>
+<h2 id="argparse">argparse</h2>
+<p>The <a href="https://docs.python.org/2/library/argparse.html" target="_blank"><code>argparse</code> module</a> comes as part of the Python standard library,
+and allows us to define what arguments our scripts accept much more easily
+than what we&#x2019;ve shown. Under the hood, it just inspects <code>sys.argv</code> in exactly
+the same way as we&#x2019;ve done, but it takes care of things like validation for us.</p>
+<pre><code>import argparse
+import sys
+import time
+
+
+def make_pizza(*toppings):
+    &quot;&quot;&quot;Make a delicious pizza from the toppings.&quot;&quot;&quot;
+    print &apos;Making pizza...&apos;
+    for topping in toppings:
+        print &apos;Adding {0}&apos;.format(topping)
+        time.sleep(1)
+    print &apos;Done!&apos;
+    return &apos;Pizza with toppings: {0}&apos;.format(toppings)
+
+
+parser = argparse.ArgumentParser(description=&apos;Make a pizza&apos;)
+parser.add_argument(&apos;toppings&apos;, nargs=&apos;+&apos;,
+                    help=&apos;Toppings to put on the pizza.&apos;)
+parser.add_argument(&apos;--verbose&apos;, &apos;-v&apos;, action=&apos;store_true&apos;,
+                    help=&apos;Print more information whilst making.&apos;)
+arguments = parser.parse_args()
+
+if arguments.verbose:
+    print &apos;About to call make_pizza&apos;
+make_pizza(*arguments.toppings)
+if arguments.verbose:
+    print &apos;Finished&apos;
+</code></pre><p>We say that we want an argument, that we will refer to as <code>toppings</code> in the
+code, that can be specified multiple times <code>nargs=&apos;+&apos;</code>, and a flag called
+<code>--verbose</code>. We ask that that flag can also be specified using the <code>-v</code>
+shorthand.</p>
+<p>Let&#x2019;s start by asking for help again.</p>
+<pre><code class="lang-shell">$ python pizzaiolo.py --help
+usage: simple.py [-h] [--verbose] toppings [toppings ...]
+
+Make a pizza
+
+positional arguments:
+  toppings       Toppings to put on the pizza.
+
+optional arguments:
+  -h, --help     show this help message and exit
+  --verbose, -v  Print more information whilst making.
+</code></pre>
+<p>Woah, nice! We didn&#x2019;t even tell <code>argparse</code> to have a <code>--help</code> flag, but we have
+one automatically. (<code>argparse</code> will also add <code>-h</code> as an alias for <code>--help</code>.)</p>
+<p>Let&apos;s now prepare the traditional Pizza Margherita.</p>
+<pre><code class="lang-shell">$ python pizzaiolo.py &apos;tomato sauce&apos; &apos;buffalo mozzarella&apos; --verbose
+About to call make_pizza
+Making pizza...
+Adding tomato sauce
+Done!
+Adding buffalo mozzarella
+Done!
+Finished
+</code></pre>
+<p>The same result is obtained, but more cleanly expressed and with fewer lines of code!</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="methods.html" class="navigation navigation-prev " aria-label="Previous page: Methods">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="modules.html" class="navigation navigation-next " aria-label="Next page: Modules">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Scripting","level":"1.9.9","depth":2,"next":{"title":"Modules","level":"1.9.10","depth":2,"path":"analysis/python/modules.md","ref":"analysis/python/modules.md","articles":[]},"previous":{"title":"Methods","level":"1.9.8","depth":2,"path":"analysis/python/methods.md","ref":"analysis/python/methods.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#117012fdc18c96831cb88196980c0ea73b0c87b8","collapsible-menu","block-align"],"styles":{"website":"css/website.css"},"pluginsConfig":{"collapsible-menu":{},"block-align":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"PEP root6 workshop","gitbook":"*","description":"PEP root6 introduction material"},"file":{"path":"analysis/python/scripting.md","mtime":"2018-11-13T16:42:45.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-14T12:01:38.575Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-panels/panels.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

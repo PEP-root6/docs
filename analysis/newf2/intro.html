@@ -1,0 +1,977 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Pointers, the absolute basics · PEP root6 workshop</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-panels/panels.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-block-align/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../css/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="smartp.html" />
+    
+    
+    <link rel="prev" href="../feat2.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction.html">
+            
+                <a href="../introduction.html">
+            
+                    
+                    Part 1 - Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../feat1.html">
+            
+                <a href="../feat1.html">
+            
+                    
+                    Part 2 - New C++ features
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../feat2.html">
+            
+                <a href="../feat2.html">
+            
+                    
+                    Part 3 - Smart (and dumb) pointers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.4.1" data-path="intro.html">
+            
+                <a href="intro.html">
+            
+                    
+                    Pointers, the absolute basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="smartp.html">
+            
+                <a href="smartp.html">
+            
+                    
+                    Smart pointers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../parallellism.html">
+            
+                <a href="../parallellism.html">
+            
+                    
+                    Part 4 - Parallellism
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../parallell/intro.html">
+            
+                <a href="../parallell/intro.html">
+            
+                    
+                    Threads and processes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../parallell/example.html">
+            
+                <a href="../parallell/example.html">
+            
+                    
+                    Posix multithreading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../parallell/root.html">
+            
+                <a href="../parallell/root.html">
+            
+                    
+                    Parallellism with ROOT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../changes.html">
+            
+                <a href="../changes.html">
+            
+                    
+                    Part 5 - 5 to 6: changes to user code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../vectorization.html">
+            
+                <a href="../vectorization.html">
+            
+                    
+                    Part 6 - Vectorization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../tdf/declarative.html">
+            
+                <a href="../tdf/declarative.html">
+            
+                    
+                    Part 7 - Declarative analysis
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../tdf/concept.html">
+            
+                <a href="../tdf/concept.html">
+            
+                    
+                    Declarative programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../tdf/TDataFrame.html">
+            
+                <a href="../tdf/TDataFrame.html">
+            
+                    
+                    TDataFrame
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../python/">
+            
+                <a href="../python/">
+            
+                    
+                    Part 8 - Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../python/running.html">
+            
+                <a href="../python/running.html">
+            
+                    
+                    Running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../python/operators.html">
+            
+                <a href="../python/operators.html">
+            
+                    
+                    Objects and operators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../python/numbers.html">
+            
+                <a href="../python/numbers.html">
+            
+                    
+                    Numbers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../python/strings.html">
+            
+                <a href="../python/strings.html">
+            
+                    
+                    Strings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../python/lists.html">
+            
+                <a href="../python/lists.html">
+            
+                    
+                    Lists and looping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../python/dictionaries.html">
+            
+                <a href="../python/dictionaries.html">
+            
+                    
+                    Dictionaries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../python/conditions.html">
+            
+                <a href="../python/conditions.html">
+            
+                    
+                    Conditions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../python/methods.html">
+            
+                <a href="../python/methods.html">
+            
+                    
+                    Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="../python/scripting.html">
+            
+                <a href="../python/scripting.html">
+            
+                    
+                    Scripting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="../python/modules.html">
+            
+                <a href="../python/modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.11" data-path="../python/learning.html">
+            
+                <a href="../python/learning.html">
+            
+                    
+                    Learning more
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.12" data-path="../python/pyroot.html">
+            
+                <a href="../python/pyroot.html">
+            
+                    
+                    PyROOT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../bestprac/best_prac.html">
+            
+                <a href="../bestprac/best_prac.html">
+            
+                    
+                    Part 9 - Best Practices
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../bestprac/preparing.html">
+            
+                <a href="../bestprac/preparing.html">
+            
+                    
+                    Preparing your code for debugging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../bestprac/general.html">
+            
+                <a href="../bestprac/general.html">
+            
+                    
+                    Some general programming tips
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../bestprac/crash.html">
+            
+                <a href="../bestprac/crash.html">
+            
+                    
+                    Where does my code crash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../bestprac/memory.html">
+            
+                <a href="../bestprac/memory.html">
+            
+                    
+                    Finding memory leaks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Pointers, the absolute basics</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="the-absolute-basics">The absolute basics</h1>
+<p>Of course, all of us remember from our C++ 101 class what a pointer is. Still, it cannot hurt to refresh the basics a little bit before we dive into the deep end. </p>
+<ul>
+<li>When a variable is declared, the memory needed to store its value is assigned a specific location in memory: its memory address. </li>
+<li>C++ programs do not actively decide the exact memory addresses where its variables are stored. </li>
+</ul>
+<p>Fortunately, that task is left to the environment where the program is run - generally, an operating system that decides the particular memory locations on runtime. However, it may be useful for a program to be able to obtain the address of a variable during runtime in order to access data cells that are at a certain position relative to it.</p>
+<h2 id="the-address-of-operator-">The address-of operator &amp;</h2>
+<p>The address of a variable can be obtained by preceding the name of a variable with an ampersand sign (&amp;), known as address-of operator. For example: </p>
+<pre><code class="lang-cpp">foo = &amp;myfar;
+</code></pre>
+<p>This assigns the <em>address</em> of variable <code>myvar</code> to <code>foo</code>; by preceding the name of the variable <code>myvar</code> with the address-of operator (&amp;), we are no longer assigning the content of the variable itself to foo, but its address.</p>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(9940209360);" id="runtime"><i class="fa fa-info-circle"></i> Runtime<span id="heading-9940209360"></span></h3></div><div class="panel-body" id="panel-9940209360"><p>The actual address of a variable in memory cannot be known before runtime, but let&apos;s assume, in order to help clarify some concepts, that myvar is placed during runtime in the memory address 1776.</p>
+</div></div></p>
+<p>Consider the following code fragment</p>
+<pre><code class="lang-cpp">myvar = <span class="hljs-number">25</span>;
+foo = &amp;myvar;
+bar = myvar;
+</code></pre>
+<ul>
+<li><p>First, we have assigned the value 25 to myvar (a variable whose address in memory we assumed to be 1776).</p>
+</li>
+<li><p>The second statement assigns foo the address of myvar, which we have assumed to be 1776.</p>
+</li>
+<li><p>Finally, the third statement, assigns the value contained in myvar to bar. This is a standard assignment operation, as already done many times in earlier chapters.</p>
+</li>
+</ul>
+<p><img src="reference_operator.png" alt="reference_operator"></p>
+<p>The main difference between the second and third statements is the appearance of the address-of operator (&amp;).</p>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(3889358879);" id="pointers"><i class="fa fa-info-circle"></i> Pointers<span id="heading-3889358879"></span></h3></div><div class="panel-body" id="panel-3889358879"><p>The variable that stores the address of another variable (like foo in the previous example) is what in C++ is called a <strong>pointer</strong>. Pointers are said to &quot;point to&quot; the variable whose address they store.</p>
+</div></div></p>
+<h2 id="dereference-operator-">Dereference operator *</h2>
+<p>Pointers can be used to access the variable they point to directly. This is done by preceding the pointer name with the <strong>dereference operator</strong> (*). The operator itself can be read as &quot;value pointed to by&quot;.</p>
+<p>Therefore, following with the values of the previous example, the following statement: </p>
+<pre><code class="lang-cpp">baz = *foo
+</code></pre>
+<p>This could be read as: &quot;<code>baz</code> equal to value pointed to by <code>foo</code>&quot;, and the statement would actually assign the value 25 to <code>baz</code>, since <code>foo</code> is 1776, and the value pointed to by 1776 (following the example above) would be 25.</p>
+<p><img src="dereference_operator.png" alt="dereference_operator"></p>
+<p>It is important to clearly differentiate that <code>foo</code> refers to the <em>value</em> 1776, while *foo (with an asterisk * preceding the identifier) refers to the value <em>stored at addres</em>s 1776, which in this case is 25. Notice the difference of including or not including the dereference operator </p>
+<pre><code class="lang-cpp">baz = foo;   <span class="hljs-comment">// baz equal to foo (1776)</span>
+baz = *foo;  <span class="hljs-comment">// baz equal to value pointed to by foo (25)</span>
+</code></pre>
+<p>The reference and dereference operators are thus complementary:</p>
+<ul>
+<li>&amp; is the address-of operator, and can be read simply as &quot;address of&quot;</li>
+<li>* is the dereference operator, and can be read as &quot;value pointed to by&quot;</li>
+</ul>
+<p>Thus, they have sort of opposite meanings: An address obtained with &amp; can be dereferenced with *.</p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(4476893006);" id="example-of-pointers"><i class="fa fa-square-o"></i> Example of pointers<span id="heading-4476893006"></span></h3></div><div class="panel-body" id="panel-4476893006"><p>What will this program return ? </p>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span> <span class="hljs-params">()</span>
+</span>{
+  <span class="hljs-keyword">int</span> firstvalue = <span class="hljs-number">5</span>, secondvalue = <span class="hljs-number">15</span>;
+  <span class="hljs-keyword">int</span> * p1, * p2;
+
+  p1 = &amp;firstvalue;  <span class="hljs-comment">// p1 = address of firstvalue</span>
+  p2 = &amp;secondvalue; <span class="hljs-comment">// p2 = address of secondvalue</span>
+  *p1 = <span class="hljs-number">10</span>;          <span class="hljs-comment">// value pointed to by p1 = 10</span>
+  *p2 = *p1;         <span class="hljs-comment">// value pointed to by p2 = value pointed to by p1</span>
+  p1 = p2;           <span class="hljs-comment">// p1 = p2 (value of pointer is copied)</span>
+  *p1 = <span class="hljs-number">20</span>;          <span class="hljs-comment">// value pointed to by p1 = 20</span>
+
+  <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;firstvalue is &quot;</span> &lt;&lt; firstvalue &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+  <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;secondvalue is &quot;</span> &lt;&lt; secondvalue &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1730307163);" id="-solutionclick-to-expand"><i class="fa fa-line-chart"></i>  Solution<span id="heading-1730307163">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-1730307163"><p>The solution is</p>
+<pre><code class="lang-cpp">firstvalue is <span class="hljs-number">10</span>
+secondvalue is <span class="hljs-number">20</span>
+</code></pre>
+</div></div></div></div></p>
+<h2 id="void-pointers">Void pointers</h2>
+<p>The void type of pointer is a <strong>special type of pointer</strong> that represents the <strong>absence of type</strong>. Void pointers are pointers that point to a value that has no type , an undetermined length and undetermined dereferencing properties.</p>
+<p>Void pointers are <strong>flexible</strong>:  by being able to point to any data type, from an integer value or a float to a string of characters. In exchange, they have a great <strong>limitation</strong>: the data pointed to by them cannot be directly dereferenced.</p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7258973117);" id="-dereferencing-void-pointers"><i class="fa fa-square-o"></i>  Dereferencing void pointers<span id="heading-7258973117"></span></h3></div><div class="panel-body" id="panel-7258973117"><p>Why can&apos;t a void pointer directly be dereferenced? </p>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(559677480);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-559677480">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-559677480"><p>Since void pointers have no type to dereference to, any address in a void pointer needs to be transformed into some other pointer type that points to a concrete data type before being dereferenced.</p>
+</div></div></div></div></p>
+<h3 id="usage-of-void-pointers">Usage of void pointers</h3>
+<p>One of its possible uses may be to pass generic parameters to a function. We will later see (in the parallellisation section) that this comes in handy, but here is already an example.  </p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(2152631454);" id="what-does-this-code-do"><i class="fa fa-square-o"></i> What does this code do?<span id="heading-2152631454"></span></h3></div><div class="panel-body" id="panel-2152631454"><p>One of the possible uses of void pointers is passing generic parameters to a function:</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// increaser</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">increase</span> <span class="hljs-params">(<span class="hljs-keyword">void</span>* data, <span class="hljs-keyword">int</span> psize)</span>
+</span>{
+  <span class="hljs-keyword">if</span> ( psize == <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">char</span>) )
+  { <span class="hljs-keyword">char</span>* pchar; pchar=(<span class="hljs-keyword">char</span>*)data; ++(*pchar); }
+  <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (psize == <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">int</span>) )
+  { <span class="hljs-keyword">int</span>* pint; pint=(<span class="hljs-keyword">int</span>*)data; ++(*pint); }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span> <span class="hljs-params">()</span>
+</span>{
+  <span class="hljs-keyword">char</span> a = <span class="hljs-string">&apos;x&apos;</span>;
+  <span class="hljs-keyword">int</span> b = <span class="hljs-number">1602</span>;
+  increase (&amp;a,<span class="hljs-keyword">sizeof</span>(a));
+  increase (&amp;b,<span class="hljs-keyword">sizeof</span>(b));
+  <span class="hljs-built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="hljs-string">&quot;, &quot;</span> &lt;&lt; b &lt;&lt; <span class="hljs-string">&apos;\n&apos;</span>;
+  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(4098645132);" id="solution-click-to-expand"><i class="fa fa-line-chart"></i> Solution <span id="heading-4098645132">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-4098645132"><p>The solution is</p>
+<pre><code class="lang-cpp">y, <span class="hljs-number">1603</span>
+</code></pre>
+</div></div></div></div></p>
+<h2 id="pointers-to-functions">Pointers to functions</h2>
+<p>C++ allows operations with <strong>pointers to functions</strong>. </p>
+<ul>
+<li>The typical use of this is for passing a function as an argument to another function. </li>
+<li>Pointers to functions are declared with the same syntax as a regular function declaration, except that the name of the function is enclosed between parentheses () and an asterisk (*) is inserted before the name</li>
+</ul>
+<p>The easiest way to familiarize yourself with function pointers is to look at an example:</p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6540207173);" id="-function-pointers-"><i class="fa fa-square-o"></i>  Function pointers <span id="heading-6540207173"></span></h3></div><div class="panel-body" id="panel-6540207173"><p>This is an example of a function pointer</p>
+<pre><code class="lang-cpp">// pointer to functions
+#include &lt;iostream&gt;
+using namespace std;
+
+int addition (int a, int b) { 
+  return (a+b); 
+}
+
+int subtraction (int a, int b) { 
+  return (a-b); 
+}
+
+int operation (int x, int y, int (*functocall)(int,int)) {
+  int g;
+  g = (*functocall)(x,y);
+  return (g);
+}
+
+int main () {
+  int m,n;
+  int (*minus)(int,int) = subtraction;
+
+  m = operation (7, 5, addition);
+  n = operation (20, m, minus);
+  cout &lt;&lt;n;
+  return 0;
+}
+</code></pre>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(5622904125);" id="-solutionclick-to-expand"><i class="fa fa-line-chart"></i>  Solution<span id="heading-5622904125">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-5622904125"><p>And the output is</p>
+<pre><code class="lang-cpp"><span class="hljs-number">8</span>
+</code></pre>
+</div></div></div></div></p>
+<p>Again, we will see, when we are multi-processing and multi-threading our code, how function pointers can be very handy. </p>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(2735409326);" id="functors"><i class="fa fa-info-circle"></i> Functors<span id="heading-2735409326"></span></h3></div><div class="panel-body" id="panel-2735409326"><p>Despite the names being very similar, <em>function pointers</em> are not the same as <em>functors</em>. Functors, instead, are 
+<em>object functions</em>. Take a look at the following example:</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">struct</span> add_x {
+  add_x(<span class="hljs-keyword">int</span> x) : x(x) {}
+  <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">operator</span><span class="hljs-params">()</span><span class="hljs-params">(<span class="hljs-keyword">int</span> y)</span> <span class="hljs-keyword">const</span> </span>{ <span class="hljs-keyword">return</span> x + y; }
+
+<span class="hljs-keyword">private</span>:
+  <span class="hljs-keyword">int</span> x;
+};
+</code></pre>
+<p>The above code snippet defines a <code>functor</code>. There are a couple of nice things about functors. One is that unlike regular functions, they can contain a <em>state</em>. The above example creates a function which adds 42 to whatever you give it. But that value 42 is not hardcoded, it was specified as a constructor argument when we created our functor instance. You could create another adder, which added 27, just by calling the constructor with a different value. This makes them nicely customizable.</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// Now you can use it like this:</span>
+<span class="hljs-function">add_x <span class="hljs-title">add42</span><span class="hljs-params">(<span class="hljs-number">42</span>)</span></span>; <span class="hljs-comment">// create an instance of the functor class</span>
+<span class="hljs-keyword">int</span> i = add42(<span class="hljs-number">8</span>); <span class="hljs-comment">// and &quot;call&quot; it</span>
+assert(i == <span class="hljs-number">50</span>); <span class="hljs-comment">// and it added 42 to its argument</span>
+
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; in; <span class="hljs-comment">// assume this contains a bunch of values)</span>
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; out(in.size());
+<span class="hljs-comment">// Pass a functor to std::transform, which calls the functor on every element </span>
+<span class="hljs-comment">// in the input sequence, and stores the result to the output sequence</span>
+<span class="hljs-built_in">std</span>::transform(in.begin(), in.end(), out.begin(), add_x(<span class="hljs-number">1</span>)); 
+assert(out[i] == in[i] + <span class="hljs-number">1</span>); <span class="hljs-comment">// for all i</span>
+</code></pre>
+<p>As the last lines show, you often pass functors as arguments to other functions such as std::transform or the other standard library algorithms. You could do the same with a regular function pointer except, as I said above, functors can be &quot;customized&quot; because they contain state, making them more flexible; if you wanted to use a function pointer, you&apos;d have to write a function which added exactly 1 to its argument. </p>
+<p>The functor is general, and potentially more efficient. In the above example, the compiler knows exactly which function std::transform should call. It should call add_x::operator() and can inline that function call. If you had passed a function pointer instead, the compiler couldn&apos;t immediately see which function it points to, so it has to dereference the pointer at runtime, and then make the call.</p>
+</div></div></p>
+<h2 id="dynamic-memory">Dynamic memory</h2>
+<p>All memory needs are determined before program execution by defining the variables needed. But there may be cases where the memory needs of a program can only be determined during runtime. For example, when the memory needed depends on user input. On these cases, programs need to dynamically allocate memory, for which the C++ language integrates the operators new and delete.</p>
+<h3 id="operators-new-and-new">Operators <code>new</code> and <code>new[]</code></h3>
+<p>Dynamic memory is allocated using operator new. new is followed by a data type specifier and, if a sequence of more than one element is required, the number of these within brackets []. It returns a pointer to the beginning of the new block of memory allocated. Its syntax is: </p>
+<ul>
+<li>pointer = new type</li>
+<li>pointer = new type [number_of_elements]</li>
+</ul>
+<p>The first expression is used to allocate memory to contain one single element of type type. The second one is used to allocate a block (an array) of elements of type type, where number_of_elements is an integer value representing the amount of these. For example:</p>
+<h3 id="operators-delete-and-delete">Operators delete and delete[]</h3>
+<p>In most cases, memory allocated dynamically is only needed during specific periods of time within a program; once it is no longer needed, it can be freed so that the memory becomes available again for other requests of dynamic memory. This is the purpose of operator delete, whose syntax is:</p>
+<ul>
+<li>delete pointer;</li>
+<li>delete[] pointer;</li>
+</ul>
+<p>The first statement releases the memory of a single element allocated using new, and the second one releases the memory allocated for arrays of elements using new and a size in brackets ([]).</p>
+<p>The value passed as argument to delete shall be either a pointer to a memory block previously allocated with new, or a null pointer (in the case of a null pointer, delete produces no effect).</p>
+<p>Pictures say more than a 1000 words, so here&apos;s a few pictures that we shamelessly stole .... : </p>
+<p><img src="b.png" alt="b">
+<img src="c.png" alt="c">
+<img src="d.png" alt="d">
+<img src="e.png" alt="e">
+<img src="f.png" alt="f">
+<img src="g.png" alt="g">
+<img src="h.png" alt="h"></p>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(935021823);" id="dynamic-memory-in-c"><i class="fa fa-info-circle"></i> Dynamic memory in C<span id="heading-935021823"></span></h3></div><div class="panel-body" id="panel-935021823"><p>C++ integrates the operators new and delete for allocating dynamic memory. But these were not available in the C language; instead, it used a library solution, with the functions malloc, calloc, realloc and free, defined in the header <cstdlib> (known as &lt;stdlib.h&gt; in C). The functions are also available in C++ and can also be used to allocate and deallocate dynamic memory.</cstdlib></p>
+<p>Note, though, that the memory blocks allocated by these functions are not necessarily compatible with those returned by new, so they should not be mixed; each one should be handled with its own set of functions or operators.</p>
+</div></div></p>
+<h1 id="exercises">Exercises</h1>
+<p>These are some very basic exercises to refresh you on the basics of pointers. First, go through the problems that were covered in the lecture. If you are interested in learning some more, take a look at the questions below. These questions do not require coding, the snippets of code serve as exapmle to the text (but of course you are free to try them out &apos;in the wild&apos;). </p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(2721312621);" id="-question-"><i class="fa fa-square-o"></i>  Question <span id="heading-2721312621"></span></h3></div><div class="panel-body" id="panel-2721312621"><p>Considering only performance, when should you pass small objects by value, reference and pointer?</p>
+<pre><code class="lang-c++"><span class="hljs-keyword">struct</span> SmallStruct { <span class="hljs-keyword">int</span> i };
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">foo</span><span class="hljs-params">(SmallStruct s)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">foo</span><span class="hljs-params">(SmallStruct&amp; s)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">foo</span><span class="hljs-params">(SmallStruct* s)</span></span>;
+</code></pre>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(494077956);" id="-solution-click-to-expand"><i class="fa fa-line-chart"></i>  Solution <span id="heading-494077956">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-494077956"><p>There was no significant performance difference between passing small objects (or built-ins) by value, reference, or pointer.</p>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6838216894);" id="-question-"><i class="fa fa-square-o"></i>  Question <span id="heading-6838216894"></span></h3></div><div class="panel-body" id="panel-6838216894"><p>Considering only performance, when should you pass large objects by value, reference and pointer?</p>
+<pre><code class="lang-c++"><span class="hljs-keyword">struct</span> LargeStruct { <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; i };
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">foo</span><span class="hljs-params">(LargeStruct s)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">foo</span><span class="hljs-params">(LargeStruct&amp; s)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">foo</span><span class="hljs-params">(LargeStruct* s)</span></span>;
+</code></pre>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7807747837);" id="-solution-click-to-expand"><i class="fa fa-line-chart"></i>  Solution <span id="heading-7807747837">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-7807747837"><p>Passing by value is the slowest since Foo&apos;s copy constructor is invoked for each call. Passing by reference or by pointer essentially copy a machine word &#x2014; there&apos;s no significant difference.</p>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6351683642);" id="-question-"><i class="fa fa-square-o"></i>  Question <span id="heading-6351683642"></span></h3></div><div class="panel-body" id="panel-6351683642"><p>Are there other reasons to prefer one argument-passing mechanism to another (i.e. passing by value, reference or pointer)?</p>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(3101935766);" id="-solution-click-to-expand"><i class="fa fa-line-chart"></i>  Solution <span id="heading-3101935766">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-3101935766"><p>The difference between writing <code>-&gt;</code> versus <code>.</code> is trivial. More important is the semantic difference between them.  Consider the following method:</p>
+<pre><code class="lang-c++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">foo</span><span class="hljs-params">(MyLargObj* p)</span>
+</span>{
+    p-&gt;bar();
+}
+</code></pre>
+<p>Perhaps when you first wrote <code>foo</code>, you knew that <code>p</code> would always be valid, but in reality, programs are complex, and inevitably, someone (maybe you) will pass <code>NULL</code>.  You might then feel the need to check <code>p</code></p>
+<pre><code class="lang-c++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">foo</span><span class="hljs-params">(MyLargObj* p)</span>
+</span>{
+    <span class="hljs-keyword">if</span> (!p)
+        <span class="hljs-keyword">return</span>;
+    p-&gt;bar();
+}
+</code></pre>
+<p>So passing by pointer, allows for writing functions in which the arguments have invalid values. So, if passing in a value is truly optional, passing by pointer may be appropriate. </p>
+<p>If a precondition of the function requires no invalid values, consider pass-by-reference or pass-by-value &#x2014; this more explicitly declares the domain of a given function.  Foo becomes:</p>
+<pre><code class="lang-c++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">foo</span><span class="hljs-params">(MyLargObj&amp; p)</span>
+</span>{
+    p.bar();
+}
+</code></pre>
+<p>Which declares via the input type that invalid values for <code>p</code> are not allowed.  Passing by value may also be reasonable, but it depends on if changes to an object should be visible after the function is complete.</p>
+<p>A final consideration is that pointers carry a notion of ownership. Pointers often point to non-stack allocated objects (e.g., allocated using new), and should be deallocated when no longer needed. Lots of comments can be written indicating ownership &#x2014; &quot;Ownership must be passed to this function, it will call <code>delete</code>,&quot; etc. Using references or values can reduce such error-prone commenting burden since they convey no notion of ownership. (Another way to address this, smart pointers, will be covered later. The discussion on the semantic differences between passing by reference and by value still applies in that case, however.)</p>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(8661276332);" id="-question-"><i class="fa fa-square-o"></i>  Question <span id="heading-8661276332"></span></h3></div><div class="panel-body" id="panel-8661276332"><p>What happens when passing a derived object as a base object?</p>
+<pre><code class="lang-c++"><span class="hljs-keyword">class</span> Base
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-keyword">virtual</span> ~Base() {}
+        <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-keyword">void</span> <span class="hljs-title">foo</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{ <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Base&quot;</span> &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>; }
+};
+<span class="hljs-keyword">class</span> Derived : <span class="hljs-keyword">public</span> Base
+{
+    <span class="hljs-keyword">public</span>:
+        <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-keyword">void</span> <span class="hljs-title">foo</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{ <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Derived&quot;</span> &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>; }
+};
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">bar1</span><span class="hljs-params">(Base b)</span> </span>{ b.foo(); }
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">bar2</span><span class="hljs-params">(Base&amp; rB)</span> </span>{ rB.foo(); }
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">bar3</span><span class="hljs-params">(Base* pB)</span> </span>{ pB-&gt;foo(); }
+...
+Derived d;
+bar1(d);
+bar2(d);
+bar3(&amp;d);
+</code></pre>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(8641951281);" id="-solution-click-to-expand"><i class="fa fa-line-chart"></i>  Solution <span id="heading-8641951281">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-8641951281"><p>All calls do not produce identical output &#x2014; when a derived object is passed by value, only the &apos;base&apos; copy constructor is called. Things that are not copied include the ability to call derived object virtual functions. This is known as the <strong>slicing problem</strong>. </p>
+</div></div></div></div></p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1651432568);" id="-question-"><i class="fa fa-square-o"></i>  Question <span id="heading-1651432568"></span></h3></div><div class="panel-body" id="panel-1651432568"><p>What are the correctness concerns of using a local static to return by reference?</p>
+<pre><code class="lang-c++"><span class="hljs-function">Foo&amp; <span class="hljs-title">return_by_reference</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// let&apos;s for some reason declare this static</span>
+    <span class="hljs-keyword">static</span> Foo s_f;
+    s_f = Foo();
+    <span class="hljs-keyword">return</span> s_f;
+}
+
+Foo&amp; f1 = return_by_reference();
+Foo&amp; f2 = return_by_reference();
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Are f1 and f2 equal? &quot;</span>
+</code></pre>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6190300957);" id="-solution-click-to-expand"><i class="fa fa-line-chart"></i>  Solution <span id="heading-6190300957">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-6190300957"><p>If the first entry of f1 and f2 are different when printed, why do they compare equal? Since f1 refers to the same object as f2, f1 and f2 will always compare equal, and the line below will always return &apos;true&apos;:</p>
+<pre><code class="lang-cpp"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">std</span>::boolalpha &lt;&lt; (f1 == f2) &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+</code></pre>
+</div></div></div></div></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../feat2.html" class="navigation navigation-prev " aria-label="Previous page: Part 3 - Smart (and dumb) pointers">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="smartp.html" class="navigation navigation-next " aria-label="Next page: Smart pointers">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Pointers, the absolute basics","level":"1.4.1","depth":2,"next":{"title":"Smart pointers","level":"1.4.2","depth":2,"path":"analysis/newf2/smartp.md","ref":"analysis/newf2/smartp.md","articles":[]},"previous":{"title":"Part 3 - Smart (and dumb) pointers","level":"1.4","depth":1,"path":"analysis/feat2.md","ref":"analysis/feat2.md","articles":[{"title":"Pointers, the absolute basics","level":"1.4.1","depth":2,"path":"analysis/newf2/intro.md","ref":"analysis/newf2/intro.md","articles":[]},{"title":"Smart pointers","level":"1.4.2","depth":2,"path":"analysis/newf2/smartp.md","ref":"analysis/newf2/smartp.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["katex","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#117012fdc18c96831cb88196980c0ea73b0c87b8","collapsible-menu","block-align"],"styles":{"website":"css/website.css"},"pluginsConfig":{"collapsible-menu":{},"block-align":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"PEP root6 workshop","gitbook":"*","description":"PEP root6 introduction material"},"file":{"path":"analysis/newf2/intro.md","mtime":"2018-11-13T16:42:45.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-14T12:01:38.575Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-panels/panels.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

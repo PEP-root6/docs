@@ -1,0 +1,810 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Finding memory leaks · PEP root6 workshop</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-panels/panels.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-block-align/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../css/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="crash.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction.html">
+            
+                <a href="../introduction.html">
+            
+                    
+                    Part 1 - Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../feat1.html">
+            
+                <a href="../feat1.html">
+            
+                    
+                    Part 2 - New C++ features
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../feat2.html">
+            
+                <a href="../feat2.html">
+            
+                    
+                    Part 3 - Smart (and dumb) pointers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../newf2/intro.html">
+            
+                <a href="../newf2/intro.html">
+            
+                    
+                    Pointers, the absolute basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../newf2/smartp.html">
+            
+                <a href="../newf2/smartp.html">
+            
+                    
+                    Smart pointers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../parallellism.html">
+            
+                <a href="../parallellism.html">
+            
+                    
+                    Part 4 - Parallellism
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../parallell/intro.html">
+            
+                <a href="../parallell/intro.html">
+            
+                    
+                    Threads and processes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../parallell/example.html">
+            
+                <a href="../parallell/example.html">
+            
+                    
+                    Posix multithreading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../parallell/root.html">
+            
+                <a href="../parallell/root.html">
+            
+                    
+                    Parallellism with ROOT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../changes.html">
+            
+                <a href="../changes.html">
+            
+                    
+                    Part 5 - 5 to 6: changes to user code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../vectorization.html">
+            
+                <a href="../vectorization.html">
+            
+                    
+                    Part 6 - Vectorization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../tdf/declarative.html">
+            
+                <a href="../tdf/declarative.html">
+            
+                    
+                    Part 7 - Declarative analysis
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../tdf/concept.html">
+            
+                <a href="../tdf/concept.html">
+            
+                    
+                    Declarative programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../tdf/TDataFrame.html">
+            
+                <a href="../tdf/TDataFrame.html">
+            
+                    
+                    TDataFrame
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../python/">
+            
+                <a href="../python/">
+            
+                    
+                    Part 8 - Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../python/running.html">
+            
+                <a href="../python/running.html">
+            
+                    
+                    Running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../python/operators.html">
+            
+                <a href="../python/operators.html">
+            
+                    
+                    Objects and operators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../python/numbers.html">
+            
+                <a href="../python/numbers.html">
+            
+                    
+                    Numbers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../python/strings.html">
+            
+                <a href="../python/strings.html">
+            
+                    
+                    Strings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../python/lists.html">
+            
+                <a href="../python/lists.html">
+            
+                    
+                    Lists and looping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../python/dictionaries.html">
+            
+                <a href="../python/dictionaries.html">
+            
+                    
+                    Dictionaries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../python/conditions.html">
+            
+                <a href="../python/conditions.html">
+            
+                    
+                    Conditions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../python/methods.html">
+            
+                <a href="../python/methods.html">
+            
+                    
+                    Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="../python/scripting.html">
+            
+                <a href="../python/scripting.html">
+            
+                    
+                    Scripting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="../python/modules.html">
+            
+                <a href="../python/modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.11" data-path="../python/learning.html">
+            
+                <a href="../python/learning.html">
+            
+                    
+                    Learning more
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.12" data-path="../python/pyroot.html">
+            
+                <a href="../python/pyroot.html">
+            
+                    
+                    PyROOT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="best_prac.html">
+            
+                <a href="best_prac.html">
+            
+                    
+                    Part 9 - Best Practices
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="preparing.html">
+            
+                <a href="preparing.html">
+            
+                    
+                    Preparing your code for debugging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="general.html">
+            
+                <a href="general.html">
+            
+                    
+                    Some general programming tips
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="crash.html">
+            
+                <a href="crash.html">
+            
+                    
+                    Where does my code crash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.10.4" data-path="memory.html">
+            
+                <a href="memory.html">
+            
+                    
+                    Finding memory leaks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Finding memory leaks</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="find-memory-leaks-for-root-object-tobjecttable">Find memory leaks for ROOT object: TObjectTable</h2>
+<p>ROOT has a special class, called <code>TObjectTable</code>, which optionally keeps track
+of all <code>new</code> and <code>delete</code> operations invoked on a ROOT object, or, in other
+words, any object that inherits from <code>TObject</code>.</p>
+<p>Hooks are present in the <code>TObject</code> constructor and destructor to increment and
+decrement a counter for the specific object you are creating or destroying.
+This operation is computationally expensive, so you have to manually turn it on
+<strong>before starting ROOT</strong>.</p>
+<p>You can create a <code>.rootrc</code> file in the current directory, or edit the
+<code>$ROOTSYS/etc/system.rootrc</code> file, and enable the memory and object tracking
+like this:</p>
+<pre><code>Root.MemStat: 1
+Root.ObjectStat: 1
+</code></pre><p>Inside ROOT, you can then tell the program at any point to print the current
+number of objects by using the <code>gObjectTable</code> singleton:</p>
+<pre><code>$&gt; gObjectTable-&gt;Print()
+class                     cnt    on heap     size    total size    heap size
+
+TKey                        4          4       72           288          288
+TClass                     84         84       80          6720         6720
+TDataMember               276        276       24          6624         6624
+TObject                    11         11       12           132          132
+TMethod                  1974       1974       64        126336       126336
+TDataType                  34         34       56          1904         1904
+TList                    2328       2328       36         83808        83808
+TH1F                        1          1      448           448          448
+TText                    2688       2688       56        150528       150528
+TGaxis                      1          0      120           120            0
+</code></pre><p>The <strong>cnt</strong> column is very useful as it gives you the number of instances of a
+certain class: if you, for instance, forgot to delete an object, you would see
+that number constantly increasing and you would notice it quite easily.</p>
+<blockquote>
+<p>Remember to <strong>turn MemStat and ObjectStat off</strong> when done! They are very
+heavy for production operations.</p>
+</blockquote>
+<h2 id="valgrind">Valgrind</h2>
+<p><a href="http://valgrind.org/" target="_blank">Valgrind</a> is a complex and robust tool to perform code
+analysis and profiling.</p>
+<p>Valgrind is composed of many <em>tools</em>, each one of them performing a different
+task. The two tools we are interested in are:</p>
+<ul>
+<li><strong>memcheck</strong>: the memory checker</li>
+<li><strong>callgrind</strong>: a performance profiler</li>
+</ul>
+<p>Installing Valgrind on Ubuntu is easy:</p>
+<pre><code class="lang-bash">apt install valgrind
+</code></pre>
+<p>On OS X it is easy as well. With Homebrew:</p>
+<pre><code class="lang-bash">brew install valgrind
+</code></pre>
+<h3 id="memory-check">Memory check</h3>
+<p>Memory checks with Valgrind are useful to find the following memory
+problems:</p>
+<ul>
+<li>invalid memory reads</li>
+<li>invalid memory writes</li>
+<li>potential memory leaks</li>
+</ul>
+<p>Valgrind will indicate the potential problems in the logfile it
+produces. Since it can be hard to understand the logfile, there are
+also graphical tools showing:</p>
+<ul>
+<li>memory trends (with respect to running time): useful to see when and
+how the memory grows</li>
+<li>allocation peaks: useful to see which are the parts of your code
+making the most memory allocations</li>
+</ul>
+<p>We recommend using the massif-visualizer tool. On Ubuntu 14.04, it can be
+installed by
+<a href="http://askubuntu.com/questions/522263/installing-massif-visualizer-on-ubuntu-14-04" target="_blank">getting it from the Kubuntu repositories</a>:</p>
+<pre><code>sudo add-apt-repository ppa:kubuntu-ppa/backports
+sudo apt-get update
+sudo apt-get install massif-visualizer
+</code></pre><p>Run your program under Valgrind&apos;s memory check. The following command
+is suitable for AliRoot (see <code>man valgrind</code> for more details):</p>
+<pre><code class="lang-bash">valgrind \
+  --tool=memcheck \
+  --error-limit=no \
+  --max-stackframe=3060888 \
+  --suppressions=<span class="hljs-variable">$ROOTSYS</span>/etc/valgrind-root.supp \
+  --leak-check=no \
+  --num-callers=40 \
+  --log-file=/tmp/valgrind_memory.log \
+  aliroot -b -q launchMyAnalysis.C+
+</code></pre>
+<p>A couple of notes.</p>
+<ul>
+<li>The <code>--suppressions</code> switch is used to tell Valgrind which alleged
+memory problems to ignore. The file we pass to it is the ROOT
+suppressions file, and greatly simplifies the produced output by
+reducing false positives.</li>
+<li>The <code>--leak-check=no</code> makes the execution much faster, but it does
+not check for memory leaks. Use <code>--leak-check=full</code> for a deeper
+inspection, but expect a longer running time.</li>
+</ul>
+<blockquote>
+<p>Valgrind traps all memory operations through an internal &quot;virtual
+machine&quot;: this is why it can be up to 40 times slow. Run your
+program under Valgrind on a very small dataset!</p>
+</blockquote>
+<p>To produce data readable with the massif-visualizer, use
+<code>--tool=massif</code>, which invokes the
+<a href="http://valgrind.org/docs/manual/ms-manual.html" target="_blank">massif heap analyzer</a>
+instead of memcheck.</p>
+<p>An example of the interactive output produced by massif-visualizer is
+presented:</p>
+<p><img src="massif-visualizer.png" alt="massif-visualizer"></p>
+<h3 id="performance-profiler">Performance profiler</h3>
+<p>Valgrind has a performance profiler called
+<a href="http://valgrind.org/docs/manual/cl-manual.html" target="_blank">callgrind</a>. Its
+purpose, like IgProf, is to analyze how much time is spent in each
+function. As we have already discussed, being a deterministic tool
+every single function of your program is trapped and captured, which
+makes the tool very precise, but also very slow.</p>
+<p>Callgrind&apos;s output can be analyzed by means of the KCachegrind program
+that can be installed on Ubuntu 14.04 with:</p>
+<pre><code class="lang-bash">sudo apt install kcachegrind
+</code></pre>
+<p>The typical way of invoking Valgrind&apos;s callgrind for AliRoot programs is:</p>
+<pre><code class="lang-bash">valgrind
+  --tool=callgrind \
+  --log-file=/tmp/valgrind_callgrind.log \
+  aliroot -b -q launchMyAnalysis.C+
+</code></pre>
+<p>The produced output can be browsed interactively by means of KCachegrind. An
+output similar to the following is presented:</p>
+<p><img src="kcachegrind.jpg" alt="KCachegrind"></p>
+<p>where colored blocks indentify graphically which are the functions where your
+program spends most of its time.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="crash.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Where does my code crash">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Finding memory leaks","layout":"tweet","createtoc":true,"parnumbers":true,"level":"1.10.4","depth":2,"previous":{"title":"Where does my code crash","level":"1.10.3","depth":2,"path":"analysis/bestprac/crash.md","ref":"analysis/bestprac/crash.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#117012fdc18c96831cb88196980c0ea73b0c87b8","collapsible-menu","block-align"],"styles":{"website":"css/website.css"},"pluginsConfig":{"collapsible-menu":{},"block-align":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"PEP root6 workshop","gitbook":"*","description":"PEP root6 introduction material"},"file":{"path":"analysis/bestprac/memory.md","mtime":"2018-11-13T16:42:45.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-14T12:01:38.575Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-panels/panels.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

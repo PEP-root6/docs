@@ -1,0 +1,983 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>PyROOT · PEP root6 workshop</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-panels/panels.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-block-align/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../css/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../bestprac/best_prac.html" />
+    
+    
+    <link rel="prev" href="learning.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction.html">
+            
+                <a href="../introduction.html">
+            
+                    
+                    Part 1 - Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../feat1.html">
+            
+                <a href="../feat1.html">
+            
+                    
+                    Part 2 - New C++ features
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../feat2.html">
+            
+                <a href="../feat2.html">
+            
+                    
+                    Part 3 - Smart (and dumb) pointers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../newf2/intro.html">
+            
+                <a href="../newf2/intro.html">
+            
+                    
+                    Pointers, the absolute basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../newf2/smartp.html">
+            
+                <a href="../newf2/smartp.html">
+            
+                    
+                    Smart pointers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../parallellism.html">
+            
+                <a href="../parallellism.html">
+            
+                    
+                    Part 4 - Parallellism
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../parallell/intro.html">
+            
+                <a href="../parallell/intro.html">
+            
+                    
+                    Threads and processes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../parallell/example.html">
+            
+                <a href="../parallell/example.html">
+            
+                    
+                    Posix multithreading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../parallell/root.html">
+            
+                <a href="../parallell/root.html">
+            
+                    
+                    Parallellism with ROOT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../changes.html">
+            
+                <a href="../changes.html">
+            
+                    
+                    Part 5 - 5 to 6: changes to user code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../vectorization.html">
+            
+                <a href="../vectorization.html">
+            
+                    
+                    Part 6 - Vectorization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../tdf/declarative.html">
+            
+                <a href="../tdf/declarative.html">
+            
+                    
+                    Part 7 - Declarative analysis
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../tdf/concept.html">
+            
+                <a href="../tdf/concept.html">
+            
+                    
+                    Declarative programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../tdf/TDataFrame.html">
+            
+                <a href="../tdf/TDataFrame.html">
+            
+                    
+                    TDataFrame
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Part 8 - Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="running.html">
+            
+                <a href="running.html">
+            
+                    
+                    Running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="operators.html">
+            
+                <a href="operators.html">
+            
+                    
+                    Objects and operators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="numbers.html">
+            
+                <a href="numbers.html">
+            
+                    
+                    Numbers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="strings.html">
+            
+                <a href="strings.html">
+            
+                    
+                    Strings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="lists.html">
+            
+                <a href="lists.html">
+            
+                    
+                    Lists and looping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="dictionaries.html">
+            
+                <a href="dictionaries.html">
+            
+                    
+                    Dictionaries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="conditions.html">
+            
+                <a href="conditions.html">
+            
+                    
+                    Conditions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="methods.html">
+            
+                <a href="methods.html">
+            
+                    
+                    Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="scripting.html">
+            
+                <a href="scripting.html">
+            
+                    
+                    Scripting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="modules.html">
+            
+                <a href="modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.11" data-path="learning.html">
+            
+                <a href="learning.html">
+            
+                    
+                    Learning more
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9.12" data-path="pyroot.html">
+            
+                <a href="pyroot.html">
+            
+                    
+                    PyROOT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../bestprac/best_prac.html">
+            
+                <a href="../bestprac/best_prac.html">
+            
+                    
+                    Part 9 - Best Practices
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../bestprac/preparing.html">
+            
+                <a href="../bestprac/preparing.html">
+            
+                    
+                    Preparing your code for debugging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../bestprac/general.html">
+            
+                <a href="../bestprac/general.html">
+            
+                    
+                    Some general programming tips
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../bestprac/crash.html">
+            
+                <a href="../bestprac/crash.html">
+            
+                    
+                    Where does my code crash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../bestprac/memory.html">
+            
+                <a href="../bestprac/memory.html">
+            
+                    
+                    Finding memory leaks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >PyROOT</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="pyroot">PyROOT</h1>
+<p>In the previous sections, we have introduced some basics of Python to you. Now, it&apos;s time to make the connection between ROOT and Python, and see why Python can be pretty convenient. </p>
+<h2 id="python-bindings">Python bindings</h2>
+<p>Many existing third-party applications and libraries have so-called &quot;Python bindings&quot;. </p>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(8118646957);" id="bindings"><i class="fa fa-info-circle"></i> Bindings<span id="heading-8118646957"></span></h3></div><div class="panel-body" id="panel-8118646957"><p>Binding generally refers to a mapping of one thing to another. In the context of software libraries, bindings are wrapper libraries that bridge two programming languages, so that a library written for one language can be used in another language.</p>
+<p>Many software libraries are written in system programming languages such as C or C++. To use such libraries from another language, usually of higher-level, a binding to the library must be created in that language, possibly requiring recompiling the language&apos;s code, depending on the amount of modification needed. However, most languages offer a foreign function interface, such as Python&apos;s ctypes.</p>
+</div></div></p>
+<p>PyROOT provides Python bindings for ROOT: it enables cross-calls from ROOT/Cling into Python and vice versa, the intermingling of the two interpreters, and the transport of user-level objects from one interpreter to the other. PyROOT enables access from ROOT to any application or library that itself has Python bindings, and it makes all ROOT functionality directly available from the python interpreter.</p>
+<p>The Python scripting language is widely used for scientific programming, including high performance and distributed parallel code (see <a href="http://www.scipy.org" target="_blank">http://www.scipy.org</a>). It is the second most popular scripting language (after Perl) and enjoys a wide-spread use as a &#x201C;glue language&#x201D;: practically every library and application these days comes with Python bindings (and if not, they can be easily written or generated).</p>
+<p>PyROOT, a Python extension module, provides the bindings for the ROOT class library in a generic way using the Cling dictionary. This way, it allows the use of any ROOT classes from the Python interpreter, and thus the &#x201C;glue-ing&#x201D; of ROOT libraries with any non-ROOT library or applications that provide Python bindings. </p>
+<h2 id="access-to-root-from-python">Access to ROOT from Python</h2>
+<p>There are several tools for scientific analysis that come with bindings that allow the use of these tools from the Python interpreter. PyROOT provides this for users who want to do analysis in Python with ROOT classes. The following example shows how to fill and display a ROOT histogram while working in Python. Of course, any actual analysis code may come from somewhere else through other bindings, e.g. from a C++ program.</p>
+<p>When run, the next example will display a 1-dimensional histogram showing a Gaussian distribution. </p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> ROOT <span class="hljs-keyword">import</span> gRandom,TCanvas,TH1F
+
+c1 = TCanvas(<span class="hljs-string">&apos;c1&apos;</span>,<span class="hljs-string">&apos;Example&apos;</span>,<span class="hljs-number">200</span>,<span class="hljs-number">10</span>,<span class="hljs-number">700</span>,<span class="hljs-number">500</span>)
+hpx = TH1F(<span class="hljs-string">&apos;hpx&apos;</span>,<span class="hljs-string">&apos;px&apos;</span>,<span class="hljs-number">100</span>,<span class="hljs-number">-4</span>,<span class="hljs-number">4</span>)
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> xrange(<span class="hljs-number">25000</span>):
+    px = gRandom.Gaus()
+    hpx.Fill(px)
+
+hpx.Draw()
+c1.Update()
+</code></pre>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(8385205107);" id="make-sure-that-pyroot-is-enabled"><i class="fa fa-info-circle"></i> Make sure that PyROOT is enabled<span id="heading-8385205107"></span></h3></div><div class="panel-body" id="panel-8385205107"><p>To make use of the Python Bindings of ROOT, make sure that the build of the PyROOT module is enabeled when you compile ROOT. If you use ROOT through aliBuild, ROOT6 is built with python support out-of-the-box. For ROOT5 based builds, PyROOT support is disabeled by default in aliBuild. For a manual build of ROOT, Python bindings are enabled by default, but can be disabled via the CMake options.</p>
+<p>To load the ROOT module in your Python code, make sure that <code>libPyROOT.so</code> and the <code>ROOT.py</code> module can be resolved by the system by entering your (Ali)ROOT environment. </p>
+</div></div></p>
+<h2 id="access-to-root-classes">Access to ROOT classes</h2>
+<p>Before a ROOT class can be used from Python, its dictionary needs to be loaded into the current process. This happens automatically for all classes that are declared to the auto-loading mechanism through so-called rootmap files. Effectively, this means that all classes in the ROOT distributions are directly available for import. For example:</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> ROOT <span class="hljs-keyword">import</span> TCanvas          <span class="hljs-comment"># available at startup</span>
+c = TCanvas()
+
+<span class="hljs-keyword">from</span> ROOT <span class="hljs-keyword">import</span> TLorentzVector   <span class="hljs-comment"># triggers auto-load of libPhysics</span>
+l = TLorentzVector()
+</code></pre>
+<p>Although it is not recommended, a simple way of working with PyROOT is doing a global import:</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> ROOT <span class="hljs-keyword">import</span> *
+
+c = TCanvas()
+l = TLorentzVector()
+</code></pre>
+<p>Keeping the ROOT namespace (&#x201C;import ROOT&#x201D;), or only importing from ROOT those classes that you will actually use (see above), however, will always be cleaner and clearer:</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> ROOT
+
+c = ROOT.TCanvas()
+l = ROOT.TLorentzVector()
+</code></pre>
+<h2 id="some-simple-examples">Some simple examples</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> ROOT <span class="hljs-keyword">import</span> TF1, TCanvas
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Linear</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__call__</span><span class="hljs-params">( self, x, par )</span>:</span>
+        <span class="hljs-keyword">return</span> par[<span class="hljs-number">0</span>] + x[<span class="hljs-number">0</span>]*par[<span class="hljs-number">1</span>]
+
+<span class="hljs-comment"># create a linear function with offset 5, and pitch 2</span>
+f = TF1(<span class="hljs-string">&apos;pyf2&apos;</span>,Linear(),<span class="hljs-number">-1.</span>,<span class="hljs-number">1.</span>,<span class="hljs-number">2</span>)
+f.SetParameters(<span class="hljs-number">5.</span>,<span class="hljs-number">2.</span>)
+
+<span class="hljs-comment"># plot the function</span>
+c = TCanvas()
+f.Draw()
+</code></pre>
+<h2 id="fitting-a-histogram">Fitting a histogram</h2>
+<p>You have seen in the previous section that we can resolve all ROOT classes through python bindings. </p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(2677162560);" id="fitting-a-histogram"><i class="fa fa-square-o"></i> Fitting a histogram<span id="heading-2677162560"></span></h3></div><div class="panel-body" id="panel-2677162560"><p>Take the code example from the previous section as a starting point, and write a simple piece of python code that</p>
+<ul>
+<li>defines a linear function</li>
+<li>fills a histogram with some linearly distributed data</li>
+<li>fits the linear function to the histogram</li>
+</ul>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(8054575452);" id="click-to-check-possible-solutionclick-to-expand"><i class="fa fa-line-chart"></i> Click to check possible solution<span id="heading-8054575452">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-8054575452"><pre><code class="lang-python"><span class="hljs-keyword">from</span> ROOT <span class="hljs-keyword">import</span> TF1, TH1F, TCanvas
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Linear</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__call__</span><span class="hljs-params">( self, x, par )</span>:</span>
+        <span class="hljs-keyword">return</span> par[<span class="hljs-number">0</span>] + x[<span class="hljs-number">0</span>]*par[<span class="hljs-number">1</span>]
+
+<span class="hljs-comment"># create a linear function for fitting</span>
+f = TF1(<span class="hljs-string">&apos;pyf3&apos;</span>,Linear(),<span class="hljs-number">-1.</span>,<span class="hljs-number">1.</span>,<span class="hljs-number">2</span>)
+
+<span class="hljs-comment"># create and fill a histogram</span>
+h = TH1F(<span class="hljs-string">&apos;h&apos;</span>,<span class="hljs-string">&apos;test&apos;</span>,<span class="hljs-number">100</span>,<span class="hljs-number">-1.</span>,<span class="hljs-number">1.</span>)
+f2 = TF1(<span class="hljs-string">&apos;cf2&apos;</span>,<span class="hljs-string">&apos;6.+x*4.5&apos;</span>,<span class="hljs-number">-1.</span>,<span class="hljs-number">1.</span>)
+h.FillRandom(<span class="hljs-string">&apos;cf2&apos;</span>,<span class="hljs-number">10000</span>)
+
+<span class="hljs-comment"># fit the histo with the python &apos;linear&apos; function</span>
+h.Fit(f)
+
+<span class="hljs-comment"># print results</span>
+par = f.GetParameters()
+print(<span class="hljs-string">&apos;fit results: const =&apos;</span>, par[<span class="hljs-number">0</span>], <span class="hljs-string">&apos;,pitch =&apos;</span>, par[<span class="hljs-number">1</span>])
+</code></pre>
+</div></div></div></div></p>
+<h2 id="advanced-examples-working-with-trees">Advanced examples: working with trees</h2>
+<p>Next to making histograms, working with trees is probably the most common part of any analysis. The TTree implementation uses pointers and dedicated buffers to reduce the memory usage and to speed up access. Consequently, mapping TTree functionality to Python is not straightforward.</p>
+<p>Let us assume that you have a file containing TTrees, TChains, or TNtuples and want to read the contents for use in your analysis code. The following example code outlines the main steps :</p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(8282966996);" id="but-first--create-a-tree"><i class="fa fa-square-o"></i> But first ... create a tree<span id="heading-8282966996"></span></h3></div><div class="panel-body" id="panel-8282966996"><p>To run the Python code below, you need a small tree</p>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6190591279);" id="click-here-for-a-generic-example-which-fills-a-suitable-treeclick-to-expand"><i class="fa fa-line-chart"></i> Click here for a generic example which fills a suitable tree<span id="heading-6190591279">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-6190591279"><p>Place the following in a file called <code>tree1.C</code></p>
+<pre><code class="lang-cpp">
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;TROOT.h&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;TFile.h&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;TTree.h&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;TBrowser.h&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;TH2.h&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;TRandom.h&quot;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">tree1w</span><span class="hljs-params">()</span>
+</span>{
+   <span class="hljs-comment">//create a Tree file tree1.root</span>
+
+   <span class="hljs-comment">//create the file, the Tree and a few branches</span>
+   <span class="hljs-function">TFile <span class="hljs-title">f</span><span class="hljs-params">(<span class="hljs-string">&quot;tree1.root&quot;</span>,<span class="hljs-string">&quot;recreate&quot;</span>)</span></span>;
+   <span class="hljs-function">TTree <span class="hljs-title">t1</span><span class="hljs-params">(<span class="hljs-string">&quot;t1&quot;</span>,<span class="hljs-string">&quot;a simple Tree with simple variables&quot;</span>)</span></span>;
+   Float_t px, py, pz;
+   Double_t random;
+   Int_t ev;
+   t1.Branch(<span class="hljs-string">&quot;px&quot;</span>,&amp;px,<span class="hljs-string">&quot;px/F&quot;</span>);
+   t1.Branch(<span class="hljs-string">&quot;py&quot;</span>,&amp;py,<span class="hljs-string">&quot;py/F&quot;</span>);
+   t1.Branch(<span class="hljs-string">&quot;pz&quot;</span>,&amp;pz,<span class="hljs-string">&quot;pz/F&quot;</span>);
+   t1.Branch(<span class="hljs-string">&quot;random&quot;</span>,&amp;random,<span class="hljs-string">&quot;random/D&quot;</span>);
+   t1.Branch(<span class="hljs-string">&quot;ev&quot;</span>,&amp;ev,<span class="hljs-string">&quot;ev/I&quot;</span>);
+
+   <span class="hljs-comment">//fill the tree</span>
+   <span class="hljs-keyword">for</span> (Int_t i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">10000</span>;i++) {
+     gRandom-&gt;Rannor(px,py);
+     pz = px*px + py*py;
+     random = gRandom-&gt;Rndm();
+     ev = i;
+     t1.Fill();
+  }
+
+  <span class="hljs-comment">//save the Tree header. The file will be automatically closed</span>
+  <span class="hljs-comment">//when going out of the function scope</span>
+  t1.Write();
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">tree1r</span><span class="hljs-params">()</span>
+</span>{
+   <span class="hljs-comment">//read the Tree generated by tree1w and fill two histograms</span>
+
+   <span class="hljs-comment">//note that we use &quot;new&quot; to create the TFile and TTree objects !</span>
+   <span class="hljs-comment">//because we want to keep these objects alive when we leave this function.</span>
+   TFile *f = <span class="hljs-keyword">new</span> TFile(<span class="hljs-string">&quot;tree1.root&quot;</span>);
+   TTree *t1 = (TTree*)f-&gt;Get(<span class="hljs-string">&quot;t1&quot;</span>);
+   Float_t px, py, pz;
+   Double_t random;
+   Int_t ev;
+   t1-&gt;SetBranchAddress(<span class="hljs-string">&quot;px&quot;</span>,&amp;px);
+   t1-&gt;SetBranchAddress(<span class="hljs-string">&quot;py&quot;</span>,&amp;py);
+   t1-&gt;SetBranchAddress(<span class="hljs-string">&quot;pz&quot;</span>,&amp;pz);
+   t1-&gt;SetBranchAddress(<span class="hljs-string">&quot;random&quot;</span>,&amp;random);
+   t1-&gt;SetBranchAddress(<span class="hljs-string">&quot;ev&quot;</span>,&amp;ev);
+
+   <span class="hljs-comment">//create two histograms</span>
+   TH1F *hpx   = <span class="hljs-keyword">new</span> TH1F(<span class="hljs-string">&quot;hpx&quot;</span>,<span class="hljs-string">&quot;px distribution&quot;</span>,<span class="hljs-number">100</span>,<span class="hljs-number">-3</span>,<span class="hljs-number">3</span>);
+   TH2F *hpxpy = <span class="hljs-keyword">new</span> TH2F(<span class="hljs-string">&quot;hpxpy&quot;</span>,<span class="hljs-string">&quot;py vs px&quot;</span>,<span class="hljs-number">30</span>,<span class="hljs-number">-3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">30</span>,<span class="hljs-number">-3</span>,<span class="hljs-number">3</span>);
+
+   <span class="hljs-comment">//read all entries and fill the histograms</span>
+   Long64_t nentries = t1-&gt;GetEntries();
+   <span class="hljs-keyword">for</span> (Long64_t i=<span class="hljs-number">0</span>;i&lt;nentries;i++) {
+     t1-&gt;GetEntry(i);
+     hpx-&gt;Fill(px);
+     hpxpy-&gt;Fill(px,py);
+  }
+
+  <span class="hljs-comment">//we do not close the file. We want to keep the generated histograms</span>
+  <span class="hljs-comment">//we open a browser and the TreeViewer</span>
+  <span class="hljs-keyword">if</span> (gROOT-&gt;IsBatch()) <span class="hljs-keyword">return</span>;
+  <span class="hljs-keyword">new</span> TBrowser();
+  t1-&gt;StartViewer();
+  <span class="hljs-comment">// in the browser, click on &quot;ROOT Files&quot;, then on &quot;tree1.root&quot;.</span>
+  <span class="hljs-comment">//     you can click on the histogram icons in the right panel to draw them.</span>
+  <span class="hljs-comment">// in the TreeViewer, follow the instructions in the Help button.</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">tree1</span><span class="hljs-params">()</span> </span>{
+   tree1w();
+   tree1r();
+}
+</code></pre>
+</div></div></div></div></p>
+<p>So, let&apos;s assume that you have cooked up a tree using the mini-code above, or you have a tree of your own. Below is a snippet of Python code that will read info from the branches of your tree and prints some extracted information to the screen. If you are interested, you can try to visualize the data in histograms. </p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> ROOT <span class="hljs-keyword">import</span> TFile
+
+<span class="hljs-comment"># open the file</span>
+myfile = TFile(<span class="hljs-string">&apos;tree1.root&apos;</span>)
+
+<span class="hljs-comment"># retrieve the ntuple of interest</span>
+mychain = myfile.Get(<span class="hljs-string">&apos;t1&apos;</span>)
+entries = mychain.GetEntriesFast()
+
+<span class="hljs-keyword">for</span> jentry <span class="hljs-keyword">in</span> xrange(entries):
+    <span class="hljs-comment"># get the next tree in the chain and verify</span>
+    ientry = mychain.LoadTree(jentry)
+    <span class="hljs-keyword">if</span> ientry &lt; <span class="hljs-number">0</span>:
+        <span class="hljs-keyword">break</span>
+
+    <span class="hljs-comment"># copy next entry into memory and verify</span>
+    nb = mychain.GetEntry(jentry)
+    <span class="hljs-keyword">if</span> nb&lt;=<span class="hljs-number">0</span>:
+        <span class="hljs-keyword">continue</span>
+
+    <span class="hljs-comment"># use the values directly from the tree</span>
+    nEvent = int(mychain.ev)
+    <span class="hljs-keyword">if</span> nEvent&lt;<span class="hljs-number">0</span>:
+        <span class="hljs-keyword">continue</span>
+
+    print(mychain.pz, <span class="hljs-string">&apos;=&apos;</span>, mychain.px*mychain.px, <span class="hljs-string">&apos;+&apos;</span>, mychain.py*mychain.py)
+</code></pre>
+<h2 id="writing-a-tree">Writing a tree</h2>
+<p>Writing a ROOT TTree in a Python session is a little convoluted, if only because you will need a C++ class to make sure that data members can be mapped, unless you are working with built-in types. Here is an example for working with the latter only:</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> ROOT <span class="hljs-keyword">import</span> TFile, TTree
+<span class="hljs-keyword">from</span> array <span class="hljs-keyword">import</span> array
+
+h = TH1F(<span class="hljs-string">&apos;h1&apos;</span>,<span class="hljs-string">&apos;test&apos;</span>,<span class="hljs-number">100</span>,<span class="hljs-number">-10.</span>,<span class="hljs-number">10.</span>)
+f = TFile(<span class="hljs-string">&apos;test.root&apos;</span>,<span class="hljs-string">&apos;recreate&apos;</span>)
+t = TTree(<span class="hljs-string">&apos;t1&apos;</span>,<span class="hljs-string">&apos;tree with histos&apos;</span>)
+maxn = <span class="hljs-number">10</span>
+n = array(<span class="hljs-string">&apos;i&apos;</span>,[<span class="hljs-number">0</span>])
+d = array(<span class="hljs-string">&apos;f&apos;</span>,maxn*[<span class="hljs-number">0.</span>])
+t.Branch(<span class="hljs-string">&apos;mynum&apos;</span>,n,<span class="hljs-string">&apos;mynum/I&apos;</span>)
+t.Branch(<span class="hljs-string">&apos;myval&apos;</span>,d,<span class="hljs-string">&apos;myval[mynum]/F&apos;</span>)
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">25</span>):
+    n[<span class="hljs-number">0</span>] = min(i,maxn)
+    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(n[<span class="hljs-number">0</span>]):
+        d[j] = i*<span class="hljs-number">0.1</span>+j
+        t.Fill()
+
+f.Write()
+f.Close()
+</code></pre>
+<p>The use of arrays is needed, because the pointer to the address of the object that is used for filling must be given to the TTree::Branch() call, even though the formal argument is declared a &#x2019;void*&apos;. In the case of ROOT objects, similar pointer manipulation is unnecessary, because the full type information is available, and TTree::Branch() has been Pythonized to take care of the call details. However, data members of such objects that are of built-in types, still require something extra since they are normally translated to Python primitive types on access and hence their address cannot be taken.</p>
+<h2 id="creating-your-own-classes">Creating your own classes</h2>
+<p>A user&#x2019;s own classes can be accessed after loading, either directly or indirectly, the library that contains the dictionary. One easy way of obtaining such a library, is by using ACLiC. Let&apos;s first make up a very small class, by putting in a file <code>MyClass.C</code> the following code</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">class</span> MyClass {
+<span class="hljs-keyword">public</span>:
+
+MyClass(<span class="hljs-keyword">int</span> value = <span class="hljs-number">0</span>) {
+m_value = value;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">SetValue</span><span class="hljs-params">(<span class="hljs-keyword">int</span> value)</span> </span>{
+m_value = value;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">GetValue</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">return</span> m_value;
+}
+
+<span class="hljs-keyword">private</span>:
+    <span class="hljs-keyword">int</span> m_value;
+};
+</code></pre>
+<p>Create the shared library using ACLiC:</p>
+<pre><code>root -e &apos;gInterpreter-&gt;LoadMacro(&quot;MyClass.C++o&quot;);&apos; -q
+</code></pre><p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6671570381);" id="optimization-or-debug-symbols-"><i class="fa fa-square-o"></i> Optimization or debug symbols ?<span id="heading-6671570381"></span></h3></div><div class="panel-body" id="panel-6671570381"><p>Anyone have any idea what the difference is between </p>
+<pre><code>root -e &apos;gInterpreter-&gt;LoadMacro(&quot;MyClass.C++o&quot;);&apos; -q
+</code></pre><p>and</p>
+<pre><code>root -e &apos;gInterpreter-&gt;LoadMacro(&quot;MyClass.C++g&quot;);&apos; -q
+</code></pre><div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(2470651835);" id="drum-rollclick-to-expand"><i class="fa fa-line-chart"></i> Drum roll<span id="heading-2470651835">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-2470651835"><p>Using <code>o</code>, we specify to the compiler to use optimization for speed. Using <code>g</code>, we specify to the compiler that we want to enable debug symbols. Confused by this? Check out Part 9 of this tutorial, &apos;Best Practices&apos;, where there is a lot of information about this!</p>
+</div></div></div></div></p>
+<p>We have now compiled our class. If we want to access it with Python, we can e.g. do</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> ROOT <span class="hljs-keyword">import</span> gSystem
+
+<span class="hljs-comment"># load library with MyClass dictionary</span>
+gSystem.Load(<span class="hljs-string">&apos;MyClass_C&apos;</span>)
+
+<span class="hljs-comment"># get MyClass from ROOT</span>
+<span class="hljs-keyword">from</span> ROOT <span class="hljs-keyword">import</span> MyClass
+<span class="hljs-comment"># use MyClass</span>
+m = MyClass(<span class="hljs-number">42</span>)
+print(m.GetValue())
+</code></pre>
+<p>You can also load a macro directly, but if you do not use ACLiC, you will be restricted to use the default constructor of your class, which is otherwise fully functional. For example:</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> ROOT <span class="hljs-keyword">import</span> gROOT
+
+<span class="hljs-comment"># load MyClass definition macro (append &apos;+&apos; to use ACLiC)</span>
+gROOT.LoadMacro(<span class="hljs-string">&apos;MyClass.C&apos;</span>)
+
+<span class="hljs-comment"># get MyClass from ROOT</span>
+<span class="hljs-keyword">from</span> ROOT <span class="hljs-keyword">import</span> MyClass
+
+<span class="hljs-comment"># use MyClass</span>
+m = MyClass()
+m.SetValue(<span class="hljs-number">42</span>)
+print(m.GetValue())
+</code></pre>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(5492155606);" id="so--why-would-i-use-this"><i class="fa fa-info-circle"></i> So ... why would I use this?<span id="heading-5492155606"></span></h3></div><div class="panel-body" id="panel-5492155606"><p>Whether or not you to use PyROOT is fully up to you: most people find the syntax easier than that of C++, and of course on does not have to worry about memory management when you use Python. </p>
+<p>With the advent of ROOT6, an attractive feature of PyROOT can be <em>speed</em></p>
+<ul>
+<li>CLING will compile your macro&apos;s line-by-line, which can sometimes lead to sluggish execution</li>
+<li>PyROOT is interpreted </li>
+</ul>
+<p>Python code is often ran as an interpreted language, it <em>can</em> be compiled, but you do don&apos;t <em>need</em> to compile it. Interpretation of macros is often much faster than compilation plus execution, unless the performance gain gained by compiling out-weighs the time the compiler spends on compiling the code. Since macro&apos;s are often intended to do only simple things (or call optimized libraries to carry out the heavy work, such as fitting), interpretation often suffices. </p>
+</div></div></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="learning.html" class="navigation navigation-prev " aria-label="Previous page: Learning more">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../bestprac/best_prac.html" class="navigation navigation-next " aria-label="Next page: Part 9 - Best Practices">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"PyROOT","level":"1.9.12","depth":2,"next":{"title":"Part 9 - Best Practices","level":"1.10","depth":1,"path":"analysis/bestprac/best_prac.md","ref":"analysis/bestprac/best_prac.md","articles":[{"title":"Preparing your code for debugging","level":"1.10.1","depth":2,"path":"analysis/bestprac/preparing.md","ref":"analysis/bestprac/preparing.md","articles":[]},{"title":"Some general programming tips","level":"1.10.2","depth":2,"path":"analysis/bestprac/general.md","ref":"analysis/bestprac/general.md","articles":[]},{"title":"Where does my code crash","level":"1.10.3","depth":2,"path":"analysis/bestprac/crash.md","ref":"analysis/bestprac/crash.md","articles":[]},{"title":"Finding memory leaks","level":"1.10.4","depth":2,"path":"analysis/bestprac/memory.md","ref":"analysis/bestprac/memory.md","articles":[]}]},"previous":{"title":"Learning more","level":"1.9.11","depth":2,"path":"analysis/python/learning.md","ref":"analysis/python/learning.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#117012fdc18c96831cb88196980c0ea73b0c87b8","collapsible-menu","block-align"],"styles":{"website":"css/website.css"},"pluginsConfig":{"collapsible-menu":{},"block-align":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"PEP root6 workshop","gitbook":"*","description":"PEP root6 introduction material"},"file":{"path":"analysis/python/pyroot.md","mtime":"2018-11-13T16:42:45.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-14T12:01:38.575Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-panels/panels.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,977 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Some general programming tips · PEP root6 workshop</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-panels/panels.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-block-align/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../css/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="crash.html" />
+    
+    
+    <link rel="prev" href="preparing.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction.html">
+            
+                <a href="../introduction.html">
+            
+                    
+                    Part 1 - Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../feat1.html">
+            
+                <a href="../feat1.html">
+            
+                    
+                    Part 2 - New C++ features
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../feat2.html">
+            
+                <a href="../feat2.html">
+            
+                    
+                    Part 3 - Smart (and dumb) pointers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../newf2/intro.html">
+            
+                <a href="../newf2/intro.html">
+            
+                    
+                    Pointers, the absolute basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../newf2/smartp.html">
+            
+                <a href="../newf2/smartp.html">
+            
+                    
+                    Smart pointers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../parallellism.html">
+            
+                <a href="../parallellism.html">
+            
+                    
+                    Part 4 - Parallellism
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../parallell/intro.html">
+            
+                <a href="../parallell/intro.html">
+            
+                    
+                    Threads and processes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../parallell/example.html">
+            
+                <a href="../parallell/example.html">
+            
+                    
+                    Posix multithreading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../parallell/root.html">
+            
+                <a href="../parallell/root.html">
+            
+                    
+                    Parallellism with ROOT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../changes.html">
+            
+                <a href="../changes.html">
+            
+                    
+                    Part 5 - 5 to 6: changes to user code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../vectorization.html">
+            
+                <a href="../vectorization.html">
+            
+                    
+                    Part 6 - Vectorization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../tdf/declarative.html">
+            
+                <a href="../tdf/declarative.html">
+            
+                    
+                    Part 7 - Declarative analysis
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../tdf/concept.html">
+            
+                <a href="../tdf/concept.html">
+            
+                    
+                    Declarative programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../tdf/TDataFrame.html">
+            
+                <a href="../tdf/TDataFrame.html">
+            
+                    
+                    TDataFrame
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../python/">
+            
+                <a href="../python/">
+            
+                    
+                    Part 8 - Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../python/running.html">
+            
+                <a href="../python/running.html">
+            
+                    
+                    Running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../python/operators.html">
+            
+                <a href="../python/operators.html">
+            
+                    
+                    Objects and operators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../python/numbers.html">
+            
+                <a href="../python/numbers.html">
+            
+                    
+                    Numbers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../python/strings.html">
+            
+                <a href="../python/strings.html">
+            
+                    
+                    Strings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../python/lists.html">
+            
+                <a href="../python/lists.html">
+            
+                    
+                    Lists and looping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../python/dictionaries.html">
+            
+                <a href="../python/dictionaries.html">
+            
+                    
+                    Dictionaries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../python/conditions.html">
+            
+                <a href="../python/conditions.html">
+            
+                    
+                    Conditions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../python/methods.html">
+            
+                <a href="../python/methods.html">
+            
+                    
+                    Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="../python/scripting.html">
+            
+                <a href="../python/scripting.html">
+            
+                    
+                    Scripting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="../python/modules.html">
+            
+                <a href="../python/modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.11" data-path="../python/learning.html">
+            
+                <a href="../python/learning.html">
+            
+                    
+                    Learning more
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.12" data-path="../python/pyroot.html">
+            
+                <a href="../python/pyroot.html">
+            
+                    
+                    PyROOT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="best_prac.html">
+            
+                <a href="best_prac.html">
+            
+                    
+                    Part 9 - Best Practices
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="preparing.html">
+            
+                <a href="preparing.html">
+            
+                    
+                    Preparing your code for debugging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.10.2" data-path="general.html">
+            
+                <a href="general.html">
+            
+                    
+                    Some general programming tips
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="crash.html">
+            
+                <a href="crash.html">
+            
+                    
+                    Where does my code crash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="memory.html">
+            
+                <a href="memory.html">
+            
+                    
+                    Finding memory leaks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Some general programming tips</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="some-general-programming-tips">Some general programming tips</h2>
+<p>In order to reduce as much as possible the amount of time spent debugging and
+making your code faster, here are some general tips you might find useful.</p>
+<h3 id="use-existing-algorithms-for-general-problems">Use existing algorithms for general problems</h3>
+<p>A large portion of coding problems applied to data collections can be reduced
+to <strong>sorting</strong> or <strong>searching</strong>: even if a simple custom made array sorting
+code looks innocuous and easy to read, when iterating over a collection of
+thousands or millions of elements its drawbacks become pretty obvious.</p>
+<p>As a general rule, <strong>do not write your own sorting algorithms</strong>: standard ROOT
+data collections, like <a href="http://root.cern.ch/root/html/TList.html" target="_blank">TLists</a> and
+<a href="http://root.cern.ch/root/html/TObjArray.html" target="_blank">TObjArrays</a>, already have an
+efficient <code>Sort()</code> method.</p>
+<p>Moreover, if you are manually filling a TList for sorting it at a later time,
+consider using something like the
+<a href="http://root.cern.ch/root/html/TSortedList.html" target="_blank">TSortedList</a>, which is
+compatible with a TList, <em>i.e.</em> you can do:</p>
+<pre><code class="lang-c++">TList *mySortedList = <span class="hljs-keyword">new</span> TSortedList();
+</code></pre>
+<p>but objects are inserted in the correct order every time you <code>Add()</code> them,
+avoiding additional time waste to order it at a later time.</p>
+<p>The same considerations apply for <strong>searching algorithms</strong>: ROOT already have
+search functions optimized for its data structures, and if you search in a
+sorted list (like the TSortedList), search is faster.</p>
+<p>Searching by strings inside large collections <strong>must be avoided at all times</strong>:
+string comparison is a very expensive operation, and it is not easy to estimate
+how long it takes since it depends on the length of the compared strings.
+Massive string comparison, even if this is unobvious, leads to:</p>
+<ul>
+<li><strong>large data transfers</strong> between CPU, caches and memory, hitting the bus
+limits</li>
+<li><strong>cache trashing</strong>, <em>i.e.</em> the constant invalidation of the caches that are
+supposed to speed up code execution</li>
+</ul>
+<p>A bad example that uses massively string comparisons has been found inside ROOT
+thanks to the IgProf profiler, and the code has been amended, as we will see
+later on.</p>
+<p>To improve lookups in large collections, please consider
+<a href="http://root.cern.ch/root/html/THashList.html" target="_blank">THashList</a> instead of TList: a
+&quot;hash&quot; is a fixed-size byte sequence (usually an integer) associated to each
+element and computed based on the content of the element, constituting a sort
+of &quot;fingerprint&quot;.</p>
+<p>When performing a lookup on a hash list (<em>i.e.</em> find what element is identical
+to this one, or find what element has this name), the hash (&quot;fingerprint&quot;) of
+the input element is calculated, and it is compared with the hash of every
+other element in the list.</p>
+<p>If two hashes match, it <em>might</em> mean that the two elements are identical: in
+this case, and this case only, a deep check is performed and the response is
+returned.</p>
+<p>The big advantage is that from a shallow (hash) comparison we can tell for sure
+if two elements are different, which saves us the time required to perform a
+deep comparison for every element.</p>
+<blockquote>
+<p>Use optimized versions of the algorithms even if they are difficult to
+understand, and <strong>trust them</strong>!</p>
+</blockquote>
+<p>For a list of optimized general purpose algorithms in C and C++, have a look at
+the <a href="http://www.nr.com/" target="_blank">Numerical Recipes</a>, which is considered the &quot;sacred
+text&quot; of this field.</p>
+<h3 id="object-ownership">Object ownership</h3>
+<p>Very often, the ownership of pointers is not clear, <em>i.e.</em> who created a
+certain object, and who is responsible of garbage collecting it?</p>
+<p>If you are the person defining a new object, be sure to do something like:</p>
+<pre><code class="lang-c++">AliMyObject *mo = <span class="hljs-keyword">new</span> AliMyObject();
+<span class="hljs-comment">// code code code</span>
+<span class="hljs-keyword">delete</span> mo;
+</code></pre>
+<p>You have probably heard it lots of times already, but it is worth repeating it:
+write a <code>delete</code> every time you write a <code>new</code>, and think in advance of how to
+dispose of an object <em>you</em> created.</p>
+<p>ROOT collections (<em>i.e.</em> the TLists) can be made &quot;owners&quot; of objects:</p>
+<pre><code class="lang-c++">TList *l = <span class="hljs-keyword">new</span> TList();
+l-&gt;SetOwner(kTRUE);
+<span class="hljs-comment">// add add add</span>
+<span class="hljs-keyword">delete</span> l;
+</code></pre>
+<p>This means that when the code reaches the <code>delete</code> line, <code>delete</code> is
+automatically invoked on each of the contained objects, so that you do not have
+to do it manually.</p>
+<h3 id="new-and-delete-and-hidden-memory-operations">New and delete, and hidden memory operations</h3>
+<p>Please note that <strong>new and delete operations are very slow</strong>: never ever create
+and destroy an object per loop (for instance inside the <code>UserExec()</code> of the
+analysis tasks)!</p>
+<blockquote>
+<p><strong>Save memory and CPU, recycle objects!</strong> And if the object classes
+are defined by you, write them in a way that you can <strong>redefine</strong>
+their content without the need to delete and recreate them!</p>
+</blockquote>
+<p>A <strong>bad example</strong> with objects constructed per loop:</p>
+<pre><code class="lang-c++"><span class="hljs-keyword">for</span> (x=<span class="hljs-number">0</span>; x&lt;<span class="hljs-number">100</span>; x++) {
+  <span class="hljs-keyword">for</span> (y=<span class="hljs-number">0</span>; y&lt;<span class="hljs-number">100</span>; y++) {
+    <span class="hljs-function">TLorentzVector <span class="hljs-title">vec1</span><span class="hljs-params">( x, y, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)</span></span>;
+    <span class="hljs-function">TLorentzVector <span class="hljs-title">vec2</span><span class="hljs-params">(-x, y, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)</span></span>;
+    TLorentzVector res = vec1 + vec2;
+    vec1.Boost( -res.GetBoostVector() );
+    <span class="hljs-comment">// ...</span>
+  }
+}
+</code></pre>
+<p>Even if <code>new</code> and <code>delete</code> are not used there (objects are on the stack), the
+<code>TLorentzVectors</code> have their constructor and destructor invoked <strong>per loop!</strong></p>
+<p>The amended code:</p>
+<pre><code class="lang-c++">TLorentzVector vec1;
+TLorentzVector vec2;
+TLorentzVector res;
+
+<span class="hljs-keyword">for</span> (x=<span class="hljs-number">0</span>; x&lt;<span class="hljs-number">100</span>; x++) {
+  <span class="hljs-keyword">for</span> (y=<span class="hljs-number">0</span>; y&lt;<span class="hljs-number">100</span>; y++) {
+    vec1.SetXYZT( x, y, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+    vec2.SetXYZT(-x, y, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+    res = vec1 + vec2;
+    vec1.Boost( -res.GetBoostVector() );
+    <span class="hljs-comment">// ...</span>
+  }
+}
+</code></pre>
+<p><a href="http://root.cern.ch/root/html/TLorentzVector.html" target="_blank">As you can see</a>, the
+<code>TLorentzVector</code> has various <code>Set*()</code> methods that make it not necessary to
+destroy and recreate the object to set new coordinates.</p>
+<p>Also, <strong>do not be too zealous when deleting</strong>: in particular, do not delete
+objects that do not belong to you.</p>
+<blockquote>
+<p>Common example: do not delete the object if you get its pointer from a
+<code>TDirectory</code> (like a <code>TFile</code>)!</p>
+</blockquote>
+<p>Choose the ROOT container carefully: even if a <code>TList</code> and a <code>TObjArray</code> are
+both collections capable of expanding, <strong>lists are sparse</strong> in memory, as each
+element points to the next (and sometimes to the previous); instead, <strong>arrays
+are contiguous collections of elements</strong> in memory.</p>
+<p>Growing an array requires periodic <strong>hidden</strong> <code>realloc()</code> low level operations
+(luckily they do not happen for every element we add), and this might be rather
+impairing when applied to a very large collection: use a <code>TList</code> in such a
+case.</p>
+<h3 id="root-io-and-objects">ROOT I/O and objects</h3>
+<p>A note about ROOT objects (<em>i.e.</em> objects inheriting from <code>TObject</code>, <em>i.e.</em>
+most likely <strong>your own</strong> objects): ROOT as you know needs a default constructor
+for I/O that takes no arguments. You should create at least <strong>two
+constructors</strong> in your code for clarity:</p>
+<ul>
+<li>The default one, needed by ROOT, that should be called only by ROOT when
+storing or restoring object from a file, and should never be used by the
+programmer directly: <strong>do not write any memory allocation instruction there</strong>,
+leave it as empty as possible!</li>
+<li>The &quot;explicit&quot; one, taking at least one argument, which should do the actual
+stuff and should be used by the programmer when creating a new object.</li>
+</ul>
+<p>Histograms or trees obtained from a file with statements like:</p>
+<pre><code class="lang-c++">TH1F *histo = (TH1F *)myFile-&gt;Get(<span class="hljs-string">&quot;myHist&quot;</span>);
+</code></pre>
+<p>are related to the corresponding <code>TFile</code>, and they are <strong>destroyed</strong> when the
+file is closed. So, <strong>do not do that</strong>:</p>
+<pre><code class="lang-c++">TFile *myFile = TFile::Open(<span class="hljs-string">&quot;myfile.root&quot;</span>);
+TH1F *histo = (TH1F *)myFile-&gt;Get(<span class="hljs-string">&quot;myHist&quot;</span>);
+<span class="hljs-keyword">delete</span> myFile;
+histo-&gt;Draw();
+</code></pre>
+<p>This is because <strong>TFile owns the pointer</strong>. You can detach the histogram from
+the file:</p>
+<pre><code class="lang-c++">TFile *myFile = TFile::Open(<span class="hljs-string">&quot;myfile.root&quot;</span>);
+gROOT-&gt;cd();
+TH1F *histo = (TH1F *)myFile-&gt;Get(<span class="hljs-string">&quot;myHist&quot;</span>);
+<span class="hljs-keyword">delete</span> myFile;
+histo-&gt;Draw();
+</code></pre>
+<p>but in this case <strong>you own the histogram</strong> and <strong>you must dispose of it</strong>:</p>
+<pre><code class="lang-c++"><span class="hljs-comment">// when done...</span>
+<span class="hljs-keyword">delete</span> histo;
+</code></pre>
+<p>Note that you could also use <code>histo-&gt;SetDirectory(0)</code> for being able to close
+the file, but it is better to attach it to the &quot;ROOT root directory&quot; in order
+to use it for instance in <code>TTree::Draw</code>.</p>
+<p>Please note that there are in particular <strong>two objects</strong> that are automatically
+associated to a <code>TFile</code>, mostly for performance reasons:</p>
+<ul>
+<li>Histograms (<em>i.e.</em> all objects inheriting from <code>TH1</code>)</li>
+<li>Trees (<em>i.e.</em> all objects inheriting from <code>TTree</code>, including the <code>TNtuple</code>)</li>
+</ul>
+<p>For those categories of objects, the corresponding <code>TFile</code> owns the object. You
+must always <strong>disassociate</strong> the object from the originating <code>TFile</code> if you
+want to keep the object while closing the file.</p>
+<blockquote>
+<p>This does not apply for objects that are neither histograms nor trees: in
+that case (<em>e.g</em> a <code>TList</code> or a <code>TGraph</code>) <strong>you</strong> are responsible of
+disposing of the object.</p>
+</blockquote>
+<h3 id="compiler-warnings">Compiler warnings</h3>
+<p><strong>Do not overlook compiler warnings!</strong> Warnings should <strong>never</strong> exist in a
+clean code.</p>
+<p>Whenever you see a warning, you have to:</p>
+<ul>
+<li><strong>fix</strong> the code, if it is actually broken: sometimes warnings get it right
+that you are doing something wrong</li>
+<li><strong>silence</strong> the warning by rewriting the snippet in a way that it does not
+trigger the warning.</li>
+</ul>
+<p>Different compilers give different warnings: clang is usually more precise and
+tends to give you advice on either how to silence the warning, or what you
+probably meant when writing the code. Of course a compiler is a &quot;stupid&quot; piece
+of software and you should not always follow literally its advice, but do not
+overlook it!</p>
+<p>Two good examples clarifying why warnings should not be ignored:</p>
+<ul>
+<li>Starting from GCC 5 many former warnings are turned into errors by default. We
+have evaluated the opportunity to pass GCC 5 some flags to maintain the legacy
+behavior (<em>i.e.</em> revert some errors into warnings) but we have found out that
+the compiler was right: those warnings were actually faulty code that needed
+to be fixed. If the authors checked the warnings in the first place they would
+have for sure recognized the logic errors in the code.</li>
+<li>Warnings clog compilation output and make more difficult to detect actual
+errors when they occur.</li>
+</ul>
+<p>Note that by default aliBuild conceals the compilation output. You need to pass
+the <code>--debug</code> option to actually see the warnings popping up:</p>
+<pre><code class="lang-bash">aliBuild build AliPhysics --debug
+</code></pre>
+<h3 id="when-to-use-pointers">When to use pointers</h3>
+<p>As a general rule, it is not always a good idea to use pointers to objects as
+data members of your class. If objects are big you are forced to use it, but
+for many small objects you&apos;d better use the object directly: you will save
+yourself (and the computer) a new/delete operation for each one of them. This
+has an impact if you have many small objects.</p>
+<p>Remember to always initialize pointers used as data members: compilers should
+raise warnings if you do not.</p>
+<p>Many member pointers in custom classes are <strong>transient</strong>, <em>i.e.</em> they should
+exist only in memory and they should not be written to a file.  So please mark
+every transient pointer with the appropriate special ROOT comment <code>//!</code> (no
+spaces between the slash and exclamation mark):</p>
+<pre><code class="lang-c++"><span class="hljs-keyword">class</span> MyClass : <span class="hljs-keyword">public</span> TObject {
+  <span class="hljs-keyword">private</span>:
+    AnotherClass *transient_ptr;  <span class="hljs-comment">//!</span>
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<blockquote>
+<p>This comment is not just a decorator: you are telling ROOT <strong>not to save</strong> the
+pointer to file, considerably reducing the output size!</p>
+</blockquote>
+<h3 id="strings">Strings</h3>
+<p>A very very very bad habit found very frequently in analysis code is
+referencing objects via their name inside the <code>UserExec()</code> (or any other loop):</p>
+<pre><code class="lang-c++">TH1I *h = <span class="hljs-built_in">list</span>-&gt;FindObject(<span class="hljs-string">&quot;myHistoName&quot;</span>);
+</code></pre>
+<p>The <code>FindObject()</code> function is very (very!) expensive, furthermore it always
+returns the same pointer for a certain object: it surely makes no sense to run
+it inside the <code>UserExec()</code>! Do this call <strong>once</strong> during the initialization and
+use the <strong>cached</strong> result in the event loop!</p>
+<p>Also, avoid passing &quot;raw&quot; strings as arguments to functions. Don&apos;t do:</p>
+<pre><code class="lang-c++"><span class="hljs-keyword">void</span> MyClass::myfunc(TString a) {
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>Do instead:</p>
+<pre><code class="lang-c++"><span class="hljs-keyword">void</span> MyClass::myfunc(<span class="hljs-keyword">const</span> TString &amp;a) {
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>Note that in both cases you invoke it with:</p>
+<pre><code class="lang-c++">myfunc(<span class="hljs-string">&quot;this is a string&quot;</span>);
+</code></pre>
+<p>which means that you can update your code without changing the way you call
+such functions.</p>
+<p>Moreover, it is a <strong>bad idea</strong> to use strings as triggering options on a method,
+like:</p>
+<pre><code class="lang-c++"><span class="hljs-keyword">void</span> MyClass::dosomething(<span class="hljs-keyword">const</span> TString &amp;what) {
+  <span class="hljs-keyword">if</span> (what == <span class="hljs-string">&quot;this&quot;</span>) {
+    <span class="hljs-comment">// ...</span>
+  }
+  <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (what == <span class="hljs-string">&quot;that&quot;</span>) {
+    <span class="hljs-comment">// ...</span>
+  }
+  <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (what == <span class="hljs-string">&quot;something else&quot;</span>) {
+    <span class="hljs-comment">// ...</span>
+  }
+}
+</code></pre>
+<p>As we have seen, <strong>string comparison is evil</strong>. Use <strong>enums</strong> instead:</p>
+<pre><code class="lang-c++"><span class="hljs-keyword">enum</span> <span class="hljs-keyword">dowhat_t</span> { THIS, THAT, SOMETHING_ELSE };
+
+<span class="hljs-keyword">void</span> MyClass::dosomething(<span class="hljs-keyword">const</span> <span class="hljs-keyword">dowhat_t</span> what) {
+  <span class="hljs-keyword">if</span> (what == THIS) {
+    <span class="hljs-comment">// ...</span>
+  }
+  <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (what == THAT) {
+    <span class="hljs-comment">// ...</span>
+  }
+  <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (what == SOMETHING_ELSE) {
+    <span class="hljs-comment">// ...</span>
+  }
+}
+</code></pre>
+<p>The code is as readable, but much more efficient.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="preparing.html" class="navigation navigation-prev " aria-label="Previous page: Preparing your code for debugging">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="crash.html" class="navigation navigation-next " aria-label="Next page: Where does my code crash">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Some general programming tips","layout":"tweet","createtoc":true,"parnumbers":true,"level":"1.10.2","depth":2,"next":{"title":"Where does my code crash","level":"1.10.3","depth":2,"path":"analysis/bestprac/crash.md","ref":"analysis/bestprac/crash.md","articles":[]},"previous":{"title":"Preparing your code for debugging","level":"1.10.1","depth":2,"path":"analysis/bestprac/preparing.md","ref":"analysis/bestprac/preparing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#117012fdc18c96831cb88196980c0ea73b0c87b8","collapsible-menu","block-align"],"styles":{"website":"css/website.css"},"pluginsConfig":{"collapsible-menu":{},"block-align":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"PEP root6 workshop","gitbook":"*","description":"PEP root6 introduction material"},"file":{"path":"analysis/bestprac/general.md","mtime":"2018-11-13T16:42:45.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-14T12:01:38.575Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-panels/panels.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

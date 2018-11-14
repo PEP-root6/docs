@@ -1,0 +1,981 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Parallellism with ROOT · PEP root6 workshop</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-panels/panels.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-block-align/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../css/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../changes.html" />
+    
+    
+    <link rel="prev" href="example.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction.html">
+            
+                <a href="../introduction.html">
+            
+                    
+                    Part 1 - Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../feat1.html">
+            
+                <a href="../feat1.html">
+            
+                    
+                    Part 2 - New C++ features
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../feat2.html">
+            
+                <a href="../feat2.html">
+            
+                    
+                    Part 3 - Smart (and dumb) pointers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../newf2/intro.html">
+            
+                <a href="../newf2/intro.html">
+            
+                    
+                    Pointers, the absolute basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../newf2/smartp.html">
+            
+                <a href="../newf2/smartp.html">
+            
+                    
+                    Smart pointers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../parallellism.html">
+            
+                <a href="../parallellism.html">
+            
+                    
+                    Part 4 - Parallellism
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="intro.html">
+            
+                <a href="intro.html">
+            
+                    
+                    Threads and processes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="example.html">
+            
+                <a href="example.html">
+            
+                    
+                    Posix multithreading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.3" data-path="root.html">
+            
+                <a href="root.html">
+            
+                    
+                    Parallellism with ROOT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../changes.html">
+            
+                <a href="../changes.html">
+            
+                    
+                    Part 5 - 5 to 6: changes to user code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../vectorization.html">
+            
+                <a href="../vectorization.html">
+            
+                    
+                    Part 6 - Vectorization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../tdf/declarative.html">
+            
+                <a href="../tdf/declarative.html">
+            
+                    
+                    Part 7 - Declarative analysis
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../tdf/concept.html">
+            
+                <a href="../tdf/concept.html">
+            
+                    
+                    Declarative programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../tdf/TDataFrame.html">
+            
+                <a href="../tdf/TDataFrame.html">
+            
+                    
+                    TDataFrame
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../python/">
+            
+                <a href="../python/">
+            
+                    
+                    Part 8 - Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../python/running.html">
+            
+                <a href="../python/running.html">
+            
+                    
+                    Running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../python/operators.html">
+            
+                <a href="../python/operators.html">
+            
+                    
+                    Objects and operators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../python/numbers.html">
+            
+                <a href="../python/numbers.html">
+            
+                    
+                    Numbers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../python/strings.html">
+            
+                <a href="../python/strings.html">
+            
+                    
+                    Strings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../python/lists.html">
+            
+                <a href="../python/lists.html">
+            
+                    
+                    Lists and looping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../python/dictionaries.html">
+            
+                <a href="../python/dictionaries.html">
+            
+                    
+                    Dictionaries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../python/conditions.html">
+            
+                <a href="../python/conditions.html">
+            
+                    
+                    Conditions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../python/methods.html">
+            
+                <a href="../python/methods.html">
+            
+                    
+                    Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="../python/scripting.html">
+            
+                <a href="../python/scripting.html">
+            
+                    
+                    Scripting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="../python/modules.html">
+            
+                <a href="../python/modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.11" data-path="../python/learning.html">
+            
+                <a href="../python/learning.html">
+            
+                    
+                    Learning more
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.12" data-path="../python/pyroot.html">
+            
+                <a href="../python/pyroot.html">
+            
+                    
+                    PyROOT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../bestprac/best_prac.html">
+            
+                <a href="../bestprac/best_prac.html">
+            
+                    
+                    Part 9 - Best Practices
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../bestprac/preparing.html">
+            
+                <a href="../bestprac/preparing.html">
+            
+                    
+                    Preparing your code for debugging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../bestprac/general.html">
+            
+                <a href="../bestprac/general.html">
+            
+                    
+                    Some general programming tips
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../bestprac/crash.html">
+            
+                <a href="../bestprac/crash.html">
+            
+                    
+                    Where does my code crash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../bestprac/memory.html">
+            
+                <a href="../bestprac/memory.html">
+            
+                    
+                    Finding memory leaks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Parallellism with ROOT</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="parallallism-in-root">Parallallism in ROOT</h1>
+<p>The <code>TThread</code> class has been developed to provide a platform independent interface to threads for ROOT. However, ROOT6 provides us with many ways to easily access <em>implicit</em> parallellism, which makes our lives much easier than defining <code>POSIX</code>-like threads by hand.</p>
+<h2 id="implicit-multi-threading">Implicit multi threading</h2>
+<p>The easiest way to learn about ROOT&apos;s implicit multi threading, is to look at an example. Say we want to read some information from a tree. This is a process that can very easily be multi threaded: operations on branches (like I/O, decompression, etc) are <strong>independent</strong> and can be carried out concurrently. </p>
+<p>To tell ROOT6 to operate on our tree in a multithreaded way, all we have to do is enable implicit multithreading:</p>
+<pre><code class="lang-cpp">   <span class="hljs-comment">// First enable implicit multi-threading globally, so that the implicit parallelisation is on.</span>
+   <span class="hljs-comment">// The parameter of the call specifies the number of threads to use.</span>
+   <span class="hljs-keyword">int</span> nthreads = <span class="hljs-number">4</span>;
+   ROOT::EnableImplicitMT(nthreads);
+   <span class="hljs-comment">// Open the file containing the tree</span>
+   <span class="hljs-keyword">auto</span> file = TFile::Open(<span class="hljs-string">&quot;http://root.cern.ch/files/h1/dstarmb.root&quot;</span>);
+   <span class="hljs-comment">// Get the tree</span>
+   TTree *tree = <span class="hljs-literal">nullptr</span>;
+   file-&gt;GetObject&lt;TTree&gt;(<span class="hljs-string">&quot;h42&quot;</span>, tree);
+   <span class="hljs-keyword">const</span> <span class="hljs-keyword">auto</span> nEntries = tree-&gt;GetEntries();
+   <span class="hljs-comment">// Read the branches in parallel.</span>
+   <span class="hljs-comment">// Note that the interface does not change, the parallelisation is internal</span>
+   <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> i : ROOT::TSeqUL(nEntries)) {
+      tree-&gt;GetEntry(i); <span class="hljs-comment">// parallel read</span>
+   }
+   <span class="hljs-comment">// IMT parallelisation can be disabled for a specific tree</span>
+   tree-&gt;SetImplicitMT(<span class="hljs-literal">false</span>);
+   <span class="hljs-comment">// If now GetEntry is invoked on the tree, the reading is sequential</span>
+   <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> i : ROOT::TSeqUL(nEntries)) {
+      tree-&gt;GetEntry(i); <span class="hljs-comment">// sequential read</span>
+   }
+   <span class="hljs-comment">// Parallel reading can be re-enabled</span>
+   tree-&gt;SetImplicitMT(<span class="hljs-literal">true</span>);
+   <span class="hljs-comment">// IMT can be also disabled globally.</span>
+   <span class="hljs-comment">// As a result, no tree will run GetEntry in parallel</span>
+   ROOT::DisableImplicitMT();
+   <span class="hljs-comment">// This is still sequential: the global flag is disabled, even if the</span>
+   <span class="hljs-comment">// flag for this particular tree is enabled</span>
+   <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> i : ROOT::TSeqUL(nEntries)) {
+      tree-&gt;GetEntry(i); <span class="hljs-comment">// sequential read</span>
+   }
+</code></pre>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1543985453);" id="exercise"><i class="fa fa-info-circle"></i> Exercise<span id="heading-1543985453"></span></h3></div><div class="panel-body" id="panel-1543985453"><p>Run the above example using a single-threaded or multi threaded approach. Time how quickly the tree is read (use e.g. the <code>TStopWatch</code> class), using different numbers of threads. </p>
+</div></div></p>
+<h2 id="tprocessexecutor">TProcessExecutor</h2>
+<p>Our first example was very easy - we did not have to do anything except for telling ROOT to enable multi threading. However, we have fancier tools to use, namely the <code>TProcessExecutor</code>. </p>
+<p>The <code>TProcessExecutor</code> uses multi processing (as the name implies). It provides a simple interface to execute the same task multiple times in parallel, possibly with different arguments every time (this mimics the behaviour of python&apos;s pool.Map method). </p>
+<p>This class inherits its interfaces from ROOT::<code>TExecutor</code>.  The two possible usages of the Map method are:</p>
+<ul>
+<li><code>Map(F func, unsigned nTimes)</code>: func is executed nTimes with no arguments</li>
+<li><code>Map(F func, T&amp; args)</code>: func is executed on each element of the collection of arguments <code>args</code></li>
+</ul>
+<p>For either signature, <code>func</code> is executed as many times as needed by a pool of <code>fNWorkers</code> workers; the number of workers can be passed to the constructor or set via SetNWorkers. It defaults to the number of cores. A collection containing the result of each execution is returned.</p>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(7070302826);" id="beware"><i class="fa fa-info-circle"></i> Beware<span id="heading-7070302826"></span></h3></div><div class="panel-body" id="panel-7070302826"><p>Note: the user is responsible for the deletion of any object that might be created upon execution of <code>func</code>, returned objects included: <code>ROOT::TProcessExecutor</code> never deletes what it returns, it simply forgets it.
+Note: that the usage of <code>ROOT::TProcessExecutor::Map</code> is indicated only when the task to be executed takes more than a few seconds, otherwise the overhead introduced by <code>Map</code> will outrun the benefits of parallel execution on most machines.</p>
+</div></div></p>
+<p>Let&apos;s take a closer look at how we can construct our processes. What we need are the following parameters</p>
+<ul>
+<li><code>func</code>    a lambda expression, an std::function, a loaded macro, a functor class or a function that takes zero arguments (for the first signature) or one (for the second signature).</li>
+<li><code>args</code>    a standard vector, a <code>ROOT::TSeq</code> of integer type or an initializer list for the second signature. </li>
+</ul>
+<p>For example, using a lambda expression and an initializer list for the <code>ROOT::TSeq</code>, our process executor could look like</p>
+<pre><code class="lang-cpp">ROOT::<span class="hljs-function">TProcessExecutor <span class="hljs-title">pool</span><span class="hljs-params">(<span class="hljs-number">2</span>)</span></span>; <span class="hljs-keyword">auto</span> squares = pool.Map([](<span class="hljs-keyword">int</span> a) { <span class="hljs-keyword">return</span> a*a; }, {<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>});
+</code></pre>
+<p>This looks more complicated than it is. Let&apos;s look at an example in the wild, where we fill four histograms with random numbers simultaneously:</p>
+<pre><code class="lang-cpp">// Total amount of numbers
+const UInt_t nNumbers = 20000000U;
+// The number of workers
+const UInt_t nWorkers = 4U;
+
+   // We define our work item
+   auto workItem = [](UInt_t workerID) {
+      // One generator, file and ntuple per worker
+      TRandom3 workerRndm(workerID); // Change the seed
+      TFile f(Form(&quot;myFile_%u.root&quot;, workerID), &quot;RECREATE&quot;);
+      TH1F h(Form(&quot;myHisto_%u&quot;, workerID), &quot;The Histogram&quot;, 64, -4, 4);
+      for (UInt_t i = 0; i &lt; nNumbers; ++i) {
+         h.Fill(workerRndm.Gaus());
+      }
+      h.Write();
+      return 0;
+   };
+
+   // Create the pool of workers
+   ROOT::TProcessExecutor workers(nWorkers);
+   // Fill the pool with work
+   workers.Map(workItem, ROOT::TSeqI(nWorkers));
+</code></pre>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(3252483307);" id="exercise"><i class="fa fa-info-circle"></i> Exercise<span id="heading-3252483307"></span></h3></div><div class="panel-body" id="panel-3252483307"><p>First, run the example that is shown above. Then, think of a macro that you have somewhere on your laptop, and see if you can multi process it. </p>
+</div></div></p>
+<h2 id="ttreeprocessormt">TTreeProcessorMT</h2>
+<p>A lot of the work that we do, involves manipulation trees. The <code>TTreeProcessorMT</code> method provides an implicit parallelisation of the reading and processing of a <code>TTree</code>. In particular, when invoking <code>Process</code>, the user provides a function that iterates on a subrange of the tree via a <code>TTreeReader</code>. Multiple tasks will be spawned, one for each sub-range, so that the processing of the tree is parallelised.</p>
+<p>Since two invocations of the user function can potentially run in parallel, the function code must be <strong>thread safe</strong> (remember the discussion on race conditions and deadlocks). For this, we can use, <code>ROOT::TThreadedObject</code>, which makes objects thread private. With the help of this class, histograms can be filled safely inside the user function and then merged at the end to get the final result.</p>
+<p>By means of its <code>Process</code> method, <code>ROOT::TTreeProcessorMT</code> provides a way to process the entries of a <code>TTree</code> in parallel. When invoking <code>TTreeProcessor::Process</code>, the user passes a function whose only parameter is a <code>TTreeReader</code>. The function iterates on a subrange of entries by using that <code>TTreeReader</code>.</p>
+<p>The implementation of <code>ROOT::TTreeProcessorMT</code> parallelizes the processing of the subranges, each corresponding to a cluster in the <code>TTree</code>. This is possible thanks to the use of a <code>ROOT::TThreadedObject</code>, so that each thread works with its own <code>TFile</code> and <code>TTree</code> objects. </p>
+<p>Yet again, let&apos;s give it a whirl!</p>
+<pre><code class="lang-cpp">   <span class="hljs-comment">// First enable implicit multi-threading globally, so that the implicit parallelisation is on.</span>
+   <span class="hljs-comment">// The parameter of the call specifies the number of threads to use.</span>
+   <span class="hljs-keyword">int</span> nthreads = <span class="hljs-number">4</span>;
+   ROOT::EnableImplicitMT(nthreads);
+   <span class="hljs-comment">// Create one TThreadedObject per histogram to fill during the processing of the tree</span>
+   ROOT::TThreadedObject&lt;TH1F&gt; ptHist(<span class="hljs-string">&quot;pt_dist&quot;</span>, <span class="hljs-string">&quot;p_{T} Distribution;p_{T};dN/p_{T}dp_{T}&quot;</span>, <span class="hljs-number">100</span>, <span class="hljs-number">0</span>, <span class="hljs-number">5</span>);
+   ROOT::TThreadedObject&lt;TH1F&gt; pzHist(<span class="hljs-string">&quot;pz_dist&quot;</span>, <span class="hljs-string">&quot;p_{Z} Distribution;p_{Z};dN/dp_{Z}&quot;</span>, <span class="hljs-number">100</span>, <span class="hljs-number">0</span>, <span class="hljs-number">5</span>);
+   ROOT::TThreadedObject&lt;TH2F&gt; pxpyHist(<span class="hljs-string">&quot;px_py&quot;</span>, <span class="hljs-string">&quot;p_{X} vs p_{Y} Distribution;p_{X};p_{Y}&quot;</span>, <span class="hljs-number">100</span>, <span class="hljs-number">-5.</span>, <span class="hljs-number">5.</span>, <span class="hljs-number">100</span>, <span class="hljs-number">-5.</span>, <span class="hljs-number">5.</span>);
+   <span class="hljs-comment">// Create a TTreeProcessorMT: specify the file and the tree in it</span>
+   ROOT::<span class="hljs-function">TTreeProcessorMT <span class="hljs-title">tp</span><span class="hljs-params">(<span class="hljs-string">&quot;http://root.cern.ch/files/tp_process_imt.root&quot;</span>, <span class="hljs-string">&quot;events&quot;</span>)</span></span>;
+   <span class="hljs-comment">// Define the function that will process a subrange of the tree.</span>
+   <span class="hljs-comment">// The function must receive only one parameter, a TTreeReader,</span>
+   <span class="hljs-comment">// and it must be thread safe. To enforce the latter requirement,</span>
+   <span class="hljs-comment">// TThreadedObject histograms will be used.</span>
+   <span class="hljs-keyword">auto</span> myFunction = [&amp;](TTreeReader &amp;myReader) {
+      TTreeReaderValue&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;ROOT::Math::PxPyPzEVector&gt;&gt; tracksRV(myReader, <span class="hljs-string">&quot;tracks&quot;</span>);
+      <span class="hljs-comment">// For performance reasons, a copy of the pointer associated to this thread on the</span>
+      <span class="hljs-comment">// stack is used</span>
+      <span class="hljs-keyword">auto</span> myPtHist = ptHist.Get();
+      <span class="hljs-keyword">auto</span> myPzHist = pzHist.Get();
+      <span class="hljs-keyword">auto</span> myPxPyHist = pxpyHist.Get();
+      <span class="hljs-keyword">while</span> (myReader.Next()) {
+         <span class="hljs-keyword">auto</span> tracks = *tracksRV;
+         <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> &amp;&amp;track : tracks) {
+            myPtHist-&gt;Fill(track.Pt(), <span class="hljs-number">1.</span> / track.Pt());
+            myPxPyHist-&gt;Fill(track.Px(), track.Py());
+            myPzHist-&gt;Fill(track.Pz());
+         }
+      }
+   };
+   <span class="hljs-comment">// Launch the parallel processing of the tree</span>
+   tp.Process(myFunction);
+   <span class="hljs-comment">// Use the TThreadedObject::Merge method to merge the thread private histograms</span>
+   <span class="hljs-comment">// into the final result</span>
+   <span class="hljs-keyword">auto</span> ptHistMerged = ptHist.Merge();
+   <span class="hljs-keyword">auto</span> pzHistMerged = pzHist.Merge();
+   <span class="hljs-keyword">auto</span> pxpyHistMerged = pxpyHist.Merge();
+</code></pre>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(4911852205);" id="exercise"><i class="fa fa-info-circle"></i> Exercise<span id="heading-4911852205"></span></h3></div><div class="panel-body" id="panel-4911852205"><p>The exercise here is the same as before: run the code snippet above, and play with the number of threads. You can of course plot the histograms by simply doing</p>
+<pre><code>ptHistMerged-&gt;DrawCopy()
+</code></pre></div></div></p>
+<h2 id="multi-core-reading-of-tchain-data">Multi core reading of TChain data</h2>
+<p>If time permits, let&apos;s look at a few more things. Below, it is illustrated how we can use a <code>TTreeProcessorMP</code> (so a multi <strong>processed</strong> version of the <code>TTreeReader</code> to delegate reading of TChain data to multiple cores</p>
+<pre><code class="lang-cpp">   <span class="hljs-comment">// No nuisance for batch execution</span>
+   gROOT-&gt;SetBatch();
+   <span class="hljs-comment">//---------------------------------------</span>
+   <span class="hljs-comment">// Perform the operation sequentially</span>
+   <span class="hljs-function">TChain <span class="hljs-title">inputChain</span><span class="hljs-params">(<span class="hljs-string">&quot;multiCore&quot;</span>)</span></span>;
+   inputChain.Add(<span class="hljs-string">&quot;mp101_multiCore_*.root&quot;</span>);
+   <span class="hljs-keyword">if</span> (inputChain.GetNtrees() &lt;= <span class="hljs-number">0</span>) {
+      Printf(<span class="hljs-string">&quot; No files in the TChain: did you run mp101_fillNtuples.C before?&quot;</span>);
+      <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+   }
+   <span class="hljs-function">TH1F <span class="hljs-title">outHisto</span><span class="hljs-params">(<span class="hljs-string">&quot;outHisto&quot;</span>, <span class="hljs-string">&quot;Random Numbers&quot;</span>, <span class="hljs-number">128</span>, <span class="hljs-number">-4</span>, <span class="hljs-number">4</span>)</span></span>;
+   inputChain.Draw(<span class="hljs-string">&quot;r &gt;&gt; outHisto&quot;</span>);
+   outHisto.Fit(<span class="hljs-string">&quot;gaus&quot;</span>);
+   <span class="hljs-comment">//---------------------------------------</span>
+   <span class="hljs-comment">// We now go MP!</span>
+   <span class="hljs-comment">// TProcessExecutor offers an interface to directly process trees and chains without</span>
+   <span class="hljs-comment">// the need for the user to go through the low level implementation of a</span>
+   <span class="hljs-comment">// map-reduce.</span>
+   <span class="hljs-comment">// We adapt our parallelisation to the number of input files</span>
+   <span class="hljs-keyword">const</span> <span class="hljs-keyword">auto</span> nFiles = inputChain.GetListOfFiles()-&gt;GetEntries();
+   <span class="hljs-comment">// This is the function invoked during the processing of the trees.</span>
+   <span class="hljs-keyword">auto</span> workItem = [](TTreeReader &amp;reader) {
+      TTreeReaderValue&lt;Float_t&gt; randomRV(reader, <span class="hljs-string">&quot;r&quot;</span>);
+      <span class="hljs-keyword">auto</span> partialHisto = <span class="hljs-keyword">new</span> TH1F(<span class="hljs-string">&quot;outHistoMP&quot;</span>, <span class="hljs-string">&quot;Random Numbers&quot;</span>, <span class="hljs-number">128</span>, <span class="hljs-number">-4</span>, <span class="hljs-number">4</span>);
+      <span class="hljs-keyword">while</span> (reader.Next()) {
+         partialHisto-&gt;Fill(*randomRV);
+      }
+      <span class="hljs-keyword">return</span> partialHisto;
+   };
+   <span class="hljs-comment">// Create the pool of processes</span>
+   ROOT::<span class="hljs-function">TTreeProcessorMP <span class="hljs-title">workers</span><span class="hljs-params">(nFiles)</span></span>;
+   <span class="hljs-comment">// Process the TChain</span>
+   <span class="hljs-keyword">auto</span> sumHistogram = workers.Process(inputChain, workItem, <span class="hljs-string">&quot;multiCore&quot;</span>);
+   sumHistogram-&gt;Fit(<span class="hljs-string">&quot;gaus&quot;</span>, <span class="hljs-number">0</span>);
+</code></pre>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(6810336726);" id="exercise"><i class="fa fa-square-o"></i> Exercise<span id="heading-6810336726"></span></h3></div><div class="panel-body" id="panel-6810336726"><p>Run the above code snippet. Note, that it needs some input! This can be generated by the mp101_fillNtuples.C macro, which is given below. </p>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(8061650091);" id="generate-your-treesclick-to-expand"><i class="fa fa-line-chart"></i> generate your trees...<span id="heading-8061650091">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-8061650091"><pre><code class="lang-cpp">// Total amount of numbers
+const UInt_t nNumbers = 20000000U;
+
+// The number of workers
+const UInt_t nWorkers = 4U;
+
+// We split the work in equal parts
+const auto workSize = nNumbers / nWorkers;
+
+// A simple function to fill ntuples randomly
+void fillRandom(TNtuple &amp;ntuple, TRandom3 &amp;rndm, UInt_t n)
+{
+   for (auto i : ROOT::TSeqI(n))
+      ntuple.Fill(rndm.Gaus());
+}
+
+Int_t mp101_fillNtuples()
+{
+
+   // No nuisance for batch execution
+   gROOT-&gt;SetBatch();
+
+   //---------------------------------------
+   // Perform the operation sequentially
+
+   // Create a random generator and and Ntuple to hold the numbers
+   TRandom3 rndm(1);
+   TFile ofile(&quot;mp101_singleCore.root&quot;, &quot;RECREATE&quot;);
+   TNtuple randomNumbers(&quot;singleCore&quot;, &quot;Random Numbers&quot;, &quot;r&quot;);
+   fillRandom(randomNumbers, rndm, nNumbers);
+   randomNumbers.Write();
+   ofile.Close();
+
+   //---------------------------------------
+   // We now go MP!
+
+   // We define our work item
+   auto workItem = [](UInt_t workerID) {
+      // One generator, file and ntuple per worker
+      TRandom3 workerRndm(workerID); // Change the seed
+      TFile ofile(Form(&quot;mp101_multiCore_%u.root&quot;, workerID), &quot;RECREATE&quot;);
+      TNtuple workerRandomNumbers(&quot;multiCore&quot;, &quot;Random Numbers&quot;, &quot;r&quot;);
+      fillRandom(workerRandomNumbers, workerRndm, workSize);
+      workerRandomNumbers.Write();
+      return 0;
+   };
+
+   // Create the pool of workers
+   ROOT::TProcessExecutor workers(nWorkers);
+
+   // Fill the pool with work
+   workers.Map(workItem, ROOT::TSeqI(nWorkers));
+
+   return 0;
+}
+</code></pre>
+</div></div></div></div></p>
+<h2 id="ttaskgroup">TTaskGroup</h2>
+<p>The last item that we will illustrate, is the <code>TTaskGroup</code>. TTask is a base class that can be used to build a complex tree of Tasks. Each TTask derived class may contain other TTasks that can be executed recursively, such that a complex program can be dynamically built and executed by invoking the services of the top level Task or one of its subtasks. If you do analysis in ALICE, you surely know <code>TTasks</code>, since they form the base class of <code>AliAnalysisTaskSE</code>. </p>
+<p><code>TTaskGroup</code> provides a way to manage the asynchronous execution of work items. A TTaskGroup represents concurrent execution of a group of tasks. Tasks may be dynamically added to the group as it is executing. </p>
+<p>Below an example of usage of the <code>TTaskGroup</code> for calculating Fibonacci series. See if you can run. And who knows, maybe in a few years, your analysis will benefit from paralellism as well ...</p>
+<pre><code class="lang-cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">Fibonacci</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span>
+</span>{
+   <span class="hljs-keyword">if</span> (n &lt; <span class="hljs-number">2</span>) {
+      <span class="hljs-keyword">return</span> n;
+   } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">int</span> x, y;
+      ROOT::Experimental::TTaskGroup tg;
+      tg.Run([&amp;] { x = Fibonacci(n - <span class="hljs-number">1</span>); });
+      tg.Run([&amp;] { y = Fibonacci(n - <span class="hljs-number">2</span>); });
+      tg.Wait();
+      <span class="hljs-keyword">return</span> x + y;
+   }
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">mt302_TTaskGroupNested</span><span class="hljs-params">()</span>
+</span>{
+   ROOT::EnableImplicitMT(<span class="hljs-number">4</span>);
+   <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Fibonacci(33) = &quot;</span> &lt;&lt; Fibonacci(<span class="hljs-number">33</span>) &lt;&lt; <span class="hljs-built_in">endl</span>;
+}
+</code></pre>
+<p>You will have to store the above example in a macro, let&apos;s call it fib.C, and load it in a ROOT session to execute it:</p>
+<pre><code>root .L fib.C 
+root [1] mt302_TTaskGroupNested()
+Fibonacci(33) = 3524578
+</code></pre><p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1096631399);" id="rootexperimental"><i class="fa fa-info-circle"></i> ROOT::Experimental<span id="heading-1096631399"></span></h3></div><div class="panel-body" id="panel-1096631399"><p>You might notice, that in the code snippet above, we use items from the <code>ROOT::Experimental</code> namespace. As the name implies, these are experimental features. Depending on your ROOT6 version, these features might have been moved from the <code>Experimental</code> namespace to a general namespace, in which case, the <code>T</code> that starts the class name, might have been changed into an <code>R</code> to avoid namespace clashes. </p>
+</div></div></p>
+<h2 id="enabling-thread-safety">Enabling thread safety</h2>
+<p>In the previous section, we have talked quite a bit about race conditions and thread safety. How are these taken care of in the ROOT landscape? </p>
+<p>ROOT provides a global mutex to make ROOT thread safe/aware. By enabling it, the following processes are ensured to be safe</p>
+<ul>
+<li>concurrent construction and destruction of TObjects, including the ones registered in ROOT&apos;s global lists (e.g. gROOT-&gt;GetListOfCleanups(), gROOT-&gt;GetListOfFiles())</li>
+<li>concurrent usage of different ROOT objects from different threads, including ones with global state (e.g. TFile, TTree, TChain) with the exception of graphics classes (e.g. TCanvas)</li>
+<li>concurrent calls to ROOT&apos;s type system classes, e.g. TClass and TEnum</li>
+<li>concurrent calls to the interpreter through gInterpreter</li>
+<li>concurrent loading of ROOT plug-ins</li>
+</ul>
+<p>In addition, gDirectory, gFile and gPad become a thread-local variable. In all threads, gDirectory defaults to gROOT, a singleton which supports thread-safe insertion and deletion of contents. gFile and gPad default to nullptr, as it is for single-thread programs.</p>
+<p>Note that there is no DisableThreadSafety(). ROOT&apos;s thread-safety features cannot be disabled once activated. </p>
+<p>Below is an example of parallell execution in ROOT, guaranteeing thread safety:</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">const</span> UInt_t poolSize = <span class="hljs-number">4U</span>;
+<span class="hljs-function">Int_t <span class="hljs-title">mtbb201_parallelHistoFill</span><span class="hljs-params">()</span>
+</span>{
+   ROOT::EnableThreadSafety();
+   TH1::AddDirectory(<span class="hljs-literal">false</span>);
+   ROOT::<span class="hljs-function">TThreadExecutor <span class="hljs-title">pool</span><span class="hljs-params">(poolSize)</span></span>;
+   <span class="hljs-keyword">auto</span> fillRandomHisto = [](<span class="hljs-keyword">int</span> seed = <span class="hljs-number">0</span>) {
+      <span class="hljs-function">TRandom3 <span class="hljs-title">rndm</span><span class="hljs-params">(seed)</span></span>;
+      <span class="hljs-keyword">auto</span> h = <span class="hljs-keyword">new</span> TH1F(<span class="hljs-string">&quot;myHist&quot;</span>, <span class="hljs-string">&quot;Filled in parallel&quot;</span>, <span class="hljs-number">128</span>, <span class="hljs-number">-8</span>, <span class="hljs-number">8</span>);
+      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> i : ROOT::TSeqI(<span class="hljs-number">1000000</span>)) {
+         h-&gt;Fill(rndm.Gaus(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>));
+      }
+      <span class="hljs-keyword">return</span> h;
+   };
+   <span class="hljs-keyword">auto</span> seeds = ROOT::TSeqI(<span class="hljs-number">23</span>);
+   ROOT::ExecutorUtils::ReduceObjects&lt;TH1F *&gt; redfunc;
+   <span class="hljs-keyword">auto</span> sumRandomHisto = pool.MapReduce(fillRandomHisto, seeds, redfunc);
+   <span class="hljs-keyword">auto</span> c = <span class="hljs-keyword">new</span> TCanvas();
+   sumRandomHisto-&gt;Draw();
+   <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(1641577290);" id="general-exercises"><i class="fa fa-info-circle"></i> General exercises<span id="heading-1641577290"></span></h3></div><div class="panel-body" id="panel-1641577290"><p>As already mentioned in the text, exercises here comprise running the examples, and looking for good candidates in your own macros that you could re-write in a multi threaded or multi processed way. </p>
+<p>It is always good to test whether or not multi threading / processing actually helps: both come with overhead, and depending on the task at hand, can either speed up execution or your program, slow it down, or do nothing at all. </p>
+</div></div></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="example.html" class="navigation navigation-prev " aria-label="Previous page: Posix multithreading">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../changes.html" class="navigation navigation-next " aria-label="Next page: Part 5 - 5 to 6: changes to user code">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Parallellism with ROOT","level":"1.5.3","depth":2,"next":{"title":"Part 5 - 5 to 6: changes to user code","level":"1.6","depth":1,"path":"analysis/changes.md","ref":"analysis/changes.md","articles":[]},"previous":{"title":"Posix multithreading","level":"1.5.2","depth":2,"path":"analysis/parallell/example.md","ref":"analysis/parallell/example.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#117012fdc18c96831cb88196980c0ea73b0c87b8","collapsible-menu","block-align"],"styles":{"website":"css/website.css"},"pluginsConfig":{"collapsible-menu":{},"block-align":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"PEP root6 workshop","gitbook":"*","description":"PEP root6 introduction material"},"file":{"path":"analysis/parallell/root.md","mtime":"2018-11-13T16:42:45.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-14T12:01:38.575Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-panels/panels.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

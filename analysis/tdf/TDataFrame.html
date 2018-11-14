@@ -1,0 +1,933 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>TDataFrame · PEP root6 workshop</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-panels/panels.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-block-align/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../css/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../python/" />
+    
+    
+    <link rel="prev" href="concept.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction.html">
+            
+                <a href="../introduction.html">
+            
+                    
+                    Part 1 - Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../feat1.html">
+            
+                <a href="../feat1.html">
+            
+                    
+                    Part 2 - New C++ features
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../feat2.html">
+            
+                <a href="../feat2.html">
+            
+                    
+                    Part 3 - Smart (and dumb) pointers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../newf2/intro.html">
+            
+                <a href="../newf2/intro.html">
+            
+                    
+                    Pointers, the absolute basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../newf2/smartp.html">
+            
+                <a href="../newf2/smartp.html">
+            
+                    
+                    Smart pointers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../parallellism.html">
+            
+                <a href="../parallellism.html">
+            
+                    
+                    Part 4 - Parallellism
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../parallell/intro.html">
+            
+                <a href="../parallell/intro.html">
+            
+                    
+                    Threads and processes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../parallell/example.html">
+            
+                <a href="../parallell/example.html">
+            
+                    
+                    Posix multithreading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../parallell/root.html">
+            
+                <a href="../parallell/root.html">
+            
+                    
+                    Parallellism with ROOT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../changes.html">
+            
+                <a href="../changes.html">
+            
+                    
+                    Part 5 - 5 to 6: changes to user code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../vectorization.html">
+            
+                <a href="../vectorization.html">
+            
+                    
+                    Part 6 - Vectorization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="declarative.html">
+            
+                <a href="declarative.html">
+            
+                    
+                    Part 7 - Declarative analysis
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="concept.html">
+            
+                <a href="concept.html">
+            
+                    
+                    Declarative programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.2" data-path="TDataFrame.html">
+            
+                <a href="TDataFrame.html">
+            
+                    
+                    TDataFrame
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../python/">
+            
+                <a href="../python/">
+            
+                    
+                    Part 8 - Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../python/running.html">
+            
+                <a href="../python/running.html">
+            
+                    
+                    Running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../python/operators.html">
+            
+                <a href="../python/operators.html">
+            
+                    
+                    Objects and operators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../python/numbers.html">
+            
+                <a href="../python/numbers.html">
+            
+                    
+                    Numbers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../python/strings.html">
+            
+                <a href="../python/strings.html">
+            
+                    
+                    Strings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../python/lists.html">
+            
+                <a href="../python/lists.html">
+            
+                    
+                    Lists and looping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../python/dictionaries.html">
+            
+                <a href="../python/dictionaries.html">
+            
+                    
+                    Dictionaries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../python/conditions.html">
+            
+                <a href="../python/conditions.html">
+            
+                    
+                    Conditions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../python/methods.html">
+            
+                <a href="../python/methods.html">
+            
+                    
+                    Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="../python/scripting.html">
+            
+                <a href="../python/scripting.html">
+            
+                    
+                    Scripting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="../python/modules.html">
+            
+                <a href="../python/modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.11" data-path="../python/learning.html">
+            
+                <a href="../python/learning.html">
+            
+                    
+                    Learning more
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.12" data-path="../python/pyroot.html">
+            
+                <a href="../python/pyroot.html">
+            
+                    
+                    PyROOT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../bestprac/best_prac.html">
+            
+                <a href="../bestprac/best_prac.html">
+            
+                    
+                    Part 9 - Best Practices
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../bestprac/preparing.html">
+            
+                <a href="../bestprac/preparing.html">
+            
+                    
+                    Preparing your code for debugging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../bestprac/general.html">
+            
+                <a href="../bestprac/general.html">
+            
+                    
+                    Some general programming tips
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../bestprac/crash.html">
+            
+                <a href="../bestprac/crash.html">
+            
+                    
+                    Where does my code crash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../bestprac/memory.html">
+            
+                <a href="../bestprac/memory.html">
+            
+                    
+                    Finding memory leaks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >TDataFrame</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="tdataframe">TDataFrame</h1>
+<p>ROOT&apos;s TDataFrame offers a high level interface for analyses of data stored in <em>TTrees*</em>.</p>
+<p>In addition, multi-threading and other low-level optimisations allow users to exploit all the resources available on their machines completely transparently.
+Skip to the class reference or keep reading for the user guide.</p>
+<p>In a nutshell:</p>
+<pre><code class="lang-c++">ROOT::EnableImplicitMT(); <span class="hljs-comment">// Tell ROOT you want to go parallel</span>
+ROOT::Experimental::<span class="hljs-function">TDataFrame <span class="hljs-title">d</span><span class="hljs-params">(<span class="hljs-string">&quot;myTree&quot;</span>, file)</span></span>; <span class="hljs-comment">// Interface to TTree and TChain</span>
+<span class="hljs-keyword">auto</span> myHisto = d.Histo1D(<span class="hljs-string">&quot;Branch_A&quot;</span>); <span class="hljs-comment">// This happens in parallel!</span>
+myHisto-&gt;Draw();
+</code></pre>
+<p>Calculations are expressed in terms of a type-safe functional chain of actions and transformations, TDataFrame takes care of their execution. The implementation automatically puts in place several low level optimisations such as multi-thread parallelisation and caching. The namespace containing the TDataFrame is ROOT::Experimental. This signals the fact that the interfaces may evolve in time.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li>Introduction</li>
+<li>Crash course</li>
+<li>More features</li>
+<li>Transformations</li>
+<li>Actions</li>
+<li>Parallel execution</li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>A pipeline of operations is described to be performed on the data, the framework takes care of the management of the loop over entries as well as low-level details such as I/O and parallelisation. TDataFrame provides an interface to perform most common operations required by ROOT analyses; at the same time, the users are not limited to those common operations: building blocks to trigger custom calculations are available too.</p>
+<p>TDataFrame is built with a modular and flexible workflow in mind, summarised as follows:</p>
+<ul>
+<li><p><strong>build</strong> a data-frame object by specifying your data-set</p>
+</li>
+<li><p><strong>apply a series of transformations</strong> to your data</p>
+<ul>
+<li><strong>filter</strong> (e.g. apply some cuts) or</li>
+<li>create a <strong>temporary column</strong> (e.g. the result of an expensive computation on branches, or an alias for a branch)</li>
+</ul>
+</li>
+<li><strong>apply actions</strong> to the transformed data to produce results (e.g. fill a histogram)</li>
+</ul>
+<h6 id="ttreereader">TTreeReader</h6>
+<pre><code class="lang-c++"><span class="hljs-function">TTreeReader <span class="hljs-title">reader</span><span class="hljs-params">(<span class="hljs-string">&quot;myTree&quot;</span>, file)</span></span>;
+TTreeReaderValue&lt;A_t&gt; a(reader, <span class="hljs-string">&quot;A&quot;</span>);
+TTreeReaderValue&lt;B_t&gt; b(reader, <span class="hljs-string">&quot;B&quot;</span>);
+TTreeReaderValue&lt;C_t&gt; c(reader, <span class="hljs-string">&quot;C&quot;</span>);
+<span class="hljs-keyword">while</span>(reader.Next()) {
+  <span class="hljs-keyword">if</span>(IsGoodEvent(a, b, c))
+      DoStuff(a, b, c);
+}
+</code></pre>
+<h6 id="rootexperimentaltdataframe">ROOT::Experimental::TDataFrame</h6>
+<pre><code class="lang-c++">ROOT::Experimental::<span class="hljs-function">TDataFrame <span class="hljs-title">d</span><span class="hljs-params">(<span class="hljs-string">&quot;myTree&quot;</span>, file, {<span class="hljs-string">&quot;A&quot;</span>, <span class="hljs-string">&quot;B&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>})</span></span>;
+d.Filter(IsGoodEvent).Foreach(DoStuff);
+</code></pre>
+<h6 id="ttreedraw">TTree::Draw</h6>
+<pre><code class="lang-c++">TTree *t = <span class="hljs-keyword">static_cast</span>&lt;TTree*&gt;(
+   file-&gt;Get(<span class="hljs-string">&quot;myTree&quot;</span>)
+);
+t-&gt;Draw(<span class="hljs-string">&quot;var&quot;</span>, <span class="hljs-string">&quot;var &gt; 2&quot;</span>);
+</code></pre>
+<h6 id="rootexperimentaltdataframe">ROOT::Experimental::TDataFrame</h6>
+<pre><code class="lang-c++">ROOT::Experimental::<span class="hljs-function">TDataFrame <span class="hljs-title">d</span><span class="hljs-params">(<span class="hljs-string">&quot;myTree&quot;</span>, file, <span class="hljs-string">&quot;var&quot;</span>)</span></span>;
+d.Filter([](<span class="hljs-keyword">int</span> v) { <span class="hljs-keyword">return</span> v &gt; <span class="hljs-number">2</span>; }).Histo1D();
+</code></pre>
+<p>Keep reading to follow a five-minute crash course to TDataFrame, or jump to an overview of useful features, or a more in-depth explanation of transformations, actions and parallelism.</p>
+<p>Crash course</p>
+<p>Filling a histogram</p>
+<p>Let&apos;s start with a very common task: filling a histogram</p>
+<pre><code class="lang-c++"><span class="hljs-comment">// Fill a TH1F with the &quot;MET&quot; branch</span>
+ROOT::Experimental::<span class="hljs-function">TDataFrame <span class="hljs-title">d</span><span class="hljs-params">(<span class="hljs-string">&quot;myTree&quot;</span>, filePtr)</span></span>; <span class="hljs-comment">// build a TDataFrame like you would build a TTreeReader</span>
+<span class="hljs-keyword">auto</span> h = d.Histo1D(<span class="hljs-string">&quot;MET&quot;</span>);
+h-&gt;Draw();
+</code></pre>
+<p>The first line creates a TDataFrame associated to the TTree &quot;myTree&quot;. This tree has a branch named &quot;MET&quot;.</p>
+<p>Histo1D is an action; it returns a smart pointer (a TResultProxy to be precise) to a TH1F histogram filled with the MET of all events. If the quantity stored in the branch is a collection, the histogram is filled with its elements.</p>
+<p>There are many other possible actions, and all their results are wrapped in smart pointers; we&apos;ll see why in a minute.</p>
+<p>Applying a filter</p>
+<p>Let&apos;s now pretend we want to cut over the value of branch &quot;MET&quot; and count how many events pass this cut:</p>
+<pre><code class="lang-c++"><span class="hljs-comment">// Select events with &quot;MET&quot; greater than 4., count events that passed the selection</span>
+<span class="hljs-keyword">auto</span> metCut = [](<span class="hljs-keyword">double</span> x) { <span class="hljs-keyword">return</span> x &gt; <span class="hljs-number">4.</span>; }; <span class="hljs-comment">// a c++11 lambda function checking &quot;x &gt; 4&quot;</span>
+ROOT::Experimental::<span class="hljs-function">TDataFrame <span class="hljs-title">d</span><span class="hljs-params">(<span class="hljs-string">&quot;myTree&quot;</span>, filePtr)</span></span>;
+<span class="hljs-keyword">auto</span> c = d.Filter(metCut, {<span class="hljs-string">&quot;MET&quot;</span>}).Count();
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; \*c &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+</code></pre>
+<p>Filter takes a function (a lambda in this example, but it can be any kind of function or even a functor class) and a list of branch names. The filter function is applied to the specified branches for each event; it is required to return a bool which signals whether the event passes the filter (true) or not (false). You can think of your data as &quot;flowing&quot; through the chain of calls, being transformed, filtered and finally used to perform actions. Multiple Filter calls can be chained one after another. It is possible to specify filters as strings too. This snippet is analogous to the one above:</p>
+<p>ROOT::Experimental::TDataFrame d(&quot;myTree&quot;, filePtr);
+auto c = d.Filter(&quot;MET &gt; 4.&quot;).Count();
+std::cout &lt;&lt; *c &lt;&lt; std::endl;
+Here the names of the branches used in the expression and their types are inferred automatically. The string must be standard C++ and is just-in-time compiled by the ROOT interpreter, Cling.</p>
+<p>Running on a range of entries</p>
+<p>It is sometimes necessary to limit the processing of the dataset to a range of entries. For this reason, the TDataFrame offers the concept of ranges as a node of the TDataFrame graph: this means that filters, columns and actions can be hung to it. If a range is specified after a filter, the range will act exclusively on the entries surviving the filter. Here you can find some code using ranges:</p>
+<p>ROOT::Experimental::TDataFrame d(&quot;myTree&quot;, filePtr);
+// This is how you can express a range of the first 30 entries
+auto d_0_30 = d.Range(0, 30);
+// This is how you pick all entries from 15 onwards
+auto d_15_end = d.Range(15, 0);
+// We can use a stride too, in this case we pick an event every 3
+auto d_15_end_3 = d.Range(15, 0, 3);
+Ranges are not available when multi-threading is enabled.</p>
+<p>Creating a temporary column</p>
+<p>Let&apos;s now consider the case in which &quot;myTree&quot; contains two quantities &quot;x&quot; and &quot;y&quot;, but our analysis relies on a derived quantity z = sqrt(x<em>x + y</em>y). Using the Define transformation, we can create a new column in the data-set containing the variable &quot;z&quot;:</p>
+<p>auto sqrtSum = <a href="double%20x,%20double%20y"></a> { return sqrt(x<em>x + y</em>y); };
+auto zCut = <a href="double%20z"></a> { return z &gt; 0.; }
+ROOT::Experimental::TDataFrame d(treeName, filePtr);
+auto zMean = d.Define(&quot;z&quot;, sqrtSum, {&quot;x&quot;,&quot;y&quot;})
+              .Filter(zCut, {&quot;z&quot;})
+              .Mean(&quot;z&quot;);
+std::cout &lt;&lt; *zMean &lt;&lt; std::endl;
+Define creates the variable &quot;z&quot; by applying sqrtSum to &quot;x&quot; and &quot;y&quot;. Later in the chain of calls we refer to variables created with Define as if they were actual tree branches, but they are evaluated on the fly, once per event. As with filters, Define calls can be chained with other transformations to create multiple temporary columns. As with filters, it is possible to specify new columns as strings too. This snippet is analogous to the one above:</p>
+<p>ROOT::Experimental::TDataFrame d(treeName, filePtr);
+auto zMean = d.Define(&quot;z&quot;, &quot;sqrt(x<em>x + y</em>y)&quot;)
+              .Filter(&quot;z &gt; 0.&quot;)
+              .Mean(&quot;z&quot;);
+std::cout &lt;&lt; *zMean &lt;&lt; std::endl;
+Again the names of the branches used in the expression and their types are inferred automatically. The string must be standard C++ and is just-in-time compiled by the ROOT interpreter, Cling.</p>
+<p>Executing multiple actions</p>
+<p>As a final example let us apply two different cuts on branch &quot;MET&quot; and fill two different histograms with the &quot;pt_v&quot; of the filtered events. You should be able to easily understand what&apos;s happening:</p>
+<p>// fill two histograms with the results of two opposite cuts
+auto isBig = <a href="double%20x"></a> { return x &gt; 10.; };
+ROOT::Experimental::TDataFrame d(treeName, filePtr);
+auto h1 = d.Filter(isBig, {&quot;MET&quot;}).Histo1D(&quot;pt_v&quot;);
+auto h2 = d.Histo1D(&quot;pt_v&quot;);
+h1-&gt;Draw();       // event loop is run once here
+h2-&gt;Draw(&quot;SAME&quot;); // no need to run the event loop again
+TDataFrame executes all above actions by running the event-loop only once. The trick is that actions are not executed at the moment they are called, but they are lazy, i.e. delayed until the moment one of their results is accessed through the smart pointer. At that time, the even loop is triggered and all results are produced simultaneously.</p>
+<p>It is therefore good practice to declare all your filters and actions before accessing their results, allowing TDataFrame to loop once and produce all results in one go.</p>
+<p>Going parallel</p>
+<p>Let&apos;s say we would like to run the previous examples in parallel on several cores, dividing events fairly between cores. The only modification required to the snippets would be the addition of this line before constructing the main data-frame object:</p>
+<p>ROOT::EnableImplicitMT();
+Simple as that, enjoy your speed-up.</p>
+<p>More features</p>
+<p>Here is a list of the most important features that have been omitted in the &quot;Crash course&quot; for brevity&apos;s sake. You don&apos;t need to read all these to start using TDataFrame, but they are useful to save typing time and runtime.</p>
+<p>Default branch lists</p>
+<p>When constructing a TDataFrame object, it is possible to specify a default branch list for your analysis, in the usual form of a list of strings representing branch names. The default branch list will be used as fallback whenever one specific to the transformation/action is not present.</p>
+<p>// use &quot;b1&quot; and &quot;b2&quot; as default branches for &apos;Filter&apos;, &apos;Define&apos; and actions
+ROOT::Experimental::TDataFrame d1(treeName, &amp;file, {&quot;b1&quot;,&quot;b2&quot;});
+// filter acts on default branch list, no need to specify it
+auto h = d1.Filter(<a href="int%20b1,%20int%20b2"></a> { return b1 &gt; b2; }).Histo1D(&quot;otherVar&quot;);
+// just one default branch this time
+ROOT::Experimental::TDataFrame d2(treeName, &amp;file, {&quot;b1&quot;});
+// we can still specify non-default branch lists
+// &apos;Min&apos; here can fall back to the default &quot;b1&quot;
+auto min = d2.Filter(<a href="double%20b2"></a> { return b2 &gt; 0; }, {&quot;b2&quot;}).Min();
+Branch type guessing and explicit declaration of branch types</p>
+<p>C++ is a statically typed language: all types must be known at compile-time. This includes the types of the TTree branches we want to work on. For filters, temporary columns and some of the actions, branch types are deduced from the signature of the relevant filter function/temporary column expression/action function:</p>
+<p>// here b1 is deduced to be &apos;int&apos; and b2 to be &apos;double&apos;
+dataFrame.Filter([](int x, double y) { return x &gt; 0 &amp;&amp; y &lt; 0.; }, {&quot;b1&quot;, &quot;b2&quot;});
+If we specify an incorrect type for one of the branches, an exception with an informative message will be thrown at runtime, when the branch value is actually read from the TTree: the implementation of TDataFrame allows the detection of type mismatches. The same would happen if we swapped the order of &quot;b1&quot; and &quot;b2&quot; in the branch list passed to Filter.</p>
+<p>Certain actions, on the other hand, do not take a function as argument (e.g. Histo1D), so we cannot deduce the type of the branch at compile-time. In this case *<em>TDataFrame tries to guess the type of the branch*</em>, trying out the most common ones and std::vector thereof. This is why we never needed to specify the branch types for all actions in the above snippets.</p>
+<p>When the branch type is not a common one such as int, double, char or float it is therefore good practice to specify it as a template parameter to the action itself, like this:</p>
+<p>dataFrame.Histo1D(&quot;b1&quot;); // OK if b1 is a &quot;common&quot; type
+dataFrame.Histo1D<object_t>(&quot;myObject&quot;); // OK, &quot;myObject&quot; is deduced to be of type &apos;Object_t&apos;
+// dataFrame.Histo1D(&quot;myObject&quot;); // THROWS an exception
+Generic actions</object_t></p>
+<p>TDataFrame strives to offer a comprehensive set of standard actions that can be performed on each event. At the same time, it allows users to execute arbitrary code (i.e. a generic action) inside the event loop through the Foreach and ForeachSlot actions.</p>
+<p>Foreach(f, branchList) takes a function f (lambda expression, free function, functor...) and a list of branches, and executes f on those branches for each event. The function passed must return nothing (i.e. void). It can be used to perform actions that are not already available in the interface. For example, the following snippet evaluates the root mean square of branch &quot;b&quot;:</p>
+<p>// Single-thread evaluation of RMS of branch &quot;b&quot; using Foreach
+double sumSq = 0.;
+unsigned int n = 0;
+ROOT::Experimental::TDataFrame d(&quot;bTree&quot;, bFilePtr);
+d.Foreach([&amp;sumSq, &amp;n](double b) { ++n; sumSq += b*b; }, {&quot;b&quot;});
+std::cout &lt;&lt; &quot;rms of b: &quot; &lt;&lt; std::sqrt(sumSq / n) &lt;&lt; std::endl;
+When executing on multiple threads, users are responsible for the thread-safety of the expression passed to Foreach. The code above would need to employ some resource protection mechanism to ensure non-concurrent writing of rms; but this is probably too much head-scratch for such a simple operation.</p>
+<p>ForeachSlot can help in this situation. It is an alternative version of Foreach for which the function takes an additional parameter besides the branches it should be applied to: an unsigned int slot parameter, where slot is a number indicating which thread (0, 1, 2 , ..., poolSize - 1) the function is being run in. We can take advantage of ForeachSlot to evaluate a thread-safe root mean square of branch &quot;b&quot;:</p>
+<p>// Thread-safe evaluation of RMS of branch &quot;b&quot; using ForeachSlot
+ROOT::EnableImplicitMT();
+unsigned int nSlots = ROOT::GetImplicitMTPoolSize();
+std::vector<double> sumSqs(nSlots, 0.);
+std::vector<unsigned int=""> ns(nSlots, 0);
+ROOT::Experimental::TDataFrame d(&quot;bTree&quot;, bFilePtr);
+d.ForeachSlot([&amp;sumSqs, &amp;ns](unsigned int slot, double b) { sumSqs[slot] += b*b; ns[slot] += 1; }, {&quot;b&quot;});
+double sumSq = std::accumulate(sumSqs.begin(), sumSqs.end(), 0.); // sum all squares
+unsigned int n = std::accumulate(ns.begin(), ns.end(), 0); // sum all counts
+std::cout &lt;&lt; &quot;rms of b: &quot; &lt;&lt; std::sqrt(sumSq / n) &lt;&lt; std::endl;
+You see how we created one double variable for each thread in the pool, and later merged their results via std::accumulate.</unsigned></double></p>
+<p>Call graphs (storing and reusing sets of transformations)</p>
+<p>Sets of transformations can be stored as variables** and reused multiple times to create call graphs in which several paths of filtering/creation of branches are executed simultaneously; we often refer to this as &quot;storing the state of the chain&quot;.</p>
+<p>This feature can be used, for example, to create a temporary column once and use it in several subsequent filters or actions, or to apply a strict filter to the data-set before executing several other transformations and actions, effectively reducing the amount of events processed.</p>
+<p>Let&apos;s try to make this clearer with a commented example:</p>
+<p>// build the data-frame and specify a default branch list
+ROOT::Experimental::TDataFrame d(treeName, filePtr, {&quot;var1&quot;, &quot;var2&quot;, &quot;var3&quot;});
+// apply a cut and save the state of the chain
+auto filtered = d.Filter(myBigCut);
+// plot branch &quot;var1&quot; at this point of the chain
+auto h1 = filtered.Histo1D(&quot;var1&quot;);
+// create a new branch &quot;vec&quot; with a vector extracted from a complex object (only for filtered entries)
+// and save the state of the chain
+auto newBranchFiltered = filtered.Define(&quot;vec&quot;, <a href="const%20Obj&amp;%20o"></a> { return o.getVector(); }, {&quot;obj&quot;});
+// apply a cut and fill a histogram with &quot;vec&quot;
+auto h2 = newBranchFiltered.Filter(cut1).Histo1D(&quot;vec&quot;);
+// apply a different cut and fill a new histogram
+auto h3 = newBranchFiltered.Filter(cut2).Histo1D(&quot;vec&quot;);
+// Inspect results
+h2-&gt;Draw(); // first access to an action result: run event-loop!
+h3-&gt;Draw(&quot;SAME&quot;); // event loop does not need to be run again here..
+std::cout &lt;&lt; &quot;Entries in h1: &quot; &lt;&lt; h1-&gt;GetEntries() &lt;&lt; std::endl; // ..or here
+TDataFrame detects when several actions use the same filter or the same temporary column, and only evaluates each filter or temporary column once per event, regardless of how many times that result is used down the call graph. Objects read from each branch are built once and never copied, for maximum efficiency. When &quot;upstream&quot; filters are not passed, subsequent filters, temporary column expressions and actions are not evaluated, so it might be advisable to put the strictest filters first in the chain.</p>
+<p>Transformations</p>
+<p>Filters</p>
+<p>A filter is defined through a call to Filter(f, branchList). f can be a function, a lambda expression, a functor class, or any other callable object. It must return a bool signalling whether the event has passed the selection (true) or not (false). It must perform &quot;read-only&quot; actions on the branches, and should not have side-effects (e.g. modification of an external or static variable) to ensure correct results when implicit multi-threading is active.</p>
+<p>TDataFrame only evaluates filters when necessary: if multiple filters are chained one after another, they are executed in order and the first one returning false causes the event to be discarded and triggers the processing of the next entry. If multiple actions or transformations depend on the same filter, that filter is not executed multiple times for each entry: after the first access it simply serves a cached result.</p>
+<p>Named filters and cutflow reports</p>
+<p>An optional string parameter name can be passed to the Filter method to create a named filter. Named filters work as usual, but also keep track of how many entries they accept and reject.</p>
+<p>Statistics are retrieved through a call to the Report method:</p>
+<p>when Report is called on the main TDataFrame object, it prints stats for all named filters declared up to that point
+when called on a stored chain state (i.e. a chain/graph node), it prints stats for all named filters in the section of the chain between the main TDataFrame and that node (included).
+Stats are printed in the same order as named filters have been added to the graph, and refer to the latest event-loop that has been run using the relevant TDataFrame. If Report is called before the event-loop has been run at least once, a run is triggered.</p>
+<p>Ranges</p>
+<p>When TDataFrame is not being used in a multi-thread environment (i.e. no call to EnableImplicitMT was made), Range transformations are available. These act very much like filters but instead of basing their decision on a filter expression, they rely on start,stop and stride parameters.</p>
+<p>start: number of entries that will be skipped before starting processing again
+stop: maximum number of entries that will be processed
+stride: only process one entry every stride entries
+The actual number of entries processed downstream of a Range node will be (stop - start)/stride (or less if less entries than that are available).</p>
+<p>Note that ranges act &quot;locally&quot;, not based on the global entry count: Range(10,50) means &quot;skip the first 10 entries that reach this node*, let the next 40 entries pass, then stop processing&quot;. If a range node hangs from a filter node, and the range has a start parameter of 10, that means the range will skip the first 10 entries that pass the preceding filter.</p>
+<p>Ranges allow &quot;early quitting&quot;: if all branches of execution of a functional graph reached their stop value of processed entries, the event-loop is immediately interrupted. This is useful for debugging and initial explorations.</p>
+<p>Temporary columns</p>
+<p>Temporary columns are created by invoking Define(name, f, branchList). As usual, f can be any callable object (function, lambda expression, functor class...); it takes the values of the branches listed in branchList (a list of strings) as parameters, in the same order as they are listed in branchList. f must return the value that will be assigned to the temporary column.</p>
+<p>A new variable is created called name, accessible as if it was contained in the dataset from subsequent transformations/actions.</p>
+<p>Use cases include:</p>
+<p>caching the results of complex calculations for easy and efficient multiple access
+extraction of quantities of interest from complex objects
+branch aliasing, i.e. changing the name of a branch
+An exception is thrown if the name of the new branch is already in use for another branch in the TTree.</p>
+<p>It is also possible to specify the quantity to be stored in the new temporary column as a C++ expression with the method Define(name, expression). For example this invocation</p>
+<p>tdf.Define(&quot;pt&quot;, &quot;sqrt(px<em>px + py</em>py)&quot;);
+will create a new column called &quot;pt&quot; the value of which is calculated starting from the branches px and py. The system builds a just-in-time compiled function starting from the expression after having deduced the list of necessary branches from the names of the variables specified by the user.</p>
+<p>Actions</p>
+<p>Instant and lazy actions</p>
+<p>Actions can be instant or lazy. Instant actions are executed as soon as they are called, while lazy actions are executed whenever the object they return is accessed for the first time. As a rule of thumb, actions with a return value are lazy, the others are instant.</p>
+<p>Overview</p>
+<p>Here is a quick overview of what actions are present and what they do. Each one is described in more detail in the reference guide.</p>
+<p>In the following, whenever we say an action &quot;returns&quot; something, we always mean it returns a smart pointer to it. Also note that all actions are only executed for events that pass all preceding filters.</p>
+<p>Lazy actions    Description
+Count    Return the number of events processed.
+Fill    Fill a user-defined object with the values of the specified branches, as if by calling &apos;Obj.Fill(branch1, branch2, ...).
+Histo{1D,2D,3D}    Fill a {one,two,three}-dimensional histogram with the processed branch values.
+Max    Return the maximum of processed branch values.
+Mean    Return the mean of processed branch values.
+Min    Return the minimum of processed branch values.
+Profile{1D,2D}    Fill a {one,two}-dimensional profile with the branch values that passed all filters.
+Reduce    Reduce (e.g. sum, merge) entries using the function (lambda, functor...) passed as argument. The function must have signature T(T,T) where T is the type of the branch. Return the final result of the reduction operation. An optional parameter allows initialization of the result object to non-default values.
+Take    Build a collection of values of a branch.
+Instant actions    Description
+Foreach    Execute a user-defined function on each entry. Users are responsible for the thread-safety of this lambda when executing with implicit multi-threading enabled.
+ForeachSlot    Same as Foreach, but the user-defined function must take an extra unsigned int slot as its first parameter. slot will take a different value, 0 to nThreads - 1, for each thread of execution. This is meant as a helper in writing thread-safe Foreach actions when using TDataFrame after ROOT::EnableImplicitMT(). ForeachSlot works just as well with single-thread execution: in that case slot will always be 0.
+Snapshot    Writes on disk a dataset made of the selected columns and entries passing the filters (if any).
+Queries    Description
+Report    This is not properly an action, since when Report is called it does not book an operation to be performed on each entry. Instead, it interrogates the data-frame directly to print a cutflow report, i.e. statistics on how many entries have been accepted and rejected by the filters. See the section on named filters for a more detailed explanation.
+Parallel execution</p>
+<p>As pointed out before in this document, TDataFrame can transparently perform multi-threaded event loops to speed up the execution of its actions. Users only have to call ROOT::EnableImplicitMT() before constructing the TDataFrame object to indicate that it should take advantage of a pool of worker threads. Each worker thread processes a distinct subset of entries, and their partial results are merged before returning the final values to the user.</p>
+<p>Thread safety</p>
+<p>Filter and Define transformations should be inherently thread-safe: they have no side-effects and are not dependent on global state. Most Filter/Define functions will in fact be pure in the functional programming sense. All actions are built to be thread-safe with the exception of Foreach, in which case users are responsible of thread-safety, see here.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="concept.html" class="navigation navigation-prev " aria-label="Previous page: Declarative programming">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../python/" class="navigation navigation-next " aria-label="Next page: Part 8 - Python">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"TDataFrame","level":"1.8.2","depth":2,"next":{"title":"Part 8 - Python","level":"1.9","depth":1,"path":"analysis/python/README.md","ref":"analysis/python/README.md","articles":[{"title":"Running","level":"1.9.1","depth":2,"path":"analysis/python/running.md","ref":"analysis/python/running.md","articles":[]},{"title":"Objects and operators","level":"1.9.2","depth":2,"path":"analysis/python/operators.md","ref":"analysis/python/operators.md","articles":[]},{"title":"Numbers","level":"1.9.3","depth":2,"path":"analysis/python/numbers.md","ref":"analysis/python/numbers.md","articles":[]},{"title":"Strings","level":"1.9.4","depth":2,"path":"analysis/python/strings.md","ref":"analysis/python/strings.md","articles":[]},{"title":"Lists and looping","level":"1.9.5","depth":2,"path":"analysis/python/lists.md","ref":"analysis/python/lists.md","articles":[]},{"title":"Dictionaries","level":"1.9.6","depth":2,"path":"analysis/python/dictionaries.md","ref":"analysis/python/dictionaries.md","articles":[]},{"title":"Conditions","level":"1.9.7","depth":2,"path":"analysis/python/conditions.md","ref":"analysis/python/conditions.md","articles":[]},{"title":"Methods","level":"1.9.8","depth":2,"path":"analysis/python/methods.md","ref":"analysis/python/methods.md","articles":[]},{"title":"Scripting","level":"1.9.9","depth":2,"path":"analysis/python/scripting.md","ref":"analysis/python/scripting.md","articles":[]},{"title":"Modules","level":"1.9.10","depth":2,"path":"analysis/python/modules.md","ref":"analysis/python/modules.md","articles":[]},{"title":"Learning more","level":"1.9.11","depth":2,"path":"analysis/python/learning.md","ref":"analysis/python/learning.md","articles":[]},{"title":"PyROOT","level":"1.9.12","depth":2,"path":"analysis/python/pyroot.md","ref":"analysis/python/pyroot.md","articles":[]}]},"previous":{"title":"Declarative programming","level":"1.8.1","depth":2,"path":"analysis/tdf/concept.md","ref":"analysis/tdf/concept.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#117012fdc18c96831cb88196980c0ea73b0c87b8","collapsible-menu","block-align"],"styles":{"website":"css/website.css"},"pluginsConfig":{"collapsible-menu":{},"block-align":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"PEP root6 workshop","gitbook":"*","description":"PEP root6 introduction material"},"file":{"path":"analysis/tdf/TDataFrame.md","mtime":"2018-11-14T11:05:44.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-14T12:01:38.575Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-panels/panels.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

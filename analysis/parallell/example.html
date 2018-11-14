@@ -1,0 +1,1192 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Posix multithreading · PEP root6 workshop</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-panels/panels.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-block-align/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../css/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="root.html" />
+    
+    
+    <link rel="prev" href="intro.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction.html">
+            
+                <a href="../introduction.html">
+            
+                    
+                    Part 1 - Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../feat1.html">
+            
+                <a href="../feat1.html">
+            
+                    
+                    Part 2 - New C++ features
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../feat2.html">
+            
+                <a href="../feat2.html">
+            
+                    
+                    Part 3 - Smart (and dumb) pointers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../newf2/intro.html">
+            
+                <a href="../newf2/intro.html">
+            
+                    
+                    Pointers, the absolute basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../newf2/smartp.html">
+            
+                <a href="../newf2/smartp.html">
+            
+                    
+                    Smart pointers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../parallellism.html">
+            
+                <a href="../parallellism.html">
+            
+                    
+                    Part 4 - Parallellism
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="intro.html">
+            
+                <a href="intro.html">
+            
+                    
+                    Threads and processes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.2" data-path="example.html">
+            
+                <a href="example.html">
+            
+                    
+                    Posix multithreading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="root.html">
+            
+                <a href="root.html">
+            
+                    
+                    Parallellism with ROOT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../changes.html">
+            
+                <a href="../changes.html">
+            
+                    
+                    Part 5 - 5 to 6: changes to user code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../vectorization.html">
+            
+                <a href="../vectorization.html">
+            
+                    
+                    Part 6 - Vectorization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../tdf/declarative.html">
+            
+                <a href="../tdf/declarative.html">
+            
+                    
+                    Part 7 - Declarative analysis
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../tdf/concept.html">
+            
+                <a href="../tdf/concept.html">
+            
+                    
+                    Declarative programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../tdf/TDataFrame.html">
+            
+                <a href="../tdf/TDataFrame.html">
+            
+                    
+                    TDataFrame
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../python/">
+            
+                <a href="../python/">
+            
+                    
+                    Part 8 - Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../python/running.html">
+            
+                <a href="../python/running.html">
+            
+                    
+                    Running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../python/operators.html">
+            
+                <a href="../python/operators.html">
+            
+                    
+                    Objects and operators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../python/numbers.html">
+            
+                <a href="../python/numbers.html">
+            
+                    
+                    Numbers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../python/strings.html">
+            
+                <a href="../python/strings.html">
+            
+                    
+                    Strings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../python/lists.html">
+            
+                <a href="../python/lists.html">
+            
+                    
+                    Lists and looping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../python/dictionaries.html">
+            
+                <a href="../python/dictionaries.html">
+            
+                    
+                    Dictionaries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../python/conditions.html">
+            
+                <a href="../python/conditions.html">
+            
+                    
+                    Conditions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../python/methods.html">
+            
+                <a href="../python/methods.html">
+            
+                    
+                    Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="../python/scripting.html">
+            
+                <a href="../python/scripting.html">
+            
+                    
+                    Scripting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="../python/modules.html">
+            
+                <a href="../python/modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.11" data-path="../python/learning.html">
+            
+                <a href="../python/learning.html">
+            
+                    
+                    Learning more
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.12" data-path="../python/pyroot.html">
+            
+                <a href="../python/pyroot.html">
+            
+                    
+                    PyROOT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../bestprac/best_prac.html">
+            
+                <a href="../bestprac/best_prac.html">
+            
+                    
+                    Part 9 - Best Practices
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../bestprac/preparing.html">
+            
+                <a href="../bestprac/preparing.html">
+            
+                    
+                    Preparing your code for debugging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../bestprac/general.html">
+            
+                <a href="../bestprac/general.html">
+            
+                    
+                    Some general programming tips
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../bestprac/crash.html">
+            
+                <a href="../bestprac/crash.html">
+            
+                    
+                    Where does my code crash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../bestprac/memory.html">
+            
+                <a href="../bestprac/memory.html">
+            
+                    
+                    Finding memory leaks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Posix multithreading</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="posix-multi-threading">POSIX multi-threading</h1>
+<p>C++ does not contain any built-in support for multithreaded applications. Instead, it relies entirely upon the operating system to provide this feature.</p>
+<p>This tutorial assumes that you are working on Linux OS and we are going to write multi-threaded C++ program using POSIX. POSIX Threads, or Pthreads provides API which are available on many Unix-like POSIX systems such as GNU/Linux, Mac OS X.</p>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(9520009274);" id="posix"><i class="fa fa-info-circle"></i> POSIX<span id="heading-9520009274"></span></h3></div><div class="panel-body" id="panel-9520009274"><p>The Portable Operating System Interface (POSIX) is a family of standards specified by the IEEE Computer Society for maintaining compatibility between operating systems. POSIX defines the application programming interface (API), along with command line shells and utility interfaces, for software compatibility with variants of Unix and other operating systems.</p>
+</div></div></p>
+<h2 id="creating-threads">Creating threads</h2>
+<p>The following routine is used to create a POSIX thread</p>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;pthread.h&gt;</span></span>
+pthread_create (thread, attr, start_routine, arg)
+</code></pre>
+<p>Here, <code>pthread_create</code> creates a new thread and makes it executable. This routine can be called any number of times from anywhere within your code. The arguments of the function are the following</p>
+<ul>
+<li><code>thread</code>: a unique identifier for the new thread returned by the subroutine</li>
+<li><code>attr</code>: an attribute object that may be used to set thread attributes. You can specify NULL for the default values.     </li>
+<li><code>start_routine</code>: the C++ routine that the thread will execute once it is created</li>
+<li><code>arg</code>: A single argument that may be passed to start_routine. It must be passed by reference as a pointer cast of type void. NULL may be used if no argument is to be passed</li>
+</ul>
+<p>The maximum number of threads that may be created by a process is implementation dependent. Once created, threads are peers, and may create other threads. <strong>There is no implied hierarchy or dependency between threads</strong>.</p>
+<h2 id="terminating-threads">Terminating threads</h2>
+<p>To terminate a POSIX thread, do</p>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;pthread.h&gt;</span></span>
+pthread_exit (status)
+</code></pre>
+<p>Here <code>pthread_exit</code> is used to explicitly exit a thread. Typically, the <code>pthread_exit()</code> routine is called after a thread has completed its work and is no longer required to exist.</p>
+<p>If <code>main()</code> finishes before the threads it has created, and exits with <code>pthread_exit()</code>, the other threads will continue to execute. Otherwise, they will be automatically terminated when <code>main()</code> finishes.</p>
+<h2 id="example">Example</h2>
+<p>This simple example code creates 5 threads with the <code>pthread_create()</code> routine. Each thread prints a &quot;Hello World!&quot; message, and then terminates with a call to <code>pthread_exit()</code>. </p>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdlib&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;pthread.h&gt;</span></span>
+
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> NUM_THREADS 5</span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> *<span class="hljs-title">PrintHello</span><span class="hljs-params">(<span class="hljs-keyword">void</span> *threadid)</span> </span>{
+   <span class="hljs-keyword">long</span> tid;
+   tid = (<span class="hljs-keyword">long</span>)threadid;
+   <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Hello World! Thread ID, &quot;</span> &lt;&lt; tid &lt;&lt; <span class="hljs-built_in">endl</span>;
+   pthread_exit(<span class="hljs-literal">NULL</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span> <span class="hljs-params">()</span> </span>{
+   <span class="hljs-keyword">pthread_t</span> threads[NUM_THREADS];
+   <span class="hljs-keyword">int</span> rc;
+   <span class="hljs-keyword">int</span> i;
+
+   <span class="hljs-keyword">for</span>( i = <span class="hljs-number">0</span>; i &lt; NUM_THREADS; i++ ) {
+      <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;main() : creating thread, &quot;</span> &lt;&lt; i &lt;&lt; <span class="hljs-built_in">endl</span>;
+      rc = pthread_create(&amp;threads[i], <span class="hljs-literal">NULL</span>, PrintHello, (<span class="hljs-keyword">void</span> *)i);
+
+      <span class="hljs-keyword">if</span> (rc) {
+         <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Error:unable to create thread,&quot;</span> &lt;&lt; rc &lt;&lt; <span class="hljs-built_in">endl</span>;
+         <span class="hljs-built_in">exit</span>(<span class="hljs-number">-1</span>);
+      }
+   }
+   pthread_exit(<span class="hljs-literal">NULL</span>);
+}
+</code></pre>
+<p>Compile the following program using -lpthread library as follows </p>
+<pre><code class="lang-cpp">g++ test.cpp -lpthread
+</code></pre>
+<p>Now, execute your program which gives the following output</p>
+<pre><code class="lang-cpp">[rbertens@tatooiine tutorial]$ ./a.out 
+main() : creating thread, 0
+main() : creating thread, 1
+Hello World! Thread ID, 0
+main() : creating thread, 2
+Hello World! Thread ID, 1
+main() : creating thread, 3
+main() : creating thread, 4
+Hello World! Thread ID, 2
+Hello World! Thread ID, 3
+Hello World! Thread ID, 4
+</code></pre>
+<p>As you can see, the threads executed in no particular order. </p>
+<h2 id="passing-arguments-to-threads">Passing Arguments to Threads</h2>
+<p>This example shows how to pass multiple arguments via a structure. You can pass any data type in a thread callback because it points to void as explained in the following example</p>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdlib&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;pthread.h&gt;</span></span>
+
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> NUM_THREADS 5</span>
+
+<span class="hljs-keyword">struct</span> thread_data {
+   <span class="hljs-keyword">int</span>  thread_id;
+   <span class="hljs-keyword">char</span> *message;
+};
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> *<span class="hljs-title">PrintHello</span><span class="hljs-params">(<span class="hljs-keyword">void</span> *threadarg)</span> </span>{
+   <span class="hljs-keyword">struct</span> thread_data *my_data;
+   my_data = (<span class="hljs-keyword">struct</span> thread_data *) threadarg;
+
+   <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Thread ID : &quot;</span> &lt;&lt; my_data-&gt;thread_id ;
+   <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot; Message : &quot;</span> &lt;&lt; my_data-&gt;message &lt;&lt; <span class="hljs-built_in">endl</span>;
+
+   pthread_exit(<span class="hljs-literal">NULL</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span> <span class="hljs-params">()</span> </span>{
+   <span class="hljs-keyword">pthread_t</span> threads[NUM_THREADS];
+   <span class="hljs-keyword">struct</span> thread_data td[NUM_THREADS];
+   <span class="hljs-keyword">int</span> rc;
+   <span class="hljs-keyword">int</span> i;
+
+   <span class="hljs-keyword">for</span>( i = <span class="hljs-number">0</span>; i &lt; NUM_THREADS; i++ ) {
+      <span class="hljs-built_in">cout</span> &lt;&lt;<span class="hljs-string">&quot;main() : creating thread, &quot;</span> &lt;&lt; i &lt;&lt; <span class="hljs-built_in">endl</span>;
+      td[i].thread_id = i;
+      td[i].message = <span class="hljs-string">&quot;This is message&quot;</span>;
+      rc = pthread_create(&amp;threads[i], <span class="hljs-literal">NULL</span>, PrintHello, (<span class="hljs-keyword">void</span> *)&amp;td[i]);
+
+      <span class="hljs-keyword">if</span> (rc) {
+         <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Error:unable to create thread,&quot;</span> &lt;&lt; rc &lt;&lt; <span class="hljs-built_in">endl</span>;
+         <span class="hljs-built_in">exit</span>(<span class="hljs-number">-1</span>);
+      }
+   }
+   pthread_exit(<span class="hljs-literal">NULL</span>);
+}
+</code></pre>
+<p>When the above code is compiled and executed, it produces the following result &#x2212;</p>
+<pre><code class="lang-cpp">[rbertens@tatooiine tutorial]$ ./a.out 
+main() : creating thread, 0
+main() : creating thread, 1
+Thread ID : 0 Message : This is message
+main() : creating thread, 2
+Thread ID : 1 Message : This is message
+main() : creating thread, 3
+Thread ID : 2 Message : This is message
+main() : creating thread, 4
+Thread ID : 3 Message : This is message
+Thread ID : 4 Message : This is message
+</code></pre>
+<p>As we learned before, void pointers are very powerful! </p>
+<h2 id="joining-and-detaching-threads">Joining and detaching threads</h2>
+<p>As we have seen before, threads execute independent from one another. For a program flow however, you might want to make sure that a given thread (or a pool of threads) have executed, before your program continues. Here, <strong>joining</strong> and <strong>detaching</strong> comes in handy. </p>
+<p>A thread can run in two modes: </p>
+<ul>
+<li><strong>Joinable mode (default)</strong>. A joinable thread will not release any resource even after the end of thread function, until some other thread calls <code>pthread_join()</code> with its ID. </li>
+<li>Detached mode. A Detached thread automatically releases it allocated resources on exit. No other thread needs to join it. </li>
+</ul>
+<p>The detached attribute merely determines the behavior of the system when the thread terminates; it does not prevent the thread from being terminated if the process terminates using exit (or equivalently, if the main thread returns). The pthread_detach() function marks the thread identified by thread as detached. When a detached thread terminates, its resources are automatically released back to the system without the need for another thread to join with the terminated thread.</p>
+<p>There are following two routines which we can use to join or detach threads</p>
+<pre><code class="lang-cpp">pthread_join (threadid, status) 
+pthread_detach (threadid)
+</code></pre>
+<p>In practice, an example of using joinable threads is e.g.</p>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;pthread.h&gt;</span></span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;unistd.h&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> * <span class="hljs-title">threadFunc</span><span class="hljs-params">(<span class="hljs-keyword">void</span> * arg)</span>
+</span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Thread Function :: Start&quot;</span> &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+    <span class="hljs-comment">// Sleep for 2 seconds</span>
+    sleep(<span class="hljs-number">2</span>);
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Thread Function :: End&quot;</span> &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+    <span class="hljs-comment">// Return value from thread</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>(<span class="hljs-number">6</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// Thread id</span>
+    <span class="hljs-keyword">pthread_t</span> threadId;
+
+    <span class="hljs-comment">// Create a thread that will funtion threadFunc()</span>
+    <span class="hljs-keyword">int</span> err = pthread_create(&amp;threadId, <span class="hljs-literal">NULL</span>, &amp;threadFunc, <span class="hljs-literal">NULL</span>);
+    <span class="hljs-comment">// Check if thread is created sucessfuly</span>
+    <span class="hljs-keyword">if</span> (err)
+    {
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Thread creation failed : &quot;</span> &lt;&lt; strerror(err);
+        <span class="hljs-keyword">return</span> err;
+    }
+    <span class="hljs-keyword">else</span>
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Thread Created with ID : &quot;</span> &lt;&lt; threadId &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+    <span class="hljs-comment">// Do some stuff</span>
+
+    <span class="hljs-keyword">void</span> * ptr = <span class="hljs-literal">NULL</span>;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Waiting for thread to exit&quot;</span> &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+    <span class="hljs-comment">// Wait for thread to exit</span>
+    err = pthread_join(threadId, &amp;ptr);
+    <span class="hljs-keyword">if</span> (err)
+    {
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Failed to join Thread : &quot;</span> &lt;&lt; strerror(err) &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+        <span class="hljs-keyword">return</span> err;
+    }
+
+    <span class="hljs-keyword">if</span> (ptr)
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot; value returned by thread : &quot;</span> &lt;&lt; *(<span class="hljs-keyword">int</span> *) ptr
+                &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+
+    <span class="hljs-keyword">delete</span> (<span class="hljs-keyword">int</span> *) ptr;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p>conversely, with detached threads, one can write</p>
+<pre><code class="lang-cpp">#include &lt;iostream&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;pthread.h&gt;
+
+#include &lt;unistd.h&gt;
+
+void * threadFunc(void * arg)
+{
+    std::cout &lt;&lt; &quot;Thread Function :: Start&quot; &lt;&lt; std::endl;
+    // Sleep for 2 seconds
+    sleep(2);
+    std::cout &lt;&lt; &quot;Thread Function :: End&quot; &lt;&lt; std::endl;
+    // Return value from thread
+    return new int(6);
+}
+
+int main()
+{
+    // Thread id
+    pthread_t threadId;
+
+    // Create a thread that will funtion threadFunc()
+    int err = pthread_create(&amp;threadId, NULL, &amp;threadFunc, NULL);
+    // Check if thread is created sucessfuly
+    if (err)
+    {
+        std::cout &lt;&lt; &quot;Thread creation failed : &quot; &lt;&lt; strerror(err);
+        return err;
+    }
+    else
+        std::cout &lt;&lt; &quot;Thread Created with ID : &quot; &lt;&lt; threadId &lt;&lt; std::endl;
+    // Do some stuff
+
+    void * ptr = NULL;
+    std::cout &lt;&lt; &quot;Waiting for thread to exit&quot; &lt;&lt; std::endl;
+    // Wait for thread to exit
+    err = pthread_join(threadId, &amp;ptr);
+    if (err)
+    {
+        std::cout &lt;&lt; &quot;Failed to join Thread : &quot; &lt;&lt; strerror(err) &lt;&lt; std::endl;
+        return err;
+    }
+
+i
+    if (ptr)
+        std::cout &lt;&lt; &quot; value returned by thread : &quot; &lt;&lt; *(int *) ptr
+                &lt;&lt; std::endl;
+
+    delete (int *) ptr;
+    return 0;
+}
+</code></pre>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(3477774149);" id="openmp-and-c11-stdthread"><i class="fa fa-info-circle"></i> OpenMP and C++11 std::thread<span id="heading-3477774149"></span></h3></div><div class="panel-body" id="panel-3477774149"><p>POSIX mutli threading is powerful, but not exactly easy. Two other approaches are mentioned here for completeness, they are easier to implement. </p>
+<h3 id="thread-support-in-std-in-c-11">Thread support in std in C++11</h3>
+<p>Since C++11, the std library offers thread support:</p>
+<pre><code class="lang-cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">thread_main</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Hello, World (thread)&quot;</span> &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-built_in">std</span>::<span class="hljs-function">thread <span class="hljs-title">t1</span><span class="hljs-params">(thread_main)</span></span>;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Hello, World (main)&quot;</span> &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+    t1.join();
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<h3 id="openmp">OpenMP</h3>
+<p>A relatively easy way to achieve multi threading is using OpenMP, which uses compiler pragma&apos;s to do the dirty work for you:</p>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;omp.h&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span>
+</span>{
+    <span class="hljs-meta">#<span class="hljs-meta-keyword">pragma</span> omp parallel</span>
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Hello, world.\n&quot;</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+
+</code></pre>
+<p>when compiling the above code snippet, prepend <code>-fopenmp</code> as compiler flag! The pragma directives will be expanded in proper C++ code before translation into machine code. Hence, executing the above code on e.g. a 4 core machine would result in</p>
+<pre><code class="lang-cpp">Hello, world.
+Hello, world.
+Hello, world.
+Hello, world.
+</code></pre>
+<p>(although, since the threads all share the same standard output, it&apos;s more likely that you end up in a race condition and see something like <code>Hello, wHello, woorld.rld.Hello, wHello, woorld.rld.</code>....)</p>
+</div></div></p>
+<h1 id="exercises">Exercises</h1>
+<p>First of all, try to go through the examples that were shown in the lecture: copy the code snippets, and try to compile and execute them. You can also</p>
+<ul>
+<li>give the threads some more work, e.g. make a computationally intensive loop</li>
+<li>use your system monitor to keep track of CPU/core usage</li>
+<li>can you demonstrate that multi threading actually speeds up execution? </li>
+</ul>
+<p>Secondly, we have talked a lot about race conditions and deadlocks</p>
+<ul>
+<li>can you write your own race condition? Hint: problems often occur when one thread does a &quot;check-then-act&quot; (e.g. &quot;check&quot; if the value is X, then &quot;act&quot; to do something that depends on the value being X) and another thread does something to the value in between the &quot;check&quot; and the &quot;act&quot;. E.g:</li>
+</ul>
+<pre><code class="lang-cpp"><span class="hljs-keyword">if</span> (x == <span class="hljs-number">5</span>) <span class="hljs-comment">// The &quot;Check&quot;</span>
+{
+   y = x * <span class="hljs-number">2</span>; <span class="hljs-comment">// The &quot;Act&quot;</span>
+
+   <span class="hljs-comment">// If another thread changed x in between &quot;if (x == 5)&quot; and &quot;y = x * 2&quot; above,</span>
+   <span class="hljs-comment">// y will not be equal to 10.</span>
+}
+</code></pre>
+<p>The point being, y could be 10, or it could be anything, depending on whether another thread changed x in between the check and act. You have no real way of knowing.</p>
+<p>Alternatively, you can create a race condition (or deadlock) by giving the threads access to shared memory (e.g. global variables or structs). Write a program that breaks itself! That will serve as an excellent motivation for the next session: handing over the headaches of multi threading to ROOT. </p>
+<p><div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(3083958515);" id="hint-"><i class="fa fa-square-o"></i> Hint ...<span id="heading-3083958515"></span></h3></div><div class="panel-body" id="panel-3083958515"><p>Below a program that creates a race condition</p>
+<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(3197826339);" id="solutionclick-to-expand"><i class="fa fa-line-chart"></i> Solution<span id="heading-3197826339">Click to expand</span></h3></div><div class="panel-body" style="display: none" id="panel-3197826339"><pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;pthread.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;unistd.h&gt;</span></span>
+
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-keyword">int</span> num1 = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">int</span> num2 = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">bool</span> raceDetected;
+<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> seed = <span class="hljs-number">0x000fff</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> NUM_THREADS = <span class="hljs-number">2</span>;
+<span class="hljs-keyword">pthread_mutex_t</span> mutex;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> * <span class="hljs-title">thread_routine</span> <span class="hljs-params">(<span class="hljs-keyword">void</span> *thread)</span> </span>{
+
+    <span class="hljs-keyword">int</span> *id_ptr, thread_num;
+
+       id_ptr = (<span class="hljs-keyword">int</span> *) thread;
+       thread_num = *id_ptr;
+
+    <span class="hljs-keyword">int</span> counter = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">int</span> tmp1;
+    <span class="hljs-keyword">int</span> tmp2;
+    <span class="hljs-keyword">int</span> r;
+
+    <span class="hljs-keyword">do</span> {
+        tmp1 = num1;
+          tmp2 = num2;
+        r = rand_r ( &amp;seed ) % <span class="hljs-number">11</span>;
+          num1 = tmp1 + r;
+          num2 = tmp2 - r;
+          counter++;
+        } <span class="hljs-keyword">while</span> ( num1 + num2 == <span class="hljs-number">0</span> &amp;&amp; !raceDetected );
+    raceDetected = <span class="hljs-literal">true</span>;
+
+    pthread_mutex_lock(&amp;mutex);
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;counter: &quot;</span> &lt;&lt; counter &lt;&lt; <span class="hljs-string">&quot; - thread number: &quot;</span> &lt;&lt; thread_num  &lt;&lt; <span class="hljs-built_in">endl</span>;
+    pthread_mutex_unlock(&amp;mutex);
+}
+
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+
+    <span class="hljs-keyword">pthread_t</span> tid[NUM_THREADS];
+    <span class="hljs-keyword">int</span>* threadIdNum[NUM_THREADS];
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>; i&lt;NUM_THREADS; i++ ) {
+        threadIdNum[i] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>;
+        *threadIdNum[i] = i;
+            <span class="hljs-keyword">if</span> ( pthread_create ( &amp;(tid[i]), <span class="hljs-literal">NULL</span>, thread_routine, (<span class="hljs-keyword">void</span> *) threadIdNum[i] )) {
+              <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;thread create failed!\n&quot;</span>;
+              <span class="hljs-built_in">exit</span>(<span class="hljs-number">1</span>);
+            }
+    }
+
+    <span class="hljs-keyword">do</span> {
+    <span class="hljs-number">0</span> + <span class="hljs-number">0</span>;
+    }  <span class="hljs-keyword">while</span>( !raceDetected );
+
+    sleep(<span class="hljs-number">1000000</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p>If you run it, printouts to screen are given when a race condition is detected. To fix it, we can introduce mutexes for the critical section of the thread:</p>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;pthread.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iomanip&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;time.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;unistd.h&gt;</span></span>
+
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-keyword">int</span> num1 = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">int</span> num2 = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">bool</span> raceDetected = <span class="hljs-literal">false</span>;
+<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> seed = <span class="hljs-number">0x000fff</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> NUM_THREADS = <span class="hljs-number">2</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAX_RUN_COUNT = <span class="hljs-number">50000000</span>;
+
+<span class="hljs-keyword">pthread_mutex_t</span> mutex = PTHREAD_MUTEX_INITIALIZER;
+<span class="hljs-keyword">bool</span> finished[NUM_THREADS];
+
+<span class="hljs-function">timespec <span class="hljs-title">timeDifference</span><span class="hljs-params">(timespec start, timespec end)</span>   
+</span>{
+    timespec temp;
+    <span class="hljs-keyword">if</span> ((end.tv_nsec-start.tv_nsec)&lt;<span class="hljs-number">0</span>) {
+        temp.tv_sec = end.tv_sec-start.tv_sec<span class="hljs-number">-1</span>;
+        temp.tv_nsec = <span class="hljs-number">1000000000</span>+end.tv_nsec-start.tv_nsec;
+    } <span class="hljs-keyword">else</span> {
+        temp.tv_sec = end.tv_sec-start.tv_sec;
+        temp.tv_nsec = end.tv_nsec-start.tv_nsec;
+    }
+    <span class="hljs-keyword">return</span> temp;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> * <span class="hljs-title">thread_routine</span> <span class="hljs-params">(<span class="hljs-keyword">void</span> *thread)</span> </span>{
+
+    <span class="hljs-keyword">int</span> *id_ptr, thread_num;
+
+    id_ptr = (<span class="hljs-keyword">int</span> *) thread;
+    thread_num = *id_ptr;
+
+    <span class="hljs-keyword">long</span> counter = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">int</span> tmp1;
+    <span class="hljs-keyword">int</span> tmp2;
+    <span class="hljs-keyword">int</span> r;
+    <span class="hljs-keyword">while</span>(counter &lt; MAX_RUN_COUNT &amp;&amp; !raceDetected) {
+        <span class="hljs-comment">//Entry</span>
+        pthread_mutex_lock (&amp;mutex);
+
+        <span class="hljs-comment">//Critical Section</span>
+        tmp1 = num1;
+        tmp2 = num2;
+        r = rand_r ( &amp;seed ) % <span class="hljs-number">5</span>;
+        num1 = tmp1 + r;
+        num2 = tmp2 - r;
+        counter++;
+
+        <span class="hljs-keyword">if</span>(num1+num2 != <span class="hljs-number">0</span> || raceDetected)  <span class="hljs-comment">// detect race</span>
+        {
+            raceDetected = <span class="hljs-literal">true</span>;
+            <span class="hljs-built_in">cout</span> &lt;&lt; num1 &lt;&lt; <span class="hljs-string">&apos;\t&apos;</span> &lt;&lt; num2 &lt;&lt; <span class="hljs-string">&apos;\t&apos;</span> &lt;&lt; num1+num2 &lt;&lt; <span class="hljs-built_in">endl</span>;
+            <span class="hljs-built_in">cout</span> &lt;&lt; counter &lt;&lt; <span class="hljs-string">&quot; : &quot;</span> &lt;&lt; (raceDetected ? <span class="hljs-string">&quot;true&quot;</span> : <span class="hljs-string">&quot;false&quot;</span>) &lt;&lt; <span class="hljs-string">&quot; : &quot;</span> &lt;&lt; thread_num  &lt;&lt; <span class="hljs-built_in">endl</span>;
+            raceDetected = <span class="hljs-literal">true</span>;
+        }
+
+        <span class="hljs-comment">//Exit</span>
+        pthread_mutex_unlock(&amp;mutex);
+        <span class="hljs-comment">//Remainder</span>
+    }
+
+    finished[thread_num] = <span class="hljs-literal">true</span>;
+}
+
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+
+    <span class="hljs-keyword">pthread_t</span> tid[NUM_THREADS];    <span class="hljs-comment">//threads</span>
+    <span class="hljs-keyword">int</span>* threadIdNum[NUM_THREADS];    <span class="hljs-comment">//thread id number that will be passed to thread when pthread_create is called</span>
+    <span class="hljs-keyword">int</span> returnCode;
+    <span class="hljs-keyword">pthread_attr_t</span> attr;
+    <span class="hljs-keyword">void</span> *status;
+
+    pthread_attr_init(&amp;attr);
+    pthread_attr_setdetachstate(&amp;attr, PTHREAD_CREATE_JOINABLE);
+
+    timespec beginTimer, stopTimer;
+
+    clock_gettime(CLOCK_MONOTONIC, &amp;beginTimer);
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>; i&lt;NUM_THREADS; i++ ) {
+        threadIdNum[i] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>;    <span class="hljs-comment">//create new int for thread number</span>
+        *threadIdNum[i] = i;        <span class="hljs-comment">//intialize thread number</span>
+        returnCode = pthread_create ( &amp;(tid[i]), &amp;attr, thread_routine, (<span class="hljs-keyword">void</span> *) threadIdNum[i] );    <span class="hljs-comment">//create thread and output message if it fails</span>
+              <span class="hljs-keyword">if</span> (returnCode) {
+                 <span class="hljs-built_in">cerr</span> &lt;&lt; <span class="hljs-string">&quot;ERROR; return code from pthread_join() is &quot;</span> &lt;&lt; returnCode &lt;&lt; <span class="hljs-built_in">endl</span>;
+                 <span class="hljs-built_in">exit</span>(<span class="hljs-number">-1</span>);
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;MAIN: completed thread creation of thread &quot;</span> &lt;&lt; i &lt;&lt; <span class="hljs-string">&quot; successfully&quot;</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+        }
+    }
+
+    pthread_attr_destroy(&amp;attr);
+
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;\nMAIN: threads running...\n\n&quot;</span>;
+
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>; i&lt;NUM_THREADS; i++) {
+              returnCode = pthread_join( tid[i], &amp;status);
+
+              <span class="hljs-keyword">if</span> (returnCode) {
+                 <span class="hljs-built_in">cerr</span> &lt;&lt;<span class="hljs-string">&quot;ERROR; return code from pthread_join() is &quot;</span> &lt;&lt; returnCode &lt;&lt; <span class="hljs-built_in">endl</span>;
+                 <span class="hljs-built_in">exit</span>(<span class="hljs-number">-1</span>);
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;MAIN: completed join with thread &quot;</span> &lt;&lt; i &lt;&lt; <span class="hljs-string">&quot; having a status of &quot;</span> &lt;&lt; (<span class="hljs-keyword">long</span>)status &lt;&lt; <span class="hljs-built_in">endl</span>;
+        }
+    }
+
+    clock_gettime(CLOCK_MONOTONIC, &amp;stopTimer);
+
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;MAIN: all threads completed\n\n&quot;</span>;
+
+    <span class="hljs-built_in">cout</span> &lt;&lt;  num1 &lt;&lt; <span class="hljs-string">&quot; + &quot;</span> &lt;&lt; num2 &lt;&lt; <span class="hljs-string">&quot; = &quot;</span> &lt;&lt; num1 + num2 &lt;&lt; <span class="hljs-built_in">endl</span>;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;time: &quot;</span> &lt;&lt; timeDifference(beginTimer, stopTimer).tv_sec &lt;&lt; <span class="hljs-string">&quot;.&quot;</span> &lt;&lt; timeDifference(beginTimer, stopTimer).tv_nsec &lt;&lt; <span class="hljs-string">&quot; seconds&quot;</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+</div></div></div></div></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="intro.html" class="navigation navigation-prev " aria-label="Previous page: Threads and processes">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="root.html" class="navigation navigation-next " aria-label="Next page: Parallellism with ROOT">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Posix multithreading","level":"1.5.2","depth":2,"next":{"title":"Parallellism with ROOT","level":"1.5.3","depth":2,"path":"analysis/parallell/root.md","ref":"analysis/parallell/root.md","articles":[]},"previous":{"title":"Threads and processes","level":"1.5.1","depth":2,"path":"analysis/parallell/intro.md","ref":"analysis/parallell/intro.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#117012fdc18c96831cb88196980c0ea73b0c87b8","collapsible-menu","block-align"],"styles":{"website":"css/website.css"},"pluginsConfig":{"collapsible-menu":{},"block-align":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"PEP root6 workshop","gitbook":"*","description":"PEP root6 introduction material"},"file":{"path":"analysis/parallell/example.md","mtime":"2018-11-13T16:42:45.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-14T12:01:38.575Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-panels/panels.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

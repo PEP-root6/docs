@@ -1,0 +1,1247 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Where does my code crash · PEP root6 workshop</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-panels/panels.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-block-align/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../css/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="memory.html" />
+    
+    
+    <link rel="prev" href="general.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction.html">
+            
+                <a href="../introduction.html">
+            
+                    
+                    Part 1 - Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../feat1.html">
+            
+                <a href="../feat1.html">
+            
+                    
+                    Part 2 - New C++ features
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../feat2.html">
+            
+                <a href="../feat2.html">
+            
+                    
+                    Part 3 - Smart (and dumb) pointers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../newf2/intro.html">
+            
+                <a href="../newf2/intro.html">
+            
+                    
+                    Pointers, the absolute basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../newf2/smartp.html">
+            
+                <a href="../newf2/smartp.html">
+            
+                    
+                    Smart pointers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../parallellism.html">
+            
+                <a href="../parallellism.html">
+            
+                    
+                    Part 4 - Parallellism
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../parallell/intro.html">
+            
+                <a href="../parallell/intro.html">
+            
+                    
+                    Threads and processes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../parallell/example.html">
+            
+                <a href="../parallell/example.html">
+            
+                    
+                    Posix multithreading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../parallell/root.html">
+            
+                <a href="../parallell/root.html">
+            
+                    
+                    Parallellism with ROOT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../changes.html">
+            
+                <a href="../changes.html">
+            
+                    
+                    Part 5 - 5 to 6: changes to user code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../vectorization.html">
+            
+                <a href="../vectorization.html">
+            
+                    
+                    Part 6 - Vectorization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../tdf/declarative.html">
+            
+                <a href="../tdf/declarative.html">
+            
+                    
+                    Part 7 - Declarative analysis
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../tdf/concept.html">
+            
+                <a href="../tdf/concept.html">
+            
+                    
+                    Declarative programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../tdf/TDataFrame.html">
+            
+                <a href="../tdf/TDataFrame.html">
+            
+                    
+                    TDataFrame
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../python/">
+            
+                <a href="../python/">
+            
+                    
+                    Part 8 - Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../python/running.html">
+            
+                <a href="../python/running.html">
+            
+                    
+                    Running
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../python/operators.html">
+            
+                <a href="../python/operators.html">
+            
+                    
+                    Objects and operators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../python/numbers.html">
+            
+                <a href="../python/numbers.html">
+            
+                    
+                    Numbers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../python/strings.html">
+            
+                <a href="../python/strings.html">
+            
+                    
+                    Strings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../python/lists.html">
+            
+                <a href="../python/lists.html">
+            
+                    
+                    Lists and looping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../python/dictionaries.html">
+            
+                <a href="../python/dictionaries.html">
+            
+                    
+                    Dictionaries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../python/conditions.html">
+            
+                <a href="../python/conditions.html">
+            
+                    
+                    Conditions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../python/methods.html">
+            
+                <a href="../python/methods.html">
+            
+                    
+                    Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="../python/scripting.html">
+            
+                <a href="../python/scripting.html">
+            
+                    
+                    Scripting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="../python/modules.html">
+            
+                <a href="../python/modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.11" data-path="../python/learning.html">
+            
+                <a href="../python/learning.html">
+            
+                    
+                    Learning more
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.12" data-path="../python/pyroot.html">
+            
+                <a href="../python/pyroot.html">
+            
+                    
+                    PyROOT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="best_prac.html">
+            
+                <a href="best_prac.html">
+            
+                    
+                    Part 9 - Best Practices
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="preparing.html">
+            
+                <a href="preparing.html">
+            
+                    
+                    Preparing your code for debugging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="general.html">
+            
+                <a href="general.html">
+            
+                    
+                    Some general programming tips
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.10.3" data-path="crash.html">
+            
+                <a href="crash.html">
+            
+                    
+                    Where does my code crash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="memory.html">
+            
+                <a href="memory.html">
+            
+                    
+                    Finding memory leaks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Where does my code crash</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="where-does-my-code-crash">Where does my code crash?</h2>
+<p>When the code you are running &quot;crashes&quot;, you are usually presented with a
+<strong>backtrace</strong> or <strong>stack trace</strong> showing the nesting level of the called
+functions plus some more or less &quot;obscure&quot; information.  Such backtrace can be
+more detailed if you have compiled your code with debug symbols.</p>
+<p>Consider the following backtrace:</p>
+<pre><code> *** Break *** segmentation violation
+ Generating stack trace...
+ 0x00000001191d3bdd in AliAnalysisTaskSE::Exec(char const*) (in libANALYSISalice.so) (AliAnalysisTask.h:118)
+ 0x0000000111df577f in TTask::ExecuteTask(char const*) (in libCore.5.so) + 383
+ 0x00000001110518ed in AliAnalysisManager::ExecAnalysis(char const*) (in libANALYSIS.so) (AliAnalysisManager.cxx:2323)
+ 0x0000000111061be8 in AliAnalysisSelector::Process(long long) (in libANALYSIS.so) (AliAnalysisSelector.cxx:164)
+ 0x0000000114aa824f in TTreePlayer::Process(TSelector*, char const*, long long, long long) (in libTreePlayer.5.so) + 895
+ 0x000000011105afd6 in AliAnalysisManager::StartAnalysis(char const*, TTree*, long long, long long) (in libANALYSIS.so) (AliAnalysisManager.cxx:1950)
+ 0x0000000111086153 in G__G__ANALYSIS_208_0_14(G__value*, char const*, G__param*, int) (in libANALYSIS.so) (G__ANALYSIS.cxx:4560)
+ 0x0000000112578881 in Cint::G__ExceptionWrapper(int (*)(G__value*, char const*, G__param*, int), G__value*, char*, G__param*, int) (in libCint.5.so) + 49
+ 0x000000011262185b in G__execute_call (in libCint.5.so) + 75
+ 0x0000000112621cbc in G__call_cppfunc (in libCint.5.so) + 860
+ 0x00000001125f563e in G__interpret_func (in libCint.5.so) + 5198
+ 0x00000001125e3a67 in G__getfunction (in libCint.5.so) + 5655
+ 0x00000001126e45db in G__getstructmem(int, G__FastAllocString&amp;, char*, int, char*, int*, G__var_array*, int) (in libCint.5.so) + 4187
+ 0x00000001126db0cd in G__getvariable (in libCint.5.so) + 7341
+ 0x00000001125d82c2 in G__getitem (in libCint.5.so) + 402
+ 0x00000001125d3e92 in G__getexpr (in libCint.5.so) + 31458
+ 0x000000011265517c in G__exec_statement (in libCint.5.so) + 34988
+ 0x000000011265348d in G__exec_statement (in libCint.5.so) + 27581
+ 0x00000001125f8282 in G__interpret_func (in libCint.5.so) + 16530
+ 0x00000001125e3ab4 in G__getfunction (in libCint.5.so) + 5732
+ 0x00000001125d832f in G__getitem (in libCint.5.so) + 511
+ 0x00000001125d3e92 in G__getexpr (in libCint.5.so) + 31458
+ 0x000000011265517c in G__exec_statement (in libCint.5.so) + 34988
+ 0x00000001125ba885 in G__exec_tempfile_core(char const*, __sFILE*) (in libCint.5.so) + 1125
+ 0x00000001125ba416 in G__exec_tempfile_fp (in libCint.5.so) + 22
+ 0x000000011265e4ab in G__process_cmd (in libCint.5.so) + 9339
+ 0x0000000111e27674 in TCint::ProcessLine(char const*, TInterpreter::EErrorCode*) (in libCore.5.so) + 884
+ 0x0000000111d86fbd in TApplication::ProcessLine(char const*, bool, int*) (in libCore.5.so) + 2141
+ 0x0000000113d81be4 in TRint::HandleTermInput() (in libRint.5.so) + 676
+ 0x0000000111e5f11d in TUnixSystem::CheckDescriptors() (in libCore.5.so) + 317
+ 0x0000000111e68053 in TMacOSXSystem::DispatchOneEvent(bool) (in libCore.5.so) + 387
+ 0x0000000111de4d5a in TSystem::InnerLoop() (in libCore.5.so) + 26
+ 0x0000000111de4c58 in TSystem::Run() (in libCore.5.so) + 392
+ 0x0000000111d87cc4 in TApplication::Run(bool) (in libCore.5.so) + 36
+ 0x0000000113d8150c in TRint::Run(bool) (in libRint.5.so) + 1420
+ 0x000000010546c5a8 in main (in aliroot) (aliroot.cxx:113)
+ 0x00007fff8c4d75fd in start (in libdyld.dylib) + 1
+ 0x0000000000000001 in &lt;unknown function&gt;
+</code></pre><p>This means that the program has crashed while running the function
+<code>AliAnalysisTaskSE::Exec</code>, and in particular while executing the line of code
+defined in <code>AliAnalysisTask.h</code> at line 113:</p>
+<pre><code>0x00000001191d3bdd in AliAnalysisTaskSE::Exec(char const*) (in libANALYSISalice.so) (AliAnalysisTask.h:118)
+</code></pre><p>The function was in turn called by <code>TTask::ExecuteTask()</code>, and so on, until we
+reach the first function called by the program.</p>
+<p>Other lines carry obscure information:</p>
+<pre><code>0x0000000111e5f11d in TUnixSystem::CheckDescriptors() (in libCore.5.so) + 317
+</code></pre><p>In this case, we know that the <code>CheckDescriptors()</code> function is defined in
+<code>libCore.5.so</code> and the crash occurred at byte offset 317 calculated from the
+start of the compiled function inside the binary library.</p>
+<p>The difference in debug information is given by the fact that:</p>
+<ul>
+<li>AliRoot has been compiled <strong>with debug information</strong>: all AliRoot functions
+report the corresponding source file and line number</li>
+<li>ROOT has been compiled <strong>without debug information</strong>: all ROOT functions only
+report obscure offsets</li>
+</ul>
+<blockquote>
+<p>It is possible to mix non-debug and debug code, but we will obtain
+comprehensible information only for the latter.</p>
+</blockquote>
+<p>In the following sections we will present two commonly used debugging
+techniques: one very simple based on printouts, and another one based on using
+a debugger (gdb).</p>
+<h3 id="debugging-with-printfcout">Debugging with &quot;printf/cout&quot;</h3>
+<p>The simplest way to understand what goes on in your code is to introduce
+periodic printouts stating the value of some variables, or simply indicating
+what the program is currently executing.</p>
+<p>Please note that, while printouts may be useful, they surely clutter your code
+if abused: so if you end up adding one printout per code line, you&apos;d better off
+with a debugger, as explained in the next paragraph.</p>
+<p>Apart from code cleanliness, printouts have a computational cost, which might
+be non-negligible depending on the frequency of your output: we are about to
+learn the appropriate way to add <em>discrete</em> debug printouts to your code in a
+way that:</p>
+<ul>
+<li>we can turn them off when debug is over without additional computational costs</li>
+<li>we don&apos;t have to write our code twice, one debug and one production version</li>
+</ul>
+<h4 id="the-generic-way">The generic way</h4>
+<p>The simplest (and naive) way to do it in C/C++ is the following:</p>
+<pre><code class="lang-c++"><span class="hljs-comment">// global variable</span>
+<span class="hljs-keyword">bool</span> gPrintDebug = <span class="hljs-literal">true</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">PrintDebug</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *message)</span> </span>{
+  <span class="hljs-keyword">if</span> (gPrintDebug == <span class="hljs-literal">false</span>)
+    <span class="hljs-keyword">return</span>;
+  <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; message &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argn, <span class="hljs-keyword">char</span> *argv[])</span> </span>{
+  PrintDebug(<span class="hljs-string">&quot;We are here&quot;</span>);
+  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p>The above snippet has a convenient <code>PrintDebug()</code> function, whose output can be
+suppressed by simply setting the global variable <code>gPrintDebug = false</code>.</p>
+<p>However, the PrintDebug() function is called in any case, even if no output
+will be produced, and this function call has a non-negligible cost; moreover,
+the condition <code>if (!gPrintDebug)</code> must be tested every time, which has another
+computational cost.</p>
+<p>The correct way is to use C/C++ <strong>preprocessor macros</strong>. The simplest way is to
+move the condition <code>if (!gPrintDebug)</code> from C++ to the preprocessor:</p>
+<pre><code class="lang-c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+
+<span class="hljs-comment">//#define PRINT_DEBUG</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">ifdef</span> PRINT_DEBUG</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">PrintDebug</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *message)</span> </span>{
+  <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; message &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+}
+<span class="hljs-meta">#<span class="hljs-meta-keyword">else</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> PrintDebug(...) 0;</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argn, <span class="hljs-keyword">char</span> *argv[])</span> </span>{
+  PrintDebug(<span class="hljs-string">&quot;We are here&quot;</span>);
+  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p>If we compile the above snippet, no call to the print function will ever be
+generated in the compiled code, because the condition is evaluated at compile
+time by the <strong>code preprocessor</strong> (to be precise, this happens <em>just before</em>
+compiling the code).</p>
+<p>To enable print debug, you can either uncomment the <code>#define</code> line on top, or
+compile the code with:</p>
+<pre><code class="lang-bash">gcc -o prog -D PRINT_DEBUG prog.cxx
+</code></pre>
+<p><em>i.e.</em> you can define the <code>PRINT_DEBUG</code> preprocessor variable on the command
+line without modifying your code.</p>
+<blockquote>
+<p>There are fancier ways to use preprocessor macros for debug: this
+one is trivial and provided as an example.</p>
+</blockquote>
+<p><div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" onclick="javascript:toggle(9797222531);" id="the-aliroot-way-alidebug-"><i class="fa fa-info-circle"></i> The AliRoot way: AliDebug <span id="heading-9797222531"></span></h3></div><div class="panel-body" id="panel-9797222531"><p>AliRoot has a logging facility defined in <code>STEER/STEERbase/AliLog.{h,cxx}</code>:
+there are different functions defined there that allow you to add sensible
+printouts to your code, and you should definitely use them instead of <code>cout</code> or
+<code>printf</code>.</p>
+<p>The &quot;functions&quot; are preprocessor macros, and there is a variable associated to
+each of them, determining whether the code for the printout should be generated
+or not ar runtime:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Function</strong></th>
+<th><strong>Variable</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AliDebug(level, message)</code></td>
+<td><code>LOG_NO_DEBUG</code></td>
+</tr>
+<tr>
+<td><code>AliInfo(message)</code></td>
+<td><code>LOG_NO_INFO</code></td>
+</tr>
+<tr>
+<td><code>AliWarning(message)</code></td>
+<td><code>LOG_NO_WARNING</code></td>
+</tr>
+<tr>
+<td><code>AliError(message)</code></td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td><code>AliFatal(message)</code></td>
+<td><em>none</em></td>
+</tr>
+</tbody>
+</table>
+<p>By defining the <code>LOG_NO_*</code> variables (through <code>#define</code>, for instance) it is
+possible to suppress all the related message outputs, but in a way that the
+generated code is optimized as explained in the previous paragraph.</p>
+<p>Please note that:</p>
+<ul>
+<li>it is not possible to suppress error and fatal error messages</li>
+<li>you must use those macros in a class</li>
+<li>you must include <code>AliLog.h</code> for using them</li>
+<li>you can turn them on and off selectively per class</li>
+</ul>
+<p>Consider the following minimal example (save it as <code>AliLogTest.h</code>):</p>
+<pre><code class="lang-c++"><span class="hljs-comment">//#define LOG_NO_INFO</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;AliLog.h&quot;</span></span>
+
+<span class="hljs-keyword">class</span> AliLogTest : <span class="hljs-keyword">public</span> TObject {
+  <span class="hljs-keyword">public</span>:
+    AliLogTest() {
+      AliInfoF(<span class="hljs-string">&quot;I am %s&quot;</span>, <span class="hljs-string">&quot;legend&quot;</span>);
+    };
+  ClassDef(AliLogTest, <span class="hljs-number">1</span>);
+};
+</code></pre>
+<p>Load it via the following <code>load.C</code> macro:</p>
+<pre><code class="lang-c++">{
+  gSystem-&gt;AddIncludePath(<span class="hljs-string">&quot;-I$ALICE_ROOT/include&quot;</span>);
+  gROOT-&gt;LoadMacro(<span class="hljs-string">&quot;AliLogTest.h++&quot;</span>);
+  AliLogTest a;
+}
+</code></pre>
+<p>Run:</p>
+<pre><code class="lang-bash">aliroot -q load.C
+</code></pre>
+<p>and see what happens if you <em>uncomment</em> the <code>LOG_NO_INFO</code> definition.</p>
+<p>Please note that in the example above we have used a function called
+<code>AliInfoF()</code> (and not <code>AliInfo()</code>): this is not a typo.</p>
+<p>Each one of the aforementioned log functions has a <code>*F</code> version (where &quot;F&quot; is
+for &quot;formatting&quot;), accepting the same arguments of <code>printf</code> (for instance, <code>%s</code>
+for strings or <code>%d</code> for signed integers). The following two calls produce the
+same output:</p>
+<pre><code class="lang-c++">AliInfoF(<span class="hljs-string">&quot;The goat sleeps %s&quot;</span>, <span class="hljs-string">&quot;on the bench&quot;</span>);
+AliInfo(Form(<span class="hljs-string">&quot;The goat sleeps %s&quot;</span>, <span class="hljs-string">&quot;on the bench&quot;</span>));
+</code></pre>
+<p>but they do different things. The <code>AliInfoF()</code> function roughly
+translates to:</p>
+<pre><code class="lang-c++"><span class="hljs-comment">// AliInfoF(message, ...)</span>
+{
+  TString formattedMessage;
+  formattedMessage.Form(message, ...);
+  AliInfo( formattedMessage );
+}
+</code></pre>
+<p>which allocates a <code>TString</code> object used as a buffer for formatting the string.
+The <code>Form()</code> call, instead, uses a preallocated common circular buffer of a
+certain, uncontrollable size: so, <code>AliInfoF()</code> is <strong>safer</strong> if you have to
+format very very long strings and you fear you might overwrite the buffer or
+get your part of the buffer overwritten by something else.</p>
+<blockquote>
+<p>On single core programs, no one overwrites your buffer before you print it
+out: you might have problems with <strong>multithreading</strong>.</p>
+</blockquote>
+<p>In general, <strong>using the full <code>AliInfo(Form())</code> is better</strong> as it does not
+create and destroy an object, which is costly. If you do not want to use the
+circular buffer but also don&apos;t want to create a buffer for each call, you can
+also allocate your own buffer once and reuse it:</p>
+<pre><code class="lang-c++">TString myBuffer;
+AliInfo( myBuffer.Form(<span class="hljs-string">&quot;the string %d&quot;</span>, <span class="hljs-number">1</span>) );
+AliInfo( myBuffer.Form(<span class="hljs-string">&quot;the string %d&quot;</span>, <span class="hljs-number">2</span>) );
+AliInfo( myBuffer.Form(<span class="hljs-string">&quot;the string %d&quot;</span>, <span class="hljs-number">3</span>) );
+</code></pre>
+<p>Please also note that the <code>LOG_NO_INFO</code> define has the effect of suppressing
+also the code generation for whatever the argument of <code>AliInfo()</code> is. So, if
+you have:</p>
+<pre><code class="lang-c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> LOG_NO_INFO</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;AliLog.h&quot;</span></span>
+<span class="hljs-comment">// ...</span>
+AliInfo( Form(<span class="hljs-string">&quot;something %s, something %s&quot;</span>, <span class="hljs-string">&quot;borrowed&quot;</span>, <span class="hljs-string">&quot;blue&quot;</span>) );
+</code></pre>
+<p>the <code>Form()</code> code will not be generated.</p>
+<p>As a general rule:</p>
+<ul>
+<li>use <code>AliInfo( Form() )</code></li>
+<li>revert to a shared buffer, or <code>AliInfoF()</code> if you get garbled output</li>
+</ul>
+<blockquote>
+<p>Choose <code>AliInfo()</code> or <code>AliInfoF()</code> according to your needs, but be
+aware of what they do under the hood!</p>
+</blockquote>
+<h4 id="choosing-a-debug-level">Choosing a &quot;debug level&quot;</h4>
+<p>AliLog allows you to set the &quot;importance&quot; of your debug message, which is
+called the <strong>debug level</strong>: depending on the settings, you can decide to only
+print important messages, <em>i.e.</em> messages with a debug level equal or greater
+than whatever you decide.</p>
+<p>Debug messages are printed using <code>AliDebug()</code>, and the corresponding
+<code>AliDebugF()</code> function for printf-formatted messages. Syntax:</p>
+<pre><code class="lang-c++">AliDebug(level, message);
+AliDebugF(level, formatstring, [arg1[, arg2...]]);
+</code></pre>
+<p><code>level</code> is a positive integer setting the debug level: <strong>greater means
+&quot;more important&quot;</strong>.</p>
+<p>The <strong>global debug level</strong> is used to decide which messages to print.
+Use:</p>
+<pre><code class="lang-c++">AliLog::SetGlobalDebugLevel(level);
+</code></pre>
+<p>Only messages with a level greater than or equal to <code>level</code> will be
+printed out.</p>
+<p>The <code>SetGlobalDebugLevel</code> function is a <em>static</em> function, so you
+should literally use it prefixed by <code>AliLog::</code>.</p>
+</div></div></p>
+<h3 id="using-a-debugger">Using a debugger</h3>
+<p><a href="http://www.gnu.org/software/gdb/" target="_blank">gdb</a> is the GNU debugger. To install it on
+Debian-based distributions (like Ubuntu):</p>
+<pre><code class="lang-bash">apt update
+apt install gdb
+</code></pre>
+<h4 id="gdb-and-os-x">gdb and OS X</h4>
+<p>Since some time, OS X moved to LLVM. In general, code compiled with LLVM
+compilers cannot be debugged easily with gdb, although it is claimed now and
+then to be compatible.</p>
+<p>LLVM comes with a new debugger called <a href="http://lldb.llvm.org/" target="_blank">lldb</a>: for the
+basic operations, lldb&apos;s commands and its way of funcitoning are very similar,
+if not identical in some cases, to gdb.</p>
+<p>The debugging example that follows contains examples and references to both gdb
+and lldb, and enough information on how to use the latter if you come from gdb.</p>
+<p>Just for reference,
+<a href="http://ntraft.com/installing-gdb-on-os-x-mavericks/" target="_blank">here&apos;s how to install gdb on OS X</a>
+properly.</p>
+<blockquote>
+<p>It is recommended you get accustomed with lldb if you use a Mac, and refrain
+from using gdb, as it lacks official support.</p>
+</blockquote>
+<h4 id="test-case-a-program-that-crashes">Test case: a program that crashes</h4>
+<p>Consider the following snippet:</p>
+<pre><code class="lang-c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> FLOAT_ARY 12</span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">crash_function</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> answer_to_everything = <span class="hljs-number">42</span>;
+  <span class="hljs-keyword">int</span> another_number = -answer_to_everything;
+  <span class="hljs-keyword">float</span> many_floats[FLOAT_ARY];
+  <span class="hljs-keyword">int</span> counter_max = <span class="hljs-number">10000</span>;
+  <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *test_string = <span class="hljs-string">&quot;oh no, not again!&quot;</span>;
+  <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; test_string &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>; i&lt;counter_max; i++) {
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;setting index &quot;</span> &lt;&lt; i &lt;&lt; <span class="hljs-string">&quot; out of &quot;</span> &lt;&lt; counter_max &lt;&lt; <span class="hljs-string">&quot;. string is: &quot;</span> &lt;&lt; test_string &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+    many_floats[i] = <span class="hljs-number">0.12345</span>;
+  }
+  <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; another_number &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">func2</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">float</span> pi = <span class="hljs-number">3.14</span>;
+  crash_function();
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">func1</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">int</span> a_variable = <span class="hljs-number">456</span>;
+  a_variable += <span class="hljs-number">1</span>;
+  func2();
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argn, <span class="hljs-keyword">char</span> *argv[])</span> </span>{
+  func1();
+  crash_function();
+  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<!-- restore syntax -->
+<p>Name it <code>crash.cxx</code> and compile it <strong>with debug symbols</strong>. On Linux:</p>
+<pre><code class="lang-bash">g++ -g -O0 -o crash crash.cxx
+</code></pre>
+<p>On OS X:</p>
+<pre><code class="lang-bash">clang++ -g -O0 -o crash crash.cxx
+</code></pre>
+<p>This code contains an array of floats, allocated &quot;on the stack&quot; (<em>i.e.</em> on the
+function&apos;s memory), which has space for 12 elements:</p>
+<pre><code class="lang-c++"><span class="hljs-keyword">float</span> many_floats[<span class="hljs-number">12</span>];
+</code></pre>
+<p>However in the <code>for</code> loop we are writing way beyond its length in order to
+artificially generate a crash. Let&apos;s run it:</p>
+<pre><code class="lang-bash">$&gt; ./crash
+...
+setting index 811 out of 10000. string is: oh no, not again!
+setting index 812 out of 10000. string is: oh no, not again!
+setting index 813 out of 10000. string is: oh no, not again!
+setting index 814 out of 10000. string is: oh no, not again!
+setting index 815 out of 10000. string is: oh no, not again!
+setting index 816 out of 10000. string is: oh no, not again!
+Segmentation fault: 11
+</code></pre>
+<p>The program crashes at a random point as expected.</p>
+<blockquote>
+<p>We did not obtain any stack trace automatically: this is a peculiarity of
+ROOT programs.</p>
+</blockquote>
+<p>We want to run the program under a debugger in order to:</p>
+<ul>
+<li>obtain a stack trace</li>
+<li>see the value of the variables at the moment of the crash</li>
+</ul>
+<p>Load the program under gdb:</p>
+<pre><code class="lang-bash">gdb --args ./crash
+</code></pre>
+<p>On OS X you might use lldb:</p>
+<pre><code class="lang-bash">lldb -- ./crash
+</code></pre>
+<p>From the gdb or lldb prompt, run the program by typing <code>run</code>: when the program
+crashes, we are back at the debugger&apos;s prompt.</p>
+<p>Here is the sample output from lldb (gdb&apos;s output is very similar):</p>
+<pre><code>* thread #1: tid = 0x13c1d0, 0x0000000100000ee8 crash`crash_function() + 280 at crash.cxx:14, queue = &apos;com.apple.main-thread&apos;, stop reason = EXC_BAD_ACCESS (code=2, address=0x7fff5fc00000)
+    frame #0: 0x0000000100000ee8 crash`crash_function() + 280 at crash.cxx:14
+   11        std::cout &lt;&lt; test_string &lt;&lt; std::endl;
+   12        for (unsigned int i=0; i&lt;counter_max; i++) {
+   13          std::cout &lt;&lt; &quot;setting index &quot; &lt;&lt; i &lt;&lt; &quot; out of &quot; &lt;&lt; counter_max &lt;&lt; &quot;. string is: &quot; &lt;&lt; test_string &lt;&lt; std::endl;
+-&gt; 14          many_floats[i] = 0.12345;
+   15        }
+   16        std::cout &lt;&lt; another_number &lt;&lt; std::endl;
+   17      }
+</code></pre><p>The debugger is pointing us exactly to the line where the execution has
+stopped: since we have compiled the program with debug symbols, we have this
+precise reference and the debugger can even show us the code snippet.</p>
+<p>To manually show the code snippet, type <code>list</code> (both gdb and lldb). By pressing
+Enter on the empty prompt you are repeating the last <code>list</code> command that
+advances in the code until the end of file is reached.</p>
+<p>To reset code listing to the beginning, type <code>list 1</code>.</p>
+<p>Print a backtrace by typing <code>bt</code>:</p>
+<pre><code>* thread #1: tid = 0x13d53e, 0x0000000100000ee8 crash`crash_function() + 280 at crash.cxx:14, queue = &apos;com.apple.main-thread&apos;, stop reason = EXC_BAD_ACCESS (code=2, address=0x7fff5fc00000)
+  * frame #0: 0x0000000100000ee8 crash`crash_function() + 280 at crash.cxx:14
+</code></pre><p>Print the list of local variables available in the current program context with
+<code>frame variable</code> (lldb):</p>
+<pre><code class="lang-console">$&gt; frame variable
+(unsigned int) answer_to_everything = 42
+(int) another_number = -42
+(float [12]) many_floats = ([0] = 0.123450004, [1] = 0.123450004, [2] = 0.123450004, [3] = 0.123450004, [4] = 0.123450004, [5] = 0.123450004, [6] = 0.123450004, [7] = 0.123450004, [8] = 0.123450004, [9] = 0.123450004, [10] = 0.123450004, [11] = 0.123450004)
+(int) counter_max = 10000
+(const char *) test_string = 0x0000000100001f14 &quot;oh no, not again!&quot;
+(unsigned int) i = 436
+</code></pre>
+<p>Print the value of a variable at this point in the program (both lldb and gdb):</p>
+<pre><code class="lang-console">$&gt; print global_int
+(int) $0 = 789
+$&gt; print test_string
+(const char *) $1 = 0x0000000100001f14 &quot;oh no, not again!&quot;
+</code></pre>
+<p>We can manually set a &quot;breakpoint&quot; in the program to stop before executing a
+certain line of code, then we can advance manually from there.</p>
+<p>Let&apos;s start by killing the current running process:</p>
+<pre><code>kill
+</code></pre><p>Set a breakpoint when calling the function <code>func1()</code>. With lldb:</p>
+<pre><code>breakpoint set -b func1
+</code></pre><p>With gdb:</p>
+<pre><code>break func1
+</code></pre><p>Or, as an alternative, we can set the breakpoint to a certain line of code.
+With lldb:</p>
+<pre><code class="lang-console">$&gt; breakpoint set -l 28
+Breakpoint 1: where = crash`func1() + 15 at crash.cxx:28, address = 0x0000000100000f9f
+</code></pre>
+<p>With gdb:</p>
+<pre><code class="lang-console">$&gt; break set 28
+Breakpoint 1 at 0x100000f9f: file crash.cxx, line 28.
+</code></pre>
+<p>Now run the program with <code>run</code>. It will stop where we told it to stop, even if
+it did not crash: since the execution is stopped, we can do many things:</p>
+<ul>
+<li>examine the variables</li>
+<li>advance line by line</li>
+<li>resume the normal execution</li>
+<li>delete the breakpoint</li>
+</ul>
+<p>For instance, we set the breakpoint before incrementing the variable
+<code>a_variable</code> of one unit: let&apos;s print its value:</p>
+<pre><code class="lang-console">$&gt; print a_variable
+$0 = 456
+</code></pre>
+<p>Process next line with <code>next</code>, or simply <code>n</code>, then examine again:</p>
+<pre><code class="lang-console">$&gt; n
+$&gt; print a_variable
+$1 = 457
+</code></pre>
+<p>The variable was correctly incremented by one unit like expected. To resume
+normal execution just type <code>continue</code> (our demo program will continue until the
+crash).</p>
+<p>Current breakpoints can be listed. On lldb:</p>
+<pre><code class="lang-console">$&gt; breakpoint list
+Current breakpoints:
+1: file = &apos;/tmp/crash.cxx&apos;, line = 28, locations = 1, resolved = 1, hit count = 1
+  1.1: where = crash`func1() + 15 at crash.cxx:28, address = 0x0000000100000f9f, resolved, hit count = 1
+</code></pre>
+<p>On gdb:</p>
+<pre><code class="lang-console">$&gt; info breakpoints
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x0000000100000f9f in func1() at crash.cxx:28
+    breakpoint already hit 1 time
+</code></pre>
+<p>We can delete a breakpoint, or disable it if we don&apos;t want it to be effective
+but we might want to restore it later. With lldb:</p>
+<pre><code class="lang-console">$&gt; breakpoint delete 1
+$&gt; breakpoint disable 2
+$&gt; breakpoint enable 2
+</code></pre>
+<p>With gdb:</p>
+<pre><code class="lang-console">$&gt; delete 1
+$&gt; disable 2
+$&gt; enable 2
+</code></pre>
+<p>We have now learned how to perform the basic operations with two different
+debuggers: stopping the program&apos;s execution and checking on the variable
+values.</p>
+<p>Without a debugger those operations are commonly done by adding printouts,
+input requests, etc.: we now know how to obtain the same results without
+modifying our code.</p>
+<h4 id="commands-summary">Commands summary</h4>
+<table>
+<thead>
+<tr>
+<th>gdb</th>
+<th>lldb</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>run</td>
+<td>run</td>
+<td>start execution</td>
+</tr>
+<tr>
+<td>quit</td>
+<td>quit</td>
+<td>exit debugger</td>
+</tr>
+<tr>
+<td>break</td>
+<td>breakpoint set [-l/-f...]</td>
+<td>set a breakpoint</td>
+</tr>
+<tr>
+<td>delete</td>
+<td>breakpoint delete</td>
+<td>deletes a breakpoint</td>
+</tr>
+<tr>
+<td>info breakpoints</td>
+<td>breakpoint list</td>
+<td>lists current breakpoints</td>
+</tr>
+<tr>
+<td>enable</td>
+<td>breakpoint enable</td>
+<td>enable a breakpoint</td>
+</tr>
+<tr>
+<td>disable</td>
+<td>breakpoint disable</td>
+<td>disable a breakpoint</td>
+</tr>
+<tr>
+<td>continue</td>
+<td>continue</td>
+<td>resume a stopped execution</td>
+</tr>
+<tr>
+<td>kill</td>
+<td>kill</td>
+<td>terminate current execution</td>
+</tr>
+<tr>
+<td>list</td>
+<td>list</td>
+<td>show source code</td>
+</tr>
+<tr>
+<td>print</td>
+<td>print</td>
+<td>print value of a variable</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>A complete list of gdb vs. lldb commands can be found on the
+official <a href="http://lldb.llvm.org/lldb-gdb.html" target="_blank">lldb documentation</a>.</p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="general.html" class="navigation navigation-prev " aria-label="Previous page: Some general programming tips">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="memory.html" class="navigation navigation-next " aria-label="Next page: Finding memory leaks">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Where does my code crash","layout":"tweet","createtoc":true,"parnumbers":true,"level":"1.10.3","depth":2,"next":{"title":"Finding memory leaks","level":"1.10.4","depth":2,"path":"analysis/bestprac/memory.md","ref":"analysis/bestprac/memory.md","articles":[]},"previous":{"title":"Some general programming tips","level":"1.10.2","depth":2,"path":"analysis/bestprac/general.md","ref":"analysis/bestprac/general.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","panels@git+https://github.com/lhcb/gitbook-plugin-panels.git#117012fdc18c96831cb88196980c0ea73b0c87b8","collapsible-menu","block-align"],"styles":{"website":"css/website.css"},"pluginsConfig":{"collapsible-menu":{},"block-align":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"panels":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"PEP root6 workshop","gitbook":"*","description":"PEP root6 introduction material"},"file":{"path":"analysis/bestprac/crash.md","mtime":"2018-11-13T16:42:45.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-14T12:01:38.575Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-panels/panels.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
