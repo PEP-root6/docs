@@ -226,7 +226,7 @@ private:
 };
 ```
 
-The above code snippet defines a `functor`. There are a couple of nice things about functors. One is that unlike regular functions, they can contain a *state*. The above example creates a function which adds 42 to whatever you give it. But that value 42 is not hardcoded, it was specified as a constructor argument when we created our functor instance. You could create another adder, which added 27, just by calling the constructor with a different value. This makes them nicely customizable.
+The above code snippet defines a `functor`. There are a couple of nice things about functors. One is that unlike regular functions, they can contain a *state*. The example below creates a function which adds 42 to whatever you give it. But that value 42 is not hardcoded, it was specified as a constructor argument when we created our functor instance. You could create another adder, which added 27, just by calling the constructor with a different value. This makes them nicely customizable.
 
 ```cpp
 // Now you can use it like this:
